@@ -111,7 +111,7 @@
             </div>
 
             <!-- Stats Bar at the bottom -->
-            <div class="absolute bottom-0 w-full bg-black/30 backdrop-blur-md p-4">
+            <div class="absolute bottom-0 w-full bg-purple-800/30 backdrop-blur-md p-4">
                 <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                     <div class="p-2">
                         <h3 class="text-2xl font-bold">50+</h3>

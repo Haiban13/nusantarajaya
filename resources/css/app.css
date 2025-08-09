@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +6,141 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+.blur {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+* {
+    scroll-behavior: smooth;
+}
+
+.konten {
+    padding: 5% 10%;
+}
+
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+p {
+    opacity: 60%;
+}
+.img-projek {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    padding: 3px 50px;
+}
+
+nav {
+    background: rgba(55, 55, 55, 0.463); /* transparan agar blur terlihat */
+    backdrop-filter: blur(10px); /* efek blur */
+    -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* garis tipis */
+}
+.btn-line1 {
+    color: rgb(175, 7, 7);
+    padding: 3px 50px;
+    border: 3px solid transparent;
+    border-radius: 3rem;
+    background: linear-gradient(transparent, transparent) padding-box,
+        linear-gradient(333deg, rgba(87, 1, 0, 1), rgba(212, 21, 0, 1))
+            border-box;
+    background-clip: padding-box, border-box;
+}
+.btn-line {
+    color: rgb(175, 7, 7);
+    padding: 3px 50px;
+    border: 3px solid transparent;
+    border-radius: 3rem;
+    border-color: rgb(175, 7, 7);
+}
+
+.btn-bg {
+    color: white;
+    padding: 3px 50px;
+    border-radius: 2rem;
+    background: #570100;
+    background: linear-gradient(
+        333deg,
+        rgba(87, 1, 0, 1) 0%,
+        rgba(212, 21, 0, 1) 100%
+    );
+}
+
+:hover.btn-line {
+    color: rgb(175, 7, 7);
+    background-color: rgb(122, 6, 6);
+    padding: 3px 50px;
+    border: 3px solid transparent;
+    border-radius: 3rem;
+    border-color: rgb(175, 7, 7);
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+:hover.btn-bg {
+    background-color: rgba(122, 6, 6, 0.253);
+    color: white;
+    padding: 3px 50px;
+    border-radius: 2rem;
+}
+
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
+    animation: slide-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        -o-transform: translateY(30px);
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
 }

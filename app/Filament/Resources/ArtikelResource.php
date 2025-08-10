@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AcaraResource\Pages;
-use App\Filament\Resources\AcaraResource\RelationManagers;
-use App\Models\Acara;
+use App\Filament\Resources\ArtikelResource\Pages;
+use App\Filament\Resources\ArtikelResource\RelationManagers;
+use App\Models\Artikel;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AcaraResource extends Resource
+class ArtikelResource extends Resource
 {
-    protected static ?string $model = Acara::class;
+    protected static ?string $model = Artikel::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -30,6 +30,7 @@ class AcaraResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('tanggal_akhir')
                     ->required(),
+             
                 Forms\Components\FileUpload::make('upload_img1')
                     ->label('Image 1')
                     ->image()
@@ -57,21 +58,14 @@ class AcaraResource extends Resource
                     ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
                     ->maxSize(10240) // 10MB
                     ->nullable(),
-                Forms\Components\TextInput::make('lokasi')
-                    ->maxLength(255),
+
+            
                 Forms\Components\Textarea::make('des_singkat')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('detail_acara')
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('htm')
-                    ->numeric(),
-                Forms\Components\TextInput::make('no_panitia')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('kategori')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('asal')
-                    ->maxLength(255),
             ]);
+       
     }
 
     public static function table(Table $table): Table
@@ -86,7 +80,7 @@ class AcaraResource extends Resource
                 Tables\Columns\TextColumn::make('tanggal_akhir')
                     ->date()
                     ->sortable(),
-                  Tables\Columns\ImageColumn::make('images.img1')
+                Tables\Columns\ImageColumn::make('images.img1')
                     ->label('Image 1')
                     ->square(),
 
@@ -103,18 +97,8 @@ class AcaraResource extends Resource
                     ->label('Video')
                     ->url(fn ($record) => $record->images?->video ? asset('storage/' . $record->images->video) : null)
                     ->openUrlInNewTab(),
-                
-                Tables\Columns\TextColumn::make('lokasi')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('htm')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('no_panitia')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('kategori')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('asal')
-                    ->searchable(),
+        
+           
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -123,9 +107,7 @@ class AcaraResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-              
-            
-                ])
+            ])
             ->filters([
                 //
             ])
@@ -149,9 +131,9 @@ class AcaraResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAcaras::route('/'),
-            'create' => Pages\CreateAcara::route('/create'),
-            'edit' => Pages\EditAcara::route('/{record}/edit'),
+            'index' => Pages\ListArtikels::route('/'),
+            'create' => Pages\CreateArtikel::route('/create'),
+            'edit' => Pages\EditArtikel::route('/{record}/edit'),
         ];
     }
 }

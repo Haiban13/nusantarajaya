@@ -6,5 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artikel extends Model
 {
-    //
+      protected $table="artikel";
+    protected $fillable = [
+        'judul',
+        'tanggal_mulai',
+        'tanggal_akhir',
+        'img',
+        'des_singkat',
+        'detail_acara',
+    ];
+
+    public function images()
+    {
+        return $this->belongsTo(Image::class, 'img');
+    }
 }

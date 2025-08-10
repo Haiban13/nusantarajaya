@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\AcaraResource\Pages;
+namespace App\Filament\Resources\ArtikelResource\Pages;
 
-use App\Filament\Resources\AcaraResource;
+use App\Filament\Resources\ArtikelResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateAcara extends CreateRecord
+class CreateArtikel extends CreateRecord
 {
-    protected static string $resource = AcaraResource::class;
+    protected static string $resource = ArtikelResource::class;
     protected function mutateFormDataBeforeCreate(array $data): array
     {
          $doc = \App\Models\Image::create([
@@ -16,7 +16,7 @@ class CreateAcara extends CreateRecord
             'img2'  => $data['upload_img2'] ?? null,
             'img3'  => $data['upload_img3'] ?? null,
             'video' => $data['upload_video'] ?? null,
-            'jenis' => "acara",
+            'jenis' => "artikel",
 
         ]);     
 

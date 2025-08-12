@@ -16,9 +16,18 @@
         <a href="/about" class="text-gray-300 hover:text-orange-600 transition-colors">About</a>
     </div>
 
-    <div class="flex items-center gap-3  sm:hidden md:block">
-        <a href="#" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
-        <a href="#" class="rounded-full duration-200 btn-bg">Login</a>
+
+    <div class="flex items-center gap-3   ">
+        <div class="flex items-center gap-3  m">
+            <a href="#" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
+            <a href="#" class="rounded-full duration-200 btn-bg">Login</a>
+        </div>
+        {{-- profile --}}
+        {{-- tampilkan setelah login --}}
+        <a href="{{ route('user.profile') }}">
+            <div class=" bg-zinc-500 w-[50px] h-[50px] rounded-full">
+            </div>
+        </a>
     </div>
 
     <div class="md:hidden">

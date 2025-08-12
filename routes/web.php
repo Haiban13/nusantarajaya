@@ -11,6 +11,9 @@ Route::get('/acara', function () {
 Route::get('/acara/1', function () {
     return view('acara-detail');
 });
+Route::get('/profile/1', function () {
+    return view('user-profile');
+})->name('user.profile');
 Route::get('/about', function () {
     return view('about-we');
 });

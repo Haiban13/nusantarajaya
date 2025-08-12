@@ -5,7 +5,8 @@
                     alt="Tari Kecak" class="w-full h-48 object-cover"> --}}
      <div class="w-full h-[200px] bg-zinc-400"></div>
      {{-- status --}}
-     <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-green-500 absolute right-0 top-0">Free</div>
+     {{-- <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-green-500 absolute right-0 top-0">Free</div> --}}
+     <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-red-500 absolute right-0 top-0">Berbayar</div>
      <div class="p-6">
          <p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                  viewBox="0 0 16 16">
@@ -43,4 +44,4 @@
              adipisicing elit. Molestias unde similique quia hic sed nostrum assumenda animi quas doloremque
              eius! At amet sunt enim, sequi ducimus exercitationem pariatur doloribus a?</p>
      </div>
- </div>w
+ </div>

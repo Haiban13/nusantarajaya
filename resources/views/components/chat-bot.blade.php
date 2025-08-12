@@ -17,7 +17,7 @@
                 size: 55,
                 dragAndDrop: true,
                 iconColor: 'white',
-                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                customIconSrc:  'assets/karakter.png',
                 autoWindowOpen: {
                     autoOpen: true,
                     openDelay: 2,
@@ -45,8 +45,8 @@
             chatWindow: {
                 showTitle: true,
                 showAgentMessages: true,
-                title: 'Flowise Bot',
-                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                title: 'Sat Set Bot',
+                titleAvatarSrc: 'assets/karakter.png',
                 welcomeMessage: 'Haii!! Aku Chat Bot Budaya Sat Set...',
                 errorMessage: 'Maaf saya tidak paham',
                 backgroundColor: '#ffffff',
@@ -66,7 +66,7 @@
                     backgroundColor: '#f7f8ff',
                     textColor: '#303235',
                     showAvatar: true,
-                    avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
+                    avatarSrc: 'assets/karakter.png'
                 },
                 userMessage: {
                     backgroundColor: '#d96f18',

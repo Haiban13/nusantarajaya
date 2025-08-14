@@ -30,33 +30,38 @@ class AcaraResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('tanggal_akhir')
                     ->required(),
+                    Forms\Components\Hidden::make('img'),
                 Forms\Components\FileUpload::make('upload_img1')
                     ->label('Image 1')
                     ->image()
                     ->directory('images')
                     ->maxSize(2048)
-                    ->nullable(),
+                    ->nullable()->preserveFilenames(false)
+                        ->visibility('public')->multiple(false),
 
                 Forms\Components\FileUpload::make('upload_img2')
                     ->label('Image 2')
                     ->image()
                     ->directory('images')
                     ->maxSize(2048)
-                    ->nullable(),
+                    ->nullable()->preserveFilenames(false)
+->visibility('public')->multiple(false),
 
                 Forms\Components\FileUpload::make('upload_img3')
                     ->label('Image 3')
                     ->image()
                     ->directory('images')
                     ->maxSize(2048)
-                    ->nullable(),
+                    ->nullable()->preserveFilenames(false)
+->visibility('public')->multiple(false),
 
                 Forms\Components\FileUpload::make('upload_video')
                     ->label('Video')
                     ->directory('videos')
                     ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
                     ->maxSize(10240) // 10MB
-                    ->nullable(),
+                    ->nullable()->preserveFilenames(false)
+->visibility('public')->multiple(false),
                 Forms\Components\TextInput::make('lokasi')
                     ->maxLength(255),
                 Forms\Components\Textarea::make('des_singkat')
@@ -152,6 +157,7 @@ class AcaraResource extends Resource
             'index' => Pages\ListAcaras::route('/'),
             'create' => Pages\CreateAcara::route('/create'),
             'edit' => Pages\EditAcara::route('/{record}/edit'),
+       
         ];
     }
 }

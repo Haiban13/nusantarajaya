@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class AcaraResource extends Resource
 {
@@ -31,6 +32,7 @@ class AcaraResource extends Resource
                 Forms\Components\DatePicker::make('tanggal_akhir')
                     ->required(),
                     Forms\Components\Hidden::make('img'),
+                    Forms\Components\Hidden::make('owner'),
                 Forms\Components\FileUpload::make('upload_img1')
                     ->label('Image 1')
                     ->image()
@@ -83,6 +85,7 @@ class AcaraResource extends Resource
     {
         return $table
             ->columns([
+           
                 Tables\Columns\TextColumn::make('judul')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('tanggal_mulai')

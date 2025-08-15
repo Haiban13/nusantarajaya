@@ -29,7 +29,8 @@ class EditAcara extends EditRecord
             $data['upload_video'] = $image->video;
             $data['img'] = $image->id;
         }
-
+        
+        
         return $data;
     }
 

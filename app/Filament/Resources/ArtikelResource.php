@@ -32,6 +32,7 @@ class ArtikelResource extends Resource
                     ->required(),
              
                 Forms\Components\Hidden::make('img'),
+                Forms\Components\Hidden::make('owner'),
                 Forms\Components\FileUpload::make('upload_img1')
                     ->label('Image 1')
                     ->image()

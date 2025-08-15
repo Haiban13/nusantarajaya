@@ -1,5 +1,7 @@
-<div class=" flex gap-5">
-    <div class="bg-zinc-400 rounded-2xl w-[100%] h-[230px]"></div>
+{{-- <div class="flex gap-5"> --}}
+<div class="w-full"> 
+
+    {{-- <div class="bg-zinc-400 rounded-2xl w-[100%] h-[230px]"></div> --}}
     <div>
         <div class="p-6">
             <p class="flex items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"
@@ -14,6 +16,5 @@
             <p class=" opacity-50 line-clamp-4"> dolor sit amet consectetur, adipisicing elit. Cumque, illum saepe
                 recusandae rem quam fugit facilis dolores molestias at eaque molestiae id dolore vel eligendi fuga
                 accusamus rerum possimus voluptatum..</p>
-
         </div>
     </div>

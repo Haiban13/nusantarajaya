@@ -13,77 +13,7 @@
      <!-- =================================================================== -->
      <!-- Hero Section -->
      <!-- =================================================================== -->
-     <section
-         class="hero-bg h-[70vh] md:h-[90vh] rounded-b-3xl flex flex-col items-center justify-center text-white text-center relative overflow-hidden">
-         <!-- Content Container -->
-         <div class="z-10 flex flex-col items-center px-4">
-             <h1
-                 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
-                 Lihat Ragam <br class="hidden md:block"> Budaya Di <span class=" text-orange-600"> Indonesia</span>
-             </h1>
-             <p
-                 class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8 animate__fadeIn animate__animated animate__delay-2s">
-                 Jelajahi kekayaan budaya, tradisi, dan warisan nusantara di ujung jari Anda.
-             </p>
-
-             <!-- Search Bar -->
-             <div
-                 class="w-full max-w-xl bg-white/20 backdrop-blur-sm p-2 rounded-full flex items-center animate__zoomIn animate__animated animate__delay-2s">
-                 <input type="text" placeholder="Cari budaya, tarian, atau acara..."
-                     class="w-full bg-transparent text-white placeholder-gray-300 border-none focus:ring-0 px-4 py-2">
-                 <button
-                     class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors shrink-0">
-                     Cari
-                 </button>
-             </div>
-         </div>
-         <div style="display: flex; font-size: 30px;  "
-             class="absolute bottom-0 w-full bg-orange-800/30 backdrop-blur-md p-4 flex justify-center gap-[10%]">
-             <div>
-                 <div class="flex items-center  justify-center">
-                     <div class="counter font-bold" data-target="500"></div>+
-                 </div>
-                 <p class=" text-xl font-medium">Pengguna Aktif</p>
-             </div>
-
-             <div>
-                 <div class="flex items-center  justify-center">
-                     <div class="counter font-bold" data-target="500"></div>+
-                 </div>
-                 <p class=" text-xl font-medium">Berita</p>
-             </div>
-             <div>
-                 <div class="flex items-center  justify-center">
-                     <div class="counter font-bold" data-target="1000"></div>+
-                 </div>
-                 <p class=" text-xl font-medium">Acara Aktif</p>
-             </div>
-
-         </div>
-
-         <!-- Stats Bar at the bottom -->
-         {{-- <div class="absolute bottom-0 w-full bg-orange-800/30 backdrop-blur-md p-4">
-             <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                 <div class="p-2">
-                     <div class="text-2xl font-bold" class="counter" data-target="100">100</div>
-                     <p class="text-gray-300">Acara</p>
-                 </div>
-                 <div class="p-2">
-                     <div class="text-2xl font-bold" class="counter" data-target="100"></div>
-                     <p class="text-gray-300">Warisan</p>
-                 </div>
-                 <div class="p-2">
-                     <div class="text-2xl font-bold" class="counter" data-target="100"></div>
-                     <p class="text-gray-300">Provinsi</p>
-                 </div>
-                 <div class="p-2 col-span-2 md:col-span-1">
-                     <div class="text-2xl font-bold" class="counter" data-target="100"></div>
-                     <p class="text-gray-300">Suku Bangsa</p>
-                 </div>
-             </div>
-         </div> --}}
-     </section>
-
+     @include('components.headerv2')
      <!-- =================================================================== -->
      <!-- "Acara Terbaru" (Latest Events) Section -->
      <!-- =================================================================== -->
@@ -98,8 +28,26 @@
          </div>
 
          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-             @include('components.card-acara')
+             @for ($i = 0; $i < 5; $i++)
+                 @include('components.card-acara')
+             @endfor
+         </div>
+     </section>
 
+     <section class="container mx-auto px-6 py-16" data-aos="fade-up" data-aos-duration="500">
+         <div class="flex items-center justify-between">
+
+             <div>
+                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Berita Terkini</h2>
+                 <p class="text-gray-500 mb-8">Jangan lewatkan acara-acara budaya paling menarik yang akan datang.</p>
+             </div>
+             <button class="btn-line">Lihat Lainnya</button>
+         </div>
+
+         <div class="grid grid-cols-2 gap-8">
+             @for ($i = 0; $i < 5; $i++)
+                 @include('components.card-artikel')
+             @endfor
          </div>
      </section>
 
@@ -140,8 +88,7 @@
          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
              <!-- Illustration -->
              <div class="flex justify-center">
-                 <img src="https://i.ibb.co/L5kH9Bw/character-illustration.png" alt="Character Illustration"
-                     class="max-w-xs md:max-w-sm">
+                 <img src="assets/karakter.png" alt="Character Illustration" class="max-w-xs md:max-w-sm">
              </div>
              <!-- Feature List -->
              <div class="space-y-8">
@@ -195,7 +142,7 @@
      <!-- CTA (Call to Action) Section -->
      <!-- =================================================================== -->
      <section class="cta-bg my-16">
-         <div class="container mx-auto px-6 py-20 text-center text-white">
+         <div class=" mx-auto px-6 py-20 text-center text-white">
              <h2 class="text-4xl font-bold mb-4">Support Me With</h2>
              <p class="max-w-2xl mx-auto mb-8 text-gray-300">Dukung kami untuk terus melestarikan dan mempromosikan
                  budaya Indonesia. Setiap dukungan Anda sangat berarti.</p>
@@ -213,40 +160,7 @@
      <!-- =================================================================== -->
      <!-- Map & Provinces Section -->
      <!-- =================================================================== -->
-     <section class="container mx-auto px-6 py-16">
-         <div class="bg-white p-8 rounded-2xl shadow-lg">
-             <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Daftar Suku di Tiap Provinsi</h2>
-             <div class="flex flex-col lg:flex-row items-center justify-around gap-8">
-                 <!-- Left List -->
-                 <ul class="space-y-3 text-gray-600 w-full lg:w-1/4 text-center lg:text-left">
-                     <li class="flex items-center justify-center lg:justify-start gap-2"><span
-                             class="text-orange-500 font-bold">•</span> Suku Jawa</li>
-                     <li class="flex items-center justify-center lg:justify-start gap-2"><span
-                             class="text-orange-500 font-bold">•</span> Suku Sunda</li>
-                     <li class="flex items-center justify-center lg:justify-start gap-2"><span
-                             class="text-orange-500 font-bold">•</span> Suku Batak</li>
-                     <li class="flex items-center justify-center lg:justify-start gap-2"><span
-                             class="text-orange-500 font-bold">•</span> Suku Betawi</li>
-                 </ul>
-                 <!-- Map Image -->
-                 <div class="w-full lg:w-1/2 flex justify-center">
-                     <img src="https://i.ibb.co/k30D0vJ/indonesia-map.png" alt="Peta Indonesia"
-                         class="max-w-md w-full">
-                 </div>
-                 <!-- Right List -->
-                 <ul class="space-y-3 text-gray-600 w-full lg:w-1/4 text-center lg:text-right">
-                     <li class="flex items-center justify-center lg:justify-end gap-2">Suku Dayak <span
-                             class="text-orange-500 font-bold">•</span></li>
-                     <li class="flex items-center justify-center lg:justify-end gap-2">Suku Asmat <span
-                             class="text-orange-500 font-bold">•</span></li>
-                     <li class="flex items-center justify-center lg:justify-end gap-2">Suku Bugis <span
-                             class="text-orange-500 font-bold">•</span></li>
-                     <li class="flex items-center justify-center lg:justify-end gap-2">Suku Minang <span
-                             class="text-orange-500 font-bold">•</span></li>
-                 </ul>
-             </div>
-         </div>
-     </section>
+     <div id="container"></div>
 
 
 

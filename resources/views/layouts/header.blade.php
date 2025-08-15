@@ -39,7 +39,8 @@
 
         /* Custom style for the CTA background */
         .cta-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1599158150225-664878143599?q=80&w=2070&auto=format&fit=crop');
+            /* background-image: url(' */
+            background-image: url('./assets/759-shutterstock_708676618.jpg');
             background-size: cover;
             background-position: center;
         }

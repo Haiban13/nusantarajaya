@@ -35,9 +35,7 @@ body {
     scroll-behavior: smooth;
 }
 
-.konten {
-    padding: 5% 10%;
-}
+ 
 
 h1 {
     font-size: 5rem;
@@ -64,6 +62,7 @@ p {
 button {
     padding: 12px 50px;
 }
+ 
 
 nav {
     background: rgba(55, 55, 55, 0.463); /* transparan agar blur terlihat */
@@ -149,4 +148,49 @@ nav {
         -webkit-transform: translateY(30px);
         transform: translateY(30px);
     }
+}
+
+.text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+        both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* maps */
+#container {
+    height: 500px;
+    min-width: 310px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
 }

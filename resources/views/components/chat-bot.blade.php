@@ -18,11 +18,11 @@
                 dragAndDrop: true,
                 iconColor: 'white',
                 customIconSrc:  'assets/karakter.png',
-                autoWindowOpen: {
-                    autoOpen: true,
-                    openDelay: 2,
-                    autoOpenOnMobile: false
-                }
+                // autoWindowOpen: {
+                //     autoOpen: true,
+                //     openDelay: 2,
+                //     autoOpenOnMobile: false
+                // }
             },
             tooltip: {
                 showTooltip: true,

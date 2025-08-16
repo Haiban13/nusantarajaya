@@ -22,9 +22,16 @@ class Acara extends Model
         'no_panitia',
         'kategori',
         'asal', // general provinsi
+        'owner',
     ];
        public function images()
     {
         return $this->belongsTo(Image::class, 'img');
+    }
+   
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner');
     }
 }

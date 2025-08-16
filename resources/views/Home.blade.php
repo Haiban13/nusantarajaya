@@ -44,19 +44,51 @@
              <button class="btn-line">Lihat Lainnya</button>
          </div>
 
-         <div class="grid grid-cols-2 gap-8">
-             @for ($i = 0; $i < 5; $i++)
-                 @include('components.card-artikel')
-             @endfor
+         <div class="lg:flex gap-5 justify-between">
+
+             <div class="grid grid-cols-2 lg:w-[70%]   gap-5">
+                 @for ($i = 0; $i < 5; $i++)
+                     @include('components.card-artikel2')
+                 @endfor
+             </div>
+             <div class=" hidden lg:block bg-zinc-100 px-5 py-10 w-[30%] rounded-3xl">
+                 <div class="flex justify-between items-center">
+                     <h1 class=" text-3xl font-bold">Penguna Ter-Aktif</h1>
+                     <button class=" text-orange-700">
+                         Lainnya
+                     </button>
+                 </div>
+                 {{-- card populer --}}
+                 <div class="flex  items-center my-5 gap-5">
+                     <div class="w-[55px] h-[55px] rounded-full bg-zinc-400"></div>
+                     <div>
+                         <h1 class="flex items-center gap-2">Hafiz Alwan Susilo <span><svg class="text-blue-500"
+                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                     viewBox="0 0 24 24">
+                                     <path fill="currentColor"
+                                         d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z" />
+                                 </svg></span></h1>
+                         {{-- keterangan --}}
+                         <p class=" text-orange-600 font-medium">Dinas Kebudayaan Purwokerto</p>
+                         {{-- <p>User Silver</p> --}}
+                     </div>
+
+                 </div>
+
+             </div>
          </div>
+
      </section>
 
      <!-- =================================================================== -->
      <!-- "Warisan Budaya" (Cultural Heritage) Section -->
      <!-- =================================================================== -->
      <section class="container mx-auto px-6 py-16">
-         <h2 class="text-3xl font-bold text-gray-800 mb-8">Warisan Budaya</h2>
-         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-5 merriweather">Warisan Budaya</h2>
+            <p class="w-[70%]">Warisan budaya adalah peninggalan berharga dari generasi sebelumnya berupa nilai, adat, seni, tradisi, dan benda budaya yang mencerminkan identitas suatu bangsa dan diwariskan untuk dijaga, dilestarikan, dan dihargai oleh generasi penerus.</p>
+        </div>
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
              <!-- Main Image -->
              <div class="w-full h-96" data-aos="fade-up" data-aos-duration="1500">
                  <iframe class="w-full h-full"
@@ -92,9 +124,14 @@
              </div>
              <!-- Feature List -->
              <div class="space-y-8">
-                 <h2 data-aos="fade-up" data-aos-duration="500" class="text-3xl font-bold text-gray-800 mb-4">Kenapa
-                     Memilih Kami?</h2>
-                 <div class="flex items-start space-x-4" data-aos="fade-up" data-aos-duration="500">
+                 <div data-aos="fade-up" data-aos-duration="500">
+                     <div class="h-[5px] mb-10 rounded-full bg-orange-600 w-[130px]"></div>
+                     <h2 class="text-3xl font-bold text-gray-800 mb-2 merriweather">Kenapa
+                         Memilih Kami?</h2>
+                     <p>Kami dipilih karena mengutamakan kualitas, kecepatan layanan, dan komitmen menghadirkan solusi
+                         yang inovatif dan terpercaya.</p>
+                 </div>
+                 <div class="flex items-start space-x-4 mt-5" data-aos="fade-up" data-aos-duration="500">
                      <div class="bg-orange-200 p-3 rounded-full">
                          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
                              <path fill="currentColor"

@@ -19,8 +19,8 @@
 
     <div class="lg:flex items-center gap-3  hidden ">
         <div class="flex items-center gap-3  ">
-            <a href="#" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
-            <a href="#" class="rounded-full duration-200 btn-bg">Login</a>
+            <a href="/admin" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
+            <a href="/admin" class="rounded-full duration-200 btn-bg">Login</a>
         </div>
         {{-- profile --}}
         {{-- tampilkan setelah login --}}

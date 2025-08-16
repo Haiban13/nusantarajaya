@@ -2,7 +2,7 @@
     <div class=" md:konten px-[5%]  pt-[7%]">
         <div class=" lg:text-center">
             <h1
-                class=" text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
+                class=" text-4xl md:text-6xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
                 Lihat Ragam <br class="hidden md:block"> Budaya Di <span class=" text-orange-600"> Indonesia</span>
             </h1>
             <p
@@ -26,18 +26,10 @@
             <div class="flex items-center gap-4 mb-4">
                 <!-- Avatar stack -->
                 <div class="flex -space-x-2">
-                    <div
-                        class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-emerald-200 shadow-md">
-                        RI</div>
-                    <div
-                        class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-blue-200 shadow-md">
-                        BA</div>
-                    <div
-                        class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-pink-200 shadow-md">
-                        SI</div>
-                    <div
-                        class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-yellow-200 shadow-md">
-                        DO</div>
+                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1690407617686-d449aa2aad3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="">
+                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="">
                 </div>
 
                 <!-- Nama + Status -->

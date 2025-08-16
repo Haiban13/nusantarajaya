@@ -14,10 +14,15 @@ class Artikel extends Model
         'img',
         'des_singkat',
         'detail_acara',
+        'owner',
     ];
 
     public function images()
     {
         return $this->belongsTo(Image::class, 'img');
+    }
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner');
     }
 }

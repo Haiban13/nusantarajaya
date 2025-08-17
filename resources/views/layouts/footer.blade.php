@@ -29,7 +29,7 @@
         // }, 3000); // durasi loading
     });
 
- 
+
 
 
     // counterP
@@ -123,6 +123,12 @@
         }
 
         window.open(shareUrl, "_blank");
+    }
+
+    // q and a dropp down
+    function toggleAnswer(id) {
+        const answer = document.getElementById(`answer-${id}`);
+        answer.classList.toggle("hidden");
     }
 </script>
 </body>

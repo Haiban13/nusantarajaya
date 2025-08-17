@@ -30,6 +30,7 @@
 body {
     scroll-behavior: smooth;
     overflow-x: hidden;
+      transition: all 0.3s ease-in-out;
 }
 * {
     scroll-behavior: smooth;
@@ -49,7 +50,7 @@ h4 {
     font-size: 1.7rem;
 }
 p {
-    opacity: 60%;
+    opacity: 80%;
 }
 .img-projek {
     background-position: center;
@@ -62,65 +63,61 @@ button {
 }
 
 nav {
-    background: rgba(55, 55, 55, 0.463); /* transparan agar blur terlihat */
+    background: rgba(55, 55, 55, 0.164); /* transparan agar blur terlihat */
     backdrop-filter: blur(10px); /* efek blur */
     -webkit-backdrop-filter: blur(10px); /* untuk Safari */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* garis tipis */
 }
-.btn-line1 {
-    color: rgb(175, 71, 7);
-    padding: 12px 50px;
-    border: 3px solid transparent;
-    border-radius: 3rem;
-    background: linear-gradient(transparent, transparent) padding-box,
-        linear-gradient(333deg, rgb(87, 33, 0), rgb(212, 95, 0)) border-box;
-    background-clip: padding-box, border-box;
-}
+/* Tombol garis dengan gradasi border */
+ 
+
+/* Tombol garis biasa */
 .btn-line {
     color: rgb(175, 91, 7);
-    padding: 12px 50px;
-    border: 3px solid transparent;
+    padding: 8px 50px;
+    border: 3px solid rgb(175, 88, 7);
     border-radius: 3rem;
-    border-color: rgb(175, 88, 7);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+ 
+
+.btn-line:hover {
+    background-color: rgba(189, 78, 13, 0.15);
+    border-color: rgb(175, 97, 7);
+    cursor: pointer;
 }
 
 .btn-bg {
-    color: white;
-    padding: 13px 50px;
-    border-radius: 2rem;
-    background: #571a00;
-    background: linear-gradient(
-        333deg,
-        rgb(151, 72, 11) 0%,
-        rgb(212, 120, 0) 100%
-    );
+  color: white;
+  padding: 10px 50px;
+  border-radius: 2rem;
+  background: linear-gradient(    333deg,    rgb(151, 72, 11) 0%,    rgb(212, 120, 0) 100%  );
+  border: none;
+  transition: all 3.3s ease-in-out;
+  -webkit-transition: all 3.3s ease-in-out;
+  -moz-transition: all 3.3s ease-in-out;
+  -ms-transition: all 3.3s ease-in-out;
+  -o-transition: all 3.3s ease-in-out;
 }
 
-:hover.btn-line {
-    color: rgb(175, 91, 7);
-    background-color: rgba(189, 78, 13, 0.233);
-    padding: 12px 50px;
-    border: 3px solid transparent;
-    border-radius: 3rem;
-    animation-duration: 5s;
-    border-color: rgb(175, 97, 7);
-    -webkit-border-radius: 3rem;
-    -moz-border-radius: 3rem;
-    -ms-border-radius: 3rem;
-    -o-border-radius: 3rem;
+.btn-bg:hover {
+  background: linear-gradient(    333deg,    rgb(212, 120, 0) 0%,    rgb(255, 153, 51) 100%  );
+  cursor: pointer;
+  /*Opsional:;
+  sedikitmembesarsaathover*/transform: scale(3.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
 }
 
-:hover.btn-bg {
-    background-color: rgba(122, 60, 6, 0.253);
-    color: white;
-    padding: 13px 50px;
-    border-radius: 2rem;
-}
-
+  
 .slide-bottom {
-    -webkit-animation: slide-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    -webkit-animation: slide-bottom 1.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
-    animation: slide-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-bottom 1.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-bottom {
@@ -148,9 +145,9 @@ nav {
 }
 
 .text-focus-in {
-    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    -webkit-animation: text-focus-in 2.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)
         both;
-    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: text-focus-in 2.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @-webkit-keyframes text-focus-in {
@@ -186,11 +183,41 @@ nav {
     margin: 0 auto;
 }
 
-.loading {
-    margin-top: 10em;
-    text-align: center;
-    color: gray;
-}
+
+/* loading screen */
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      z-index: 999999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    #loading-screen.hide {
+      opacity: 0;
+      transform: scale(1.2); /* Zoom-out efek */
+      pointer-events: none;
+    }
+
+    #loading-text {
+      color: orange;
+      /* font-size: 2rem; */
+      font-family: sans-serif;
+    }
+
+    /* Simulasi konten utama */
+    /* #main-content {
+      display: none;
+      padding: 2rem;
+    } */
+ 
 
 /* font */
 
@@ -231,3 +258,29 @@ nav {
         height: 64px;
     }
 }
+
+/* share icon  */
+  .icon-box {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .icon-share {
+    width: 2.2rem;
+    height: 2.2rem;
+    color: #d97706;
+    transition: color 0.3s ease;
+  }
+
+  .icon-share:hover {
+    color: black;
+  }
+
+  .share-main {
+    transition: opacity 0.3s ease;
+  }
+
+  .group:hover .share-main {
+    opacity: 0;
+    visibility: hidden;
+  }

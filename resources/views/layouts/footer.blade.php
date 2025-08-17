@@ -9,6 +9,25 @@
 </script>
 
 <script>
+    // loading screen
+    // Simulasi waktu loading (misalnya 3 detik)
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
+
+            // Tambah class hide untuk animasi keluar
+            loadingScreen.classList.add('hide');
+
+            // Tampilkan konten setelah animasi selesai
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                document.body.classList.add('loaded');
+                mainContent.style.display = 'block';
+            }, 800); // sesuai durasi animasi CSS
+        }, 300); // durasi loading
+        // }, 3000); // durasi loading
+    });
     // counterP
     document.addEventListener("DOMContentLoaded", () => {
         const counters = document.querySelectorAll('.counter');
@@ -16,7 +35,7 @@
         counters.forEach(counter => {
             let target = parseInt(counter.getAttribute('data-target'));
             counter.textContent = "0"; // mulai dari 0
-            let duration = 2000; // durasi total animasi (ms)
+            let duration = 3000; // durasi total animasi (ms)
             let startTime = null;
 
             function updateCount(currentTime) {
@@ -75,7 +94,32 @@
             startX = e.pageX;
             position += move;
         });
-    }); 
+    });
+
+    // redirect dan share social media
+    function shareTo(platform) {
+        const url = window.location.href;
+        const text = "Cek halaman ini: ";
+        let shareUrl = "";
+
+        switch (platform) {
+            case 'wa':
+                shareUrl = `https://wa.me/?text=${encodeURIComponent(text + url)}`;
+                break;
+            case 'fb':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                break;
+            case 'ig':
+                shareUrl = `https://www.instagram.com/direct/inbox/`;
+                alert("Kamu akan diarahkan ke Instagram Direct. Silakan tempel link halaman ini secara manual.");
+                break;
+            default:
+                alert("Platform tidak dikenali.");
+                return;
+        }
+
+        window.open(shareUrl, "_blank");
+    }
 </script>
 </body>
 

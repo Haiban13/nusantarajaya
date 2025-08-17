@@ -1,7 +1,7 @@
  <!-- Card 1 -->
  <a href="acara/1">
-     <div data-aos="flip-left" data-aos-duration="500"
-         class="  rounded-2xl shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden transform hover:-translate-y-2 transition-transform relative duration-200">
+     <div  
+         class="  rounded-2xl shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden hover:scale-105 relative duration-200">
          {{-- <img src="https://images.unsplash.com/photo-1587542989595-a273d445ca8d?q=80&w=1974&auto=format&fit=crop"
                     alt="Tari Kecak" class="w-full h-48 object-cover"> --}}
          <div class="w-full h-[200px] bg-zinc-400"></div>

@@ -21,6 +21,10 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Custom Navigation Label';
+    }
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -37,6 +41,17 @@ class AdminPanelProvider extends PanelProvider
                 Pages\Dashboard::class,
 
             ])
+            ->spa()
+            // ->topNavigation()
+            ->colors([
+                'danger' => Color::Rose,
+                'gray' => '#ffffff',
+                'info' => '#b83c07',
+                'primary' => '#b83c07',
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
+            ])
+            // ->viteTheme('resources/css/filament/admin/theme.css')
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
         ])
@@ -56,6 +71,7 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+
             ->authMiddleware([
                 Authenticate::class,
             ]);

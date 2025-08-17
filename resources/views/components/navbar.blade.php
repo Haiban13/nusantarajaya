@@ -1,31 +1,28 @@
-{{-- <header class="absolute top-0 left-0 right-0 z-50 "> --}}
-{{-- <div class="container mx-auto px-6 py-4 "> --}}
 <nav x-data="{ open: false }"
-    class="flex slide-bottom mx-[2%]   shadow-2xl items-center justify-between rounded-full px-10 py-3 fixed w-[96%] z-[9999]">
+    class="grid grid-cols-3 slide-bottom mx-[1%] shadow-xl items-center justify-center rounded-full px-10 py-2 fixed w-[96%] z-[9999] border-[2px] border-zinc-50">
 
     <!-- Wrapper dengan blur -->
-    <div class=" px-4 py-2 rounded-lg ">
+    <div class=" px-4 py-2 rounded-lg  ">
         <a href="#" class="text-white text-2xl font-bold">Budaya. <span class=" text-orange-500">Sat Set</span></a>
     </div>
-
-    <div class="hidden md:flex items-center  gap-8">
-        <a href="/" class="text-gray-300 hover:text-orange-600 transition-colors">Home</a>
-        <a href="/acara" class="text-gray-300 hover:text-orange-600 transition-colors">Info Acara</a>
-        <a href="/artikel" class="text-gray-300 hover:text-orange-600 transition-colors">Berita</a>
-        <a href="#" class="text-gray-300 hover:text-orange-600 transition-colors">-H30 Acara</a>
-        <a href="/about" class="text-gray-300 hover:text-orange-600 transition-colors">About</a>
+    <div class="hidden md:flex items-center gap-8 text-zinc-800 text-center justify-self-center">
+        <a href="/" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Beranda</a>
+        <a href="/acara" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Info Acara</a>
+        <a href="/artikel" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Berita</a>
+        <a href="/about" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">About</a>
     </div>
 
 
-    <div class="lg:flex items-center gap-3  hidden ">
-        <div class="flex items-center gap-3  ">
+
+    <div class="lg:flex items-center gap-3  hidden justify-self-end ">
+        <div class="flex items-center gap-3   ">
             <a href="/admin" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
             <a href="/admin" class="rounded-full duration-200 btn-bg">Login</a>
         </div>
         {{-- profile --}}
         {{-- tampilkan setelah login --}}
         <a href="{{ route('user.profile') }}">
-            <div class=" bg-zinc-500 w-[50px] h-[50px] rounded-full">
+            <div class=" bg-zinc-500 w-[50px] hidden h-[50px] rounded-full">
             </div>
         </a>
     </div>
@@ -41,5 +38,3 @@
         </button>
     </div>
 </nav>
-{{-- </div> --}}
-</header>

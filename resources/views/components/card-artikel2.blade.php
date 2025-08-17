@@ -1,5 +1,5 @@
  <a href="acara/1">
-     <div class="hover:bg-zinc-100 rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
+     <div class="hover:bg-zinc-100 relative z-[9999] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
          <div class=" rounded-2xl h-[240px] bg-zinc-500"></div>
          <div class="mt-3 lg:mt-5 px-2 py-4">
              <p class="flex items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"

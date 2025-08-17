@@ -1,19 +1,34 @@
 <div class=" flex justify-center items-center w-[100dvw] h-[1000px]">
     <div class=" md:konten px-[5%]  pt-[7%]">
         <div class=" lg:text-center">
-            <h1
-                class=" text-4xl md:text-6xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
-                Lihat Ragam <br class="hidden md:block"> Budaya Di <span class=" text-orange-600"> Indonesia</span>
-            </h1>
+            <div
+                class=" text-4xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
+                Kenali dan Cintai
+                Budaya
+                <span class="  text-orange-600   lg:text-6xl">
+                    Indonesia</span>
+            </div>
             <p
                 class=" text-lg md:text-xl text-gray-300 px-[5%] lg:px-[20%] mb-8 animate__fadeIn animate__animated animate__delay-2s">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam debitis ipsam non distinctio? Quo
-                nesciunt quisquam laborum maxime.
-                <span class="hidden lg:block">
-                    Provident quam non totam suscipit nobis amet porro reiciendis
-                    inventore magnam. Aut?
-                </span>
+                Indonesia adalah negeri yang kaya akan budaya, tradisi, dan kearifan lokal.
+                Temukan pesona tradisi Indonesia yang kaya, unik, dan penuh makna dari Sabang hingga Merauke.
+                {{-- Setiap daerah memiliki
+                cerita uniknya sendiri, mulai dari tarian yang memikat, upacara adat yang sarat makna, hingga karya seni
+                yang menggambarkan jiwa masyarakatnya. --}}
+
             </p>
+            <div class="flex items-center justify-center gap-3">
+                <button class="btn-line flex items-center gap-2 ">Jelajahi Budaya <svg xmlns="http://www.w3.org/2000/svg"
+                        width="12" height="24" viewBox="0 0 12 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
+                    </svg></button>
+                <button class="btn-bg  flex items-center gap-2">Daftar Acara <svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M16 13h-3c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1m0-10v1H8V3c0-.55-.45-1-1-1s-1 .45-1 1v1H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-1V3c0-.55-.45-1-1-1s-1 .45-1 1m2 17H6c-.55 0-1-.45-1-1V9h14v10c0 .55-.45 1-1 1" />
+                    </svg></button>
+            </div>
         </div>
 
         {{-- ilustrasi --}}
@@ -26,10 +41,18 @@
             <div class="flex items-center gap-4 mb-4">
                 <!-- Avatar stack -->
                 <div class="flex -space-x-2">
-                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1690407617686-d449aa2aad3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="">
-                        <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top" src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="">
+                    <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top"
+                        src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top"
+                        src="https://plus.unsplash.com/premium_photo-1690407617686-d449aa2aad3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-[#0b0f14] border-2 border-[#0b0f14] bg-zinc-100 shadow-md object-cover object-top"
+                        src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
                 </div>
 
                 <!-- Nama + Status -->

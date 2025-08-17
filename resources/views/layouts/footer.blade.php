@@ -28,6 +28,10 @@
         }, 300); // durasi loading
         // }, 3000); // durasi loading
     });
+
+ 
+
+
     // counterP
     document.addEventListener("DOMContentLoaded", () => {
         const counters = document.querySelectorAll('.counter');

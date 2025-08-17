@@ -13,7 +13,7 @@
     {{-- card --}}
     <div class="flex justify-center gap-10 items-center mt-[150px]">
         <div class="w-[70%]">
-            <div data-aos="flip-left"
+            <div 
                 class=" bg-white shadow-lg hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-20  py-5">
                 <!-- Foto Kiri -->
                 <img src="https://ua-lawyer.com/static/default-user.png" alt="Profile"
@@ -53,8 +53,9 @@
                     </div>
                 </div>
             </div>
-            <div data-aos="flip-left"
-            class="mt-10 bg-white shadow-lg hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-20  py-5">
+            <div 
+                class="mt-10 bg-white shadow-lg
+             hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-20  py-5">
                 <!-- Foto Kiri -->
                 <img src="https://ua-lawyer.com/static/default-user.png" alt="Profile"
                     class="w-[120px] h-[120px] rounded-full object-cover bg-zinc-800">
@@ -93,7 +94,7 @@
             </div>
         </div>
         {{-- qris --}}
-        <div class="w-[30%] shadow-2xl hover:scale-105">
+        <div class="w-[30%] shadow-2xl hover:scale-105 duration-200">
             <img src="https://beasiswa.kamajaya.id/wp-content/uploads/2021/04/qris-yayasan-bakti-kamajaya-pf.jpg"
                 class=" " alt="">
         </div>

@@ -10,7 +10,7 @@
         <a href="/acara" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Info Acara</a>
         <a href="/artikel" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Berita</a>
         <a href="/about" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">About</a>
-    </div>
+    </div> 
 
 
 

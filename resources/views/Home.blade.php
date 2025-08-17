@@ -25,7 +25,7 @@
 
 
          {{-- tutorial --}}
-         <div class="flex items-center gap-10 justify-center w-full hidden lg:block">
+         <div class="lg:flex items-center gap-10 justify-center w-full hidden mt-[10%]">
              <h1 class=" text-4xl font-bold  ">Langkah Menjadi <br> Event Orginize</h1>
              <div>
                  <div class="relative">
@@ -49,9 +49,9 @@
                              </g>
                          </svg>
                          <div class=" text-left ">
-                             <h3 class=" text-xl font-bold">Daftar Anggota</h3>
+                             <h3 class=" text-xl font-bold">1. Daftar Anggota</h3>
                              <p><a href=""> <span class="hover:cursor-pointer text-orange-600 font-bold"> Hubungi
-                                         Admin</span></a> untuk melakukan refistrasi</p>
+                                         Admin</span></a> untuk melakukan ferivikasi data</p>
                          </div>
                      </div>
                      <div class=" text-center px-10 flex items-center gap-3" data-aos="fade-up"
@@ -62,7 +62,7 @@
                          </svg>
                          <div class=" text-left">
 
-                             <h3 class=" text-xl font-bold">Masuk Ke Dashboard Admin</h3>
+                             <h3 class=" text-xl font-bold">2. Masuk Ke Dashboard Admin</h3>
                              <p>setelah di acc oleh admin login akun</p>
                          </div>
                      </div>
@@ -74,7 +74,7 @@
                          </svg>
                          <div class=" text-left">
 
-                             <h3 class=" text-xl font-bold">Masuk Ke Halaman Event</h3>
+                             <h3 class=" text-xl font-bold">3. Masuk Ke Halaman Event</h3>
                              <p>Tambah Acara dan isi semua form </p>
                          </div>
                      </div>
@@ -96,7 +96,8 @@
                  <!-- Feature List -->
                  <div class="space-y-8">
                      <div data-aos="fade-up" data-aos-duration="500">
-                         <div class="h-[5px] mb-10 rounded-full bg-orange-600 w-[130px]"></div>
+                         {{-- line --}}
+                         <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
                          <h2 class="text-3xl font-bold text-gray-800 mb-2 merriweather">Kenapa
                              Memilih Kami?</h2>
                          <p>Kami dipilih karena mengutamakan kualitas, kecepatan layanan, dan komitmen menghadirkan
@@ -154,8 +155,9 @@
          <!-- =================================================================== -->
          <section class="container mt-[10%] mx-auto px-6 py-16">
              <div>
-                 <h2 class="text-4xl font-bold text-gray-800 mb-5 merriweather">Warisan Budaya</h2>
-                 <p class="w-full md:w-[70%]">Warisan budaya adalah peninggalan berharga dari generasi sebelumnya berupa nilai,
+                 <h2 class="text-4xl font-bold text-gray-800 mb-5 merriweather">Ragam Budaya</h2>
+                 <p class="w-full md:w-[70%]">Warisan budaya adalah peninggalan berharga dari generasi sebelumnya
+                     berupa nilai,
                      adat, seni, tradisi, dan benda budaya yang mencerminkan identitas suatu bangsa dan diwariskan untuk
                      dijaga, dilestarikan, dan dihargai oleh generasi penerus.</p>
              </div>
@@ -172,16 +174,65 @@
                  </div>
                  <!-- Side Images -->
                  <div class="grid grid-cols-2 gap-4">
-                     <img src="assets/64f6bffa35c0f501898316.webp" alt="Warisan 1" data-aos="fade-up"
-                         data-aos-duration="500" class="w-full h-44 object-cover rounded-2xl shadow-lg">
-                     <img src="assets/Budaya-Daerah-adalah-Kekayaan-Kebudayaan-Nasional-Indonesia.jpg" alt="Warisan 2"
-                         data-aos="fade-up" data-aos-duration="1000"
-                         class="w-full h-44 object-cover rounded-2xl shadow-lg">
-                     <img src="assets/Festival-Pasola-source-globetrotting.com_.webp" alt="Warisan 3"
-                         data-aos="fade-up" data-aos-duration="1500"
-                         class="w-full h-44 object-cover rounded-2xl shadow-lg">
-                     <img src="assets/66614acb424ea989322620.jpeg" alt="Warisan 4" data-aos="fade-up"
-                         data-aos-duration="2000" class="w-full h-44 object-cover rounded-2xl shadow-lg">
+                     {{-- img1: Kuliner --}}
+                     <a href="#">
+                         <div data-aos="fade-up" data-aos-duration="500"
+                             class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
+                             style="background-image: url('assets/kuliner.webp') ">
+                             <div class="cc-content text-center backdrop-blur-sm">
+                                 <p class="cc-title text-2xl font-bold text-[#333]">Kuliner</p>
+                                 <p class="cc-description mt-2 text-sm text-[#777] leading-5">
+                                     Keanekaragaman makanan tradisional khas Indonesia yang menggugah selera, dari
+                                     rendang
+                                     hingga gudeg.
+                                 </p>
+                             </div>
+                         </div>
+                     </a>
+                     {{-- img2: Seni --}}
+                     <a href="#">
+                         <div data-aos="fade-up" data-aos-duration="1000"
+                             class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
+                             style="background-image: url('assets/tari.jpg') ">
+                             <div class="cc-content text-center backdrop-blur-sm">
+                                 <p class="cc-title text-2xl font-bold text-[#333]">Seni</p>
+                                 <p class="cc-description mt-2 text-sm text-[#777] leading-5">
+                                     Ragam seni tari dan pertunjukan yang mencerminkan keindahan budaya dan tradisi di
+                                     seluruh nusantara.
+                                 </p>
+                             </div>
+                         </div>
+                     </a>
+                     {{-- img3: Upacara --}}
+                     <a href="#">
+                         <div data-aos="fade-up" data-aos-duration="1500"
+                             class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
+                             style="background-image: url('assets/upacara.jpeg') ">
+                             <div class="cc-content text-center backdrop-blur-sm">
+                                 <p class="cc-title text-2xl font-bold text-[#333]">Upacara Adat</p>
+                                 <p class="cc-description mt-2 text-sm text-[#777] leading-5">
+                                     Berbagai upacara adat sebagai wujud penghormatan terhadap leluhur dan warisan
+                                     budaya
+                                     lokal.
+                                 </p>
+                             </div>
+                         </div>
+                     </a>
+                     {{-- img4: Festival --}}
+                     <a href="#">
+                         <div data-aos="fade-up" data-aos-duration="2000"
+                             class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
+                             style="background-image: url('assets/festival.webp') ">
+                             <div class="cc-content text-center backdrop-blur-sm">
+                                 <p class="cc-title text-2xl font-bold text-[#333]">Festival</p>
+                                 <p class="cc-description mt-2 text-sm text-[#777] leading-5">
+                                     Perayaan budaya penuh warna seperti Festival Danau Toba dan Jember Fashion
+                                     Carnival.
+                                 </p>
+                             </div>
+                         </div>
+                     </a>
+                  
                  </div>
              </div>
          </section>
@@ -197,7 +248,11 @@
                      <p class="text-gray-500 mb-8 ">Jangan lewatkan acara-acara budaya paling menarik yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line">Lihat Lainnya</button>
+                 <button class="btn-line flex items-center gap-2">Lihat Lainnya <svg class=" rotate-90"
+                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                         <path fill="currentColor"
+                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                     </svg></button>
              </div>
 
              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -215,7 +270,11 @@
                      <p class="text-gray-500 mb-8">Jangan lewatkan acara-acara budaya paling menarik yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line">Lihat Lainnya</button>
+                 <button class="btn-line flex items-center gap-2">Lihat Lainnya <svg class=" rotate-90"
+                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                         <path fill="currentColor"
+                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                     </svg></button>
              </div>
 
              <div class="lg:flex gap-5 justify-between">
@@ -233,9 +292,9 @@
                          </button>
                      </div>
                      {{-- card populer --}}
-                     @for ($i = 0; $i < 10; $i++)
+                     @for ($i = 0; $i < 4; $i++)
                          <div class="flex  items-center my-5 gap-5" data-aos="fade-up" data-aos-duration="500">
-                             <div class="w-[55px] h-[55px] rounded-full bg-zinc-400"></div>
+                             <div class="bg-cover bg-center w-[55px] h-[55px] rounded-full bg-zinc-400" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D')"></div>
                              <div>
                                  <h1 class="flex items-center text-xl gap-2">Hafiz Alwan Susilo <span><svg
                                              class="text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -261,21 +320,35 @@
          <!-- =================================================================== -->
          <!-- CTA (Call to Action) Section -->
          <!-- =================================================================== -->
-         <section class="cta-bg my-16">
-             <div class=" mx-auto px-6 py-20 text-center text-white">
-                 <h2 class="text-4xl font-bold mb-4">Support Me With</h2>
-                 <p class="max-w-2xl mx-auto mb-8 text-gray-300">Dukung kami untuk terus melestarikan dan mempromosikan
-                     budaya Indonesia. Setiap dukungan Anda sangat berarti.</p>
-                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">
-                     <input type="email" placeholder="Masukkan email Anda"
-                         class="w-full bg-white/20 text-white placeholder-gray-300 px-4 py-3 rounded-full border-2 border-transparent focus:border-orange-500 focus:ring-0 transition">
-                     <button
-                         class="w-full sm:w-auto bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors font-semibold shrink-0">
-                         Kirim Sekarang
-                     </button>
+         <div
+             class="w-[80%]  mx-auto grid grid-cols-2 rounded-3xl bg-zinc-900  px-[5%] py-7 items-center text-zinc-50">
+             <div>
+                 {{-- line --}}
+                 <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
+                 <h1 class="text-4xl leading-snug font-semibold">
+                     Temukan pesona budaya lokal yang kaya dan jadilah bagian dari pelestarian warisan Indonesia.
+                 </h1>
+                 <div class="flex items-center gap-3 mt-5">
+                     <button class="btn-line flex items-center gap-3">Lihat Berita Terkini <svg
+                             xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512">
+                             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                 d="M368 415.86V72a24.07 24.07 0 0 0-24-24H72a24.07 24.07 0 0 0-24 24v352a40.12 40.12 0 0 0 40 40h328" />
+                             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
+                                 d="M416 464a48 48 0 0 1-48-48V128h72a24 24 0 0 1 24 24v264a48 48 0 0 1-48 48Z" />
+                             <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                 stroke-linejoin="round" stroke-width="32"
+                                 d="M240 128h64m-64 64h64m-192 64h192m-192 64h192m-192 64h192" />
+                             <path fill="currentColor"
+                                 d="M176 208h-64a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v64a16 16 0 0 1-16 16" />
+                         </svg></button>
                  </div>
              </div>
-         </section>
+
+             <div class="flex justify-end">
+                 <img src="assets/karakter2.png" class="w-[50%]" alt="">
+             </div>
+         </div>
+
 
          <!-- =================================================================== -->
          <!-- Map & Provinces Section -->

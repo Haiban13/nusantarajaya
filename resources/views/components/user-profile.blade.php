@@ -1,6 +1,6 @@
 <div class="flex items-center my-5 gap-5">
 
-    <div class="w-[55px] h-[55px] rounded-full bg-zinc-400"></div>
+    <div class="w-[55px] bg-center bg-cover h-[55px] rounded-full bg-zinc-400" style="background-image: url('https://images.unsplash.com/photo-1608734265656-f035d3e7bcbf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
     <div>
         <h1 class="flex items-center gap-2">Hafiz Alwan Susilo <span><svg class="text-blue-500"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

@@ -1,10 +1,11 @@
-<div class=" flex justify-center items-center w-[100dvw] h-[1000px]">
+<div class=" flex justify-center items-center w-[100dvw] h-[1000px] relative z-[10]">
     <div class=" md:konten px-[5%]  pt-[7%]">
         <div class=" lg:text-center">
             <div
-                class=" text-4xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
+                class=" text-4xl md:text-4xl   merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
                 Kenali dan Cintai
                 Budaya
+                <br>
                 <span class="  text-orange-600   lg:text-6xl">
                     Indonesia</span>
             </div>
@@ -17,7 +18,7 @@
                 yang menggambarkan jiwa masyarakatnya. --}}
 
             </p>
-            <div class="flex items-center justify-center gap-3">
+            <div class="flex items-center justify-center gap-3 animate__fadeIn animate__animated animate__delay-2s">
                 <button class="btn-line flex items-center gap-2 ">Jelajahi Budaya <svg xmlns="http://www.w3.org/2000/svg"
                         width="12" height="24" viewBox="0 0 12 24">
                         <path fill="currentColor" fill-rule="evenodd"
@@ -87,7 +88,6 @@
             <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="p-2">
                     <div class="flex items-center justify-center gap-1">
-
                         <div class="text-2xl font-bold counter " data-target="100">
                         </div>
                         <div class="text-2xl font-bold">+</div>
@@ -119,3 +119,4 @@
     </div>
 
 </div>
+<img src="assets/batik-header1.png" class="absolute top-[20%] w-full z-[2] opacity-10 " alt="">

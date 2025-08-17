@@ -4,7 +4,7 @@
          class="  rounded-2xl shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden hover:scale-105 relative duration-200">
          {{-- <img src="https://images.unsplash.com/photo-1587542989595-a273d445ca8d?q=80&w=1974&auto=format&fit=crop"
                     alt="Tari Kecak" class="w-full h-48 object-cover"> --}}
-         <div class="w-full h-[200px] bg-zinc-400"></div>
+         <div class="w-full h-[200px] bg-zinc-400 bg-center bg-cover" style="background-image: url('assets/karapan.webp')"></div>
          {{-- status --}}
          {{-- <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-green-500 absolute right-0 top-0">Free</div> --}}
          <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-red-500 absolute right-0 top-0">Berbayar</div>

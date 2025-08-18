@@ -1,5 +1,5 @@
 <footer class="bg-zinc-900 text-white mt-[10%]">
-    <img src="assets/hbatik2.png" class="w-full scale-200 opacity-30" alt="">
+    {{-- <img src="assets/hbatik2.png" class="w-full scale-200 opacity-30" alt=""> --}}
     <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- About -->

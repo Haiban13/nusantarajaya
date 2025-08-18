@@ -1,7 +1,7 @@
 {{-- <div class="flex gap-5"> --}}
-<div class="w-full hover:bg-zinc-100 duration-200 hover:scale-105 hover:cursor-pointer"> 
+<div class=" flex md:block hover:bg-zinc-100 duration-200 hover:scale-105 hover:cursor-pointer"> 
 
-    {{-- <div class="bg-zinc-400 rounded-2xl w-[100%] h-[230px]"></div> --}}
+    <div class="bg-zinc-400 rounded-2xl w-[100%] h-[230px]"></div>
     <div>
         <div class="p-6">
             <p class="flex items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"

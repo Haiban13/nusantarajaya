@@ -1,7 +1,7 @@
  <!-- Card 1 -->
  <a href="acara/1">
      <div  
-         class="  rounded-2xl shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden hover:scale-105 relative duration-200">
+         class=" relative z-[4] rounded-2xl w-min-[300px] lg:w-min-[500px] shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden hover:scale-105 bg-zinc-50 duration-200">
          {{-- <img src="https://images.unsplash.com/photo-1587542989595-a273d445ca8d?q=80&w=1974&auto=format&fit=crop"
                     alt="Tari Kecak" class="w-full h-48 object-cover"> --}}
          <div class="w-full h-[200px] bg-zinc-400 bg-center bg-cover" style="background-image: url('assets/karapan.webp')"></div>

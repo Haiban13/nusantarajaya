@@ -6,7 +6,12 @@
     @for ($i = 0; $i < 10; $i++)
         @include('components.card-artikel2')
     @endfor
+    {{-- batik efek bg --}}
+    <img class="absolute w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
+
 </div>
 
 
+
+ 
 @include('layouts.footer')

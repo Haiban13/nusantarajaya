@@ -6,7 +6,7 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/acara', function () {
-    return view('info-acara');
+    return view('acara');
 });
 Route::get('/acara/1', function () {
     return view('acara-detail');

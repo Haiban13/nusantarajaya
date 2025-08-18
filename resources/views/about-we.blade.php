@@ -123,15 +123,21 @@
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sql_data_base_with_logo.png/800px-Sql_data_base_with_logo.png">
             <img class="max-h-[70px] mx-10"
                 src="https://garapmedia.com/wp-content/uploads/2025/01/01J4TYXBRT9FYKKKPTXFVSQE3T.png">
+            <img class="max-h-[90px] mx-10"
+                src="https://docs.flowiseai.com/~gitbook/image?url=https%3A%2F%2F4068692976-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FUiD7nOmFRK805sNuiieJ%252Fuploads%252FXxve37yNH63uTNoBYJ1Y%252FFlowise%2520Cropped%2520White%2520High%2520Res.png%3Falt%3Dmedia%26token%3De022b6af-b237-4724-9e4c-7b895cc3cdbe&width=768&dpr=4&quality=100&sign=8f7e6694&sv=2">
             {{-- <img class="max-h-[70px] mx-10" src=""> --}}
 
         </div>
     </div>
 
+    {{-- batik efek bg --}}
+    <img class="absolute w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
     <!-- QnA Section -->
-    <div class="  px-[10%] mt-[15%] py-8 grid grid-cols-2 gap-10">
+    <div class="  px-[10%] mt-[15%] py-8 grid grid-cols-2 gap-10 relative z-[4]">
         <div>
+            {{-- line --}}
+            <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
             <h2 class="text-4xl font-bold text-left mb-6 w-[70%]">💬 Tanya Jawab Seputar Website Kebudayaan</h2>
             <p>Berikut satu paragraf singkat untuk bagian QnA:
                 > Bagian Tanya Jawab (Q\&A) ini disediakan untuk membantu pengunjung memahami tujuan, isi, serta fitur
@@ -149,8 +155,8 @@
                     + Apa tujuan dari website ini?
                 </button>
                 <p id="answer-1" class="hidden px-4 pb-10 mt-5 text-gray-700">
-                     Website ini bertujuan untuk memperkenalkan dan melestarikan berbagai kebudayaan Indonesia kepada
-                    masyarakat, khususnya generasi muda.
+                    Website ini bertujuan untuk memperkenalkan dan melestarikan berbagai kebudayaan Indonesia kepada
+                    masyarakat, khususnya generasi muda. dengan cara yang modern
                 </p>
             </div>
 
@@ -161,7 +167,7 @@
                     + Apa saja kategori kebudayaan yang ditampilkan?
                 </button>
                 <p id="answer-2" class="hidden px-4 pb-10 mt-5 text-gray-700">
-                     Website ini menampilkan empat kategori utama:<br>
+                    Website ini menampilkan empat kategori utama:<br>
                     1. <strong>Kuliner</strong> – Makanan tradisional khas daerah.<br>
                     2. <strong>Seni</strong> – Tari, musik, dan pertunjukan budaya.<br>
                     3. <strong>Upacara Adat</strong> – Ritual dari berbagai suku.<br>
@@ -176,7 +182,7 @@
                     + Apakah konten di website ini bisa terus diperbarui?
                 </button>
                 <p id="answer-3" class="hidden px-4 pb-10 mt-5 text-gray-700">
-                     Ya, konten akan terus diperbarui sesuai dengan perkembangan dan tambahan informasi budaya dari
+                    Ya, konten akan terus diperbarui sesuai dengan perkembangan dan tambahan informasi budaya dari
                     berbagai daerah.
                 </p>
             </div>
@@ -188,7 +194,7 @@
                     + Siapa yang dapat menggunakan website ini?
                 </button>
                 <p id="answer-4" class="hidden px-4 pb-10 mt-5 text-gray-700">
-                     Website ini terbuka untuk semua kalangan: pelajar, guru, wisatawan, maupun masyarakat umum.
+                    Website ini terbuka untuk semua kalangan: pelajar, guru, wisatawan, maupun masyarakat umum.
                 </p>
             </div>
 
@@ -199,7 +205,7 @@
                     + Apakah website ini bisa diakses melalui HP?
                 </button>
                 <p id="answer-5" class="hidden px-4 pb-10 mt-5 text-gray-700">
-                     Bisa. Website ini responsif dan nyaman digunakan di desktop maupun perangkat seluler.
+                    Bisa. Website ini responsif dan nyaman digunakan di desktop maupun perangkat seluler.
                 </p>
             </div>
         </div>

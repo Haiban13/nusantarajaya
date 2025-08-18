@@ -14,7 +14,7 @@
 @import "animate.css";
 
 .konten {
-    padding: 20% 10%;
+    padding: 15% 10%;
 }
 
 .blur {
@@ -37,7 +37,7 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 h2 {
     font-size: 2.5rem;
@@ -160,6 +160,77 @@ nav {
     }
 }
 
+.shake-lr {
+	-webkit-animation: shake-lr 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s both;
+	        animation: shake-lr 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) 8s both;
+}
+@-webkit-keyframes shake-lr {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  10% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  90% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+}
+@keyframes shake-lr {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  10% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  90% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+}
+
 .text-focus-in {
     -webkit-animation: text-focus-in 2.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)
         both;
@@ -228,12 +299,6 @@ nav {
       font-family: sans-serif;
     }
 
-    /* Simulasi konten utama */
-    /* #main-content {
-      display: none;
-      padding: 2rem;
-    } */
- 
 
     /* scrolll bar custom */
     /* width */
@@ -265,6 +330,40 @@ nav {
     font-optical-sizing: auto;
     /* font-weight: <weight>; */
     font-style: normal;
+}
+
+
+/* overlay img full screen */
+/* Gambar thumbnail */
+.thumbnail {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Fullscreen overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.74);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  /* box-shadow: 0 0 20px #000; */
 }
 
 

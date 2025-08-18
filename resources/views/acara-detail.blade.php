@@ -2,13 +2,19 @@
 @include('components.navbar')
 
 <div class="konten">
-    <div class=" flex items-center gap-[10%]">
-
-        <div class="w-[600px] rounded-2xl h-[400px] bg-zinc-400 bg-center bg-cover" style="background-image: url('assets/dayak.jpg')"></div>
+    <div class=" lg:flex items-center gap-[10%]">
         <div>
-
+            <div class="w-full rounded-2xl h-[400px] thumbnail bg-zinc-400 bg-center bg-cover"
+                style="background-image: url('/assets/dayak.jpg')"></div>
+            <div class="grid grid-cols-4 mt-4 gap-3 rounded-2xl">
+                <img src="/assets/festival.webp" alt="" class="w-full bg-zinc-50 h-[100px] thumbnail ">
+                <img src="/assets/dayak.jpg" alt="" class="w-full bg-zinc-50 h-[100px] thumbnail ">
+                <img src="/assets/tari.jpg" alt="" class="w-full bg-zinc-50 h-[100px] thumbnail ">
+                <img src="/assets/dayak.jpg" alt="" class="w-full bg-zinc-50 h-[100px] thumbnail ">
+            </div>
+        </div>
+        <div class="mt-10 lg:mt-0">
             <div class="flex items-center gap-3 text-2xl">
-
                 <p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         viewBox="0 0 16 16">
                         <g fill="none">
@@ -87,57 +93,14 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Tombol Share -->
-            {{-- <button
-                class="relative inline-flex items-center px-4 py-2 bg-[#d97706] text-white rounded-lg overflow-hidden group hover:pl-12 transition-all duration-500 cursor-pointer">
-                <!-- Ikon utama -->
-                <div
-                    class="absolute mt-5 left-2 top-1/2  -translate-y-1/2 bg-white rounded-md flex justify-center items-center transition-all duration-500 group-hover:w-[calc(100%-0.5rem)] icon-box">
-                    <!-- Panah utama -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px] share-main"
-                        viewBox="0 0 1024 1024">
-                        <path fill="#d97706"
-                            d="M767.99994 585.142857q75.995429 0 129.462857 53.394286t53.394286 129.462857-53.394286 129.462857-129.462857 53.394286-129.462857-53.394286-53.394286-129.462857q0-6.875429 1.170286-19.456l-205.677714-102.838857q-52.589714 49.152-124.562286 49.152-75.995429 0-129.462857-53.394286t-53.394286-129.462857 53.394286-129.462857 129.462857-53.394286q71.972571 0 124.562286 49.152l205.677714-102.838857q-1.170286-12.580571-1.170286-19.456 0-75.995429 53.394286-129.462857t129.462857-53.394286 129.462857 53.394286 53.394286 129.462857-53.394286 129.462857-129.462857 53.394286q-71.972571 0-124.562286-49.152l-205.677714 102.838857q1.170286 12.580571 1.170286 19.456t-1.170286 19.456l205.677714 102.838857q52.589714-49.152 124.562286-49.152z" />
-                    </svg>
-
-                    <!-- Ikon share lainnya -->
-                    <div class="hidden group-hover:flex gap-2 items-center pl-3">
-                        <a onclick="shareTo('fb')">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-share" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M8.94 8H10l.2-1.29H8.94V5.9c0-.38.1-.65.67-.65H10V4.22c-.12-.02-.55-.05-1.05-.05-1.05 0-1.77.63-1.77 1.78v1.05H6v1.29h1.12v3.13A5.99 5.99 0 0 0 8.94 14V8z" />
-                            </svg>
-                        </a>
-                        <a onclick="shareTo('ig')">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-share" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01" />
-                            </svg>
-                        </a>
-                        <a onclick="shareTo('wa')">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-share" fill="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Text -->
-                <span class="ml-10">Share me</span>
-            </button> --}}
-
+ 
 
 
         </div>
     </div>
 
     <h2 class=" text-4xl font-bold mt-[10%]">Detail Acara</h2>
-    <p class="mt-5 text-2xl">
+    <p class="mt-5 text-2xl ">
         adipisicing elit. Iure magni laudantium quo necessitatibus deleniti quis quae exercitationem pariatur illo qui
         deserunt praesentium, ducimus porro molestiae beatae totam, alias nesciunt expedita. adipisicing elit. Iure
         magni laudantium quo necessitatibus deleniti quis quae exercitationem pariatur illo qui deserunt praesentium,
@@ -148,29 +111,41 @@
         <div class=" flex items-center justify-between">
             <div>
                 <h2 class=" text-3xl font-bold">Lihat Acara di lokasi terdekat</h2>
-                <p class="mt-2 w-[70%]">
+                <p class="mt-2 w-[70%] hidden md:block">
                     adipisicing elit. Iure magni laudantium quo necessitatibus deleniti quis quae exercitationem
                 </p>
             </div>
-            <button class="btn-line">Lihat Lainnya</button>
+            <button class="btn-line"><span class="hidden md:block">Lihat </span> Lainnya</button>
         </div>
-        <div class=" grid grid-cols-5 gap-3 mt-5">
-            @include('components.card-acara')
+        <div class=" flex overflow-x-scroll lg:grid lg:grid-cols-5 overflow-y-hidden gap-3 mt-5 h-[120%]">
+            @for ($i = 0; $i < 5; $i++)
+                @include('components.card-acara')
+            @endfor
         </div>
     </div>
     <div class="mt-[10%]">
         <div class=" flex items-center justify-between">
             <div>
                 <h2 class=" text-3xl font-bold">Lihat Berita Terbaru</h2>
-                <p class="mt-2 w-[70%]">
+                <p class="mt-2 w-[70%] hidden md:block">
                     adipisicing elit. Iure magni laudantium quo necessitatibus deleniti quis quae exercitationem
                 </p>
             </div>
-            <button class="btn-line">Lihat Lainnya</button>
+            <button class="btn-line"><span class="hidden md:block">Lihat </span> Lainnya</button>
         </div>
-        <div class=" grid grid-cols-2 gap-3 mt-5">
-            @include('components.card-artikel')
+        <div class=" grid lg:grid-cols-3 grid-cols-1 gap-3 mt-5">
+            @for ($i = 0; $i < 10; $i++)
+            @include('components.card-artikel3')
+            @endfor
         </div>
     </div>
 </div>
+</div>
+
+<!-- Fullscreen overlay -->
+<div class="overlay" id="overlay">
+    <img src="" alt="Full View" class="fullscreen-image" id="fullscreenImage">
+</div>
+
+@include('components.footer')
 @include('layouts.footer')

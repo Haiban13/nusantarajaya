@@ -56,9 +56,29 @@
     });
 
 
+    // full image overlay
+    const overlay = document.getElementById('overlay');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+
+    // Event untuk setiap gambar thumbnail
+    thumbnails.forEach(img => {
+        img.addEventListener('click', () => {
+            fullscreenImage.src = img.src; // ambil src dari gambar yang diklik
+            overlay.style.display = 'flex'; // tampilkan overlay
+        });
+    });
+
+    // Klik di luar gambar = close
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+            fullscreenImage.src = ""; // kosongkan src untuk optimasi
+        }
+    });
+
+
     // infinity scroll
-
-
     document.addEventListener("DOMContentLoaded", function() {
         const scrollContent = document.getElementById("scrollContent");
 

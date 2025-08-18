@@ -1,7 +1,9 @@
  <a href="artikel/1">
-     <div class="hover:bg-zinc-100 relative z-[99] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
-         <div class="bg-center bg-cover rounded-2xl h-[240px] bg-zinc-500"  style="background-image: url('assets/dayak.jpg')"></div>
-         <div class="mt-3 lg:mt-5 px-2 py-4">
+     <div
+         class="hover:bg-zinc-100 flex items-center mt-5 relative z-[99] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
+         <div class="bg-center bg-cover rounded-2xl h-[120px] w-full bg-zinc-500"
+             style="background-image: url('assets/dayak.jpg')"></div>
+         <div class="px-2 py-4  w-[170%]">
              <p class="flex items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                      height="20" viewBox="0 0 20 20">
                      <path fill="currentColor"
@@ -10,7 +12,7 @@
                  20 juni 2025 | Bali, Pulau Bali
              </p>
              <h1 class=" text-2xl font-bold"> corrupti! Minus.</h1>
-             <p class=" opacity-50 line-clamp-4"> dolor sit amet consectetur, adipisicing elit. Cumque, illum saepe
+             <p class=" opacity-50 line-clamp-2"> dolor sit amet consectetur, adipisicing elit. Cumque, illum saepe
                  recusandae rem quam fugit facilis dolores molestias at eaque molestiae id dolore vel eligendi fuga
                  accusamus rerum possimus voluptatum..</p>
          </div>

@@ -55,7 +55,7 @@
 
                     <!-- Desktop Navigation Links -->
                     <div class="hidden md:flex items-center space-x-8">
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">Dashboard</a>
                         <a href="#" class="text-gray-300 hover:text-white transition-colors">Acara</a>
                         <a href="#" class="text-gray-300 hover:text-white transition-colors">Warisan</a>
                         <a href="#" class="text-gray-300 hover:text-white transition-colors">Kontak</a>
@@ -79,7 +79,7 @@
 
                 <!-- Mobile Menu -->
                 <div x-show="open" @click.away="open = false" class="md:hidden mt-4 bg-black bg-opacity-80 rounded-lg p-4">
-                    <a href="#" class="block text-white py-2">Home</a>
+                    <a href="#" class="block text-white py-2">Dashboard</a>
                     <a href="#" class="block text-white py-2">Acara</a>
                     <a href="#" class="block text-white py-2">Warisan</a>
                     <a href="#" class="block text-white py-2">Kontak</a>

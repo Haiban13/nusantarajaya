@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        
     }
 }

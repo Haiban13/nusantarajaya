@@ -31,7 +31,7 @@
                 ->plugins([
                     FilamentShieldPlugin::make(), // ✅ correct
                 ])
-                ->login()
+                ->login()->authGuard('filament')
                 ->colors([
                     'primary' => Color::Amber,
                 ])

@@ -54,8 +54,8 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(Acara::class, 'owner');
     }
-     public function canAccessPanel(\Filament\Panel $panel): bool
-    {
-          return $this->hasRole('admin') || $this->hasRole('superadmin');
-    }
+        public function canAccessPanel(\Filament\Panel $panel): bool
+        {
+            return $this->hasRole('admin') || $this->hasRole('superadmin');
+        }
 }

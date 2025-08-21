@@ -1,11 +1,11 @@
 @include('layouts.header')
 @include('components.navbar')
 
-<div class="lg:flex  konten gap-10 relative z-[4] ">
+<div class="lg:flex px-5    lg:px-[10%] lg:pt-[10%] pt-[20%]  gap-10 relative z-[4] ">
     <div  >
-        <img src="/assets/festival.webp" class=" object-cover bg-zinc-300 w-full h-[300px] lg:h-[500px] rounded-2xl" >
+        <img src="/assets/festival.webp" class=" object-cover bg-zinc-300 w-full h-[250px] shadow md:h-[300px] lg:h-[500px] rounded-2xl" >
         <div class="px-10 py-2 rounded-full bg-orange-600 mt-10 bg-opacity-25 w-fit text-orange-700"> 12 Desember 2025</div>
-        <h1 class="text-5xl mt-10 font-bold">Pacu Jalur: Warisan Budaya Riau yang Mendebarkan</h1>
+        <h1 class="text-2xl lg:text-5xl mt-10 font-bold">Pacu Jalur: Warisan Budaya Riau yang Mendebarkan</h1>
         @include('components.user-profile')
         <div class="mt-10">Pacu Jalur adalah sebuah tradisi lomba dayung perahu panjang khas masyarakat Kabupaten
             Kuantan Singingi, Riau. Lomba ini tidak hanya sekadar perlombaan adu cepat di atas sungai, tetapi merupakan

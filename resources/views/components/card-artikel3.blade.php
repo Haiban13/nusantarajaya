@@ -1,9 +1,9 @@
  <a href="artikel/1">
      <div
-         class="hover:bg-zinc-100 flex items-center mt-5 relative z-[99] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
+         class="hover:bg-zinc-100 flex items-center mt-2 lg:mt-5 relative z-[99] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
          <div class="bg-center bg-cover rounded-2xl h-[120px] w-full bg-zinc-500"
              style="background-image: url('assets/dayak.jpg')"></div>
-         <div class="px-2 py-4  w-[170%]">
+         <div class="px-2 py-4  w-[170%] text-xs md:text-base">
              <p class="flex items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                      height="20" viewBox="0 0 20 20">
                      <path fill="currentColor"

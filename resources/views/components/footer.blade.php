@@ -1,4 +1,4 @@
-<footer class="bg-zinc-900 text-white mt-[10%]">
+<footer class="bg-zinc-900 text-white mt-[10%] relative z-[55]">
     {{-- <img src="assets/hbatik2.png" class="w-full scale-200 opacity-30" alt=""> --}}
     <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class=" bg-orange-800 h-[100px] w-full py-10 flex flex-col sm:flex-row justify-between items-center px-[10%]">
+    <div class=" bg-orange-800 h-[100px] w-full py-3 lg:py-10 flex flex-col sm:flex-row justify-between items-center px-[10%]">
         <p class=" text-zinc-50 text-sm">&copy; {{ date('Y') }} Budaya. All rights reserved.</p>
         <div class=" space-x-4 mt-4 sm:mt-0 hidden md:flex">
             <!-- Social Icons -->

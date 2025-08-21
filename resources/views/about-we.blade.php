@@ -1,29 +1,34 @@
 @include('layouts.header')
 @include('components.navbar')
 
-<div class=" px-[10%] pt-[15%] pb-[15%]">
+<div class=" px-[10%] pt-[30%] md:pt-[20%] pb-[15%]">
     <div class=" text-center ">
         <h1 class=" text-4xl font-bold merriweather">Tim Pengembang</h1>
-        <p class="mt-5 px-[10%] text-xl">Kami adalah tim pengembang yang berdedikasi untuk menciptakan solusi digital
+        <p class="mt-5 px-[3%] lg:px-[10%] text-xl">Kami adalah tim pengembang yang berdedikasi untuk menciptakan solusi digital
             yang berdampak
-            positif bagi masyarakat. Dengan semangat kolaborasi, kami menggabungkan kreativitas dan teknologi untuk
-            menghasilkan produk yang berkualitas dan inovatif. Setiap baris kode yang kami tulis mencerminkan komitmen
-            kami terhadap kemudahan, keandalan, dan pengalaman pengguna yang optimal.</p>
+            positif bagi masyarakat.
+            <span class=" hidden lg:block">
+                Dengan semangat kolaborasi, kami menggabungkan kreativitas dan teknologi untuk
+                menghasilkan produk yang berkualitas dan inovatif. Setiap baris kode yang kami tulis mencerminkan
+                komitmen
+                kami terhadap kemudahan, keandalan, dan pengalaman pengguna yang optimal.</span>
+        </p>
     </div>
     {{-- card --}}
-    <div class="flex justify-center gap-10 items-center mt-[150px]">
-        <div class="w-[70%]">
+    <div class="lg:flex justify-center gap-5 lg:gap-10 items-center md:mt-[10%] lg:mt-[30%] ">
+        <div class="lg:w-[70%] w-full">
             <div
-                class=" bg-white shadow-lg hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-20  py-5">
+                class=" bg-white shadow-lg hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-5 md:px-10 lg:px-20  py-5">
                 <!-- Foto Kiri -->
                 <img src="https://ua-lawyer.com/static/default-user.png" alt="Profile"
-                    class="w-[120px] h-[120px] rounded-full object-cover bg-zinc-800">
+                    class="w-[80px] h-[80px] lg:w-[120px] lg:h-[120px] rounded-full object-cover bg-zinc-800">
 
                 <!-- Info Kanan -->
                 <div class="ml-10 flex flex-col justify-center">
-                    <p class="text-orange-600 text-xl font-semibold mb-2">Front end Developer</p>
-                    <h2 class="text-4xl font-bold text-gray-800 merriweather">Hafiz Alwan </h2>
-                    <p class="w-[97%] my-2">Mendesain UI yang menarik dan mengintegrasikan AI ke dalam sistem. Fokus
+                    <p class="text-orange-600 text-sm lg:text-xl font-semibold mb-2">Front end Developer</p>
+                    <h2 class="text-2xl lg:text-4xl font-bold text-gray-800 merriweather">Hafiz Alwan </h2>
+                    <p class="w-[97%] my-2  hidden lg:block">Mendesain UI yang menarik dan mengintegrasikan AI ke dalam
+                        sistem. Fokus
                         pada
                         kenyamanan pengguna dan
                         kecerdasan fitur.
@@ -55,16 +60,16 @@
             </div>
             <div
                 class="mt-10 bg-white shadow-lg
-             hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-20  py-5">
+             hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-5 md:px-10 lg:px-20  py-5">
                 <!-- Foto Kiri -->
                 <img src="https://ua-lawyer.com/static/default-user.png" alt="Profile"
-                    class="w-[120px] h-[120px] rounded-full object-cover bg-zinc-800">
+                    class="w-[80px] h-[80px] lg:w-[120px] lg:h-[120px] rounded-full object-cover bg-zinc-800">
 
                 <!-- Info Kanan -->
                 <div class="ml-10 flex flex-col justify-center">
-                    <p class="text-orange-600 text-xl font-semibold mb-2">Back end Developer</p>
-                    <h2 class="text-4xl font-bold text-gray-800 merriweather">Haiban Aufar</h2>
-                    <p class="w-[97%] my-2">
+                    <p class="text-orange-600 text-sm lg:text-xl font-semibold mb-2">Back end Developer</p>
+                    <h2 class="text-2xl lg:text-4xl font-bold text-gray-800 merriweather">Haiban Aufar</h2>
+                    <p class="w-[97%] my-2 hidden lg:block">
                         Mengelola struktur database dan memastikan data tersimpan dengan baik. Bertanggung jawab atas
                         kestabilan dan efisiensi penyimpanan data.
                     </p>
@@ -94,7 +99,7 @@
             </div>
         </div>
         {{-- qris --}}
-        <div class="w-[30%] shadow-2xl hover:scale-105 duration-200">
+        <div class="lg:w-[30%] mt-10 lg:mt-0 shadow-2xl hover:scale-105 duration-200">
             <img src="https://beasiswa.kamajaya.id/wp-content/uploads/2021/04/qris-yayasan-bakti-kamajaya-pf.jpg"
                 class=" " alt="">
         </div>
@@ -134,12 +139,12 @@
     <img class="absolute w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
     <!-- QnA Section -->
-    <div class="  px-[10%] mt-[15%] py-8 grid grid-cols-2 gap-10 relative z-[4]">
+    <div class="  px-[10%] mt-[15%] py-8 lg:grid grid-cols-2 gap-10 relative z-[4]">
         <div>
             {{-- line --}}
             <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
-            <h2 class="text-4xl font-bold text-left mb-6 w-[70%]">💬 Tanya Jawab Seputar Website Kebudayaan</h2>
-            <p>Berikut satu paragraf singkat untuk bagian QnA:
+            <h2 class="text-2xl lg:text-4xl font-bold text-left mb-6 lg:w-[70%]">💬 Tanya Jawab Seputar Website Kebudayaan</h2>
+            <p class=" hidden lg:block">Berikut satu paragraf singkat untuk bagian QnA:
                 > Bagian Tanya Jawab (Q\&A) ini disediakan untuk membantu pengunjung memahami tujuan, isi, serta fitur
                 utama dari website kebudayaan ini. Dengan menjawab pertanyaan-pertanyaan umum, pengguna dapat lebih
                 mudah mengeksplorasi konten dan mengetahui manfaat dari setiap kategori budaya yang ditampilkan.
@@ -151,7 +156,7 @@
             <!-- Item 1 -->
             <div class="border border-gray-300 rounded-lg">
                 <button onclick="toggleAnswer(1)"
-                    class="w-full text-left p-4 font-medium text-xl bg-gray-100 hover:bg-gray-200 transition-all">
+                    class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apa tujuan dari website ini?
                 </button>
                 <p id="answer-1" class="hidden px-4 pb-10 mt-5 text-gray-700">
@@ -163,7 +168,7 @@
             <!-- Item 2 -->
             <div class="border border-gray-300 rounded-lg">
                 <button onclick="toggleAnswer(2)"
-                    class="w-full text-left p-4 font-medium text-xl bg-gray-100 hover:bg-gray-200 transition-all">
+                    class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apa saja kategori kebudayaan yang ditampilkan?
                 </button>
                 <p id="answer-2" class="hidden px-4 pb-10 mt-5 text-gray-700">
@@ -178,7 +183,7 @@
             <!-- Item 3 -->
             <div class="border border-gray-300 rounded-lg">
                 <button onclick="toggleAnswer(3)"
-                    class="w-full text-left p-4 font-medium text-xl bg-gray-100 hover:bg-gray-200 transition-all">
+                    class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apakah konten di website ini bisa terus diperbarui?
                 </button>
                 <p id="answer-3" class="hidden px-4 pb-10 mt-5 text-gray-700">
@@ -190,7 +195,7 @@
             <!-- Item 4 -->
             <div class="border border-gray-300 rounded-lg">
                 <button onclick="toggleAnswer(4)"
-                    class="w-full text-left p-4 font-medium text-xl bg-gray-100 hover:bg-gray-200 transition-all">
+                    class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Siapa yang dapat menggunakan website ini?
                 </button>
                 <p id="answer-4" class="hidden px-4 pb-10 mt-5 text-gray-700">
@@ -201,7 +206,7 @@
             <!-- Item 5 -->
             <div class="border border-gray-300 rounded-lg">
                 <button onclick="toggleAnswer(5)"
-                    class="w-full text-left p-4 font-medium text-xl bg-gray-100 hover:bg-gray-200 transition-all">
+                    class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apakah website ini bisa diakses melalui HP?
                 </button>
                 <p id="answer-5" class="hidden px-4 pb-10 mt-5 text-gray-700">

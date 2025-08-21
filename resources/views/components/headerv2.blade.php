@@ -1,8 +1,8 @@
-<div class=" flex justify-center items-center w-[100dvw] lg:h-[1000px] relative z-[10] pt-[30%] lg:pt-0">
+<div class=" flex justify-center items-center w-[100dvw] lg:h-[1000px] relative z-[10] pt-[30%] md:pt-[15%] lg:pt-0">
     <div class=" md:konten px-[5%]  pt-[7%]">
         <div class=" text-center">
             <div
-                class=" text-4xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
+                class=" text-2xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
                 Kenali dan Cintai
                 Budaya
                 <br>
@@ -19,12 +19,12 @@
 
             </p>
             <div class="flex items-center justify-center gap-3 animate__fadeIn animate__animated animate__delay-2s">
-                <button class="btn-line flex items-center gap-2 ">Jelajahi Budaya <svg xmlns="http://www.w3.org/2000/svg"
+                <button class="btn-line text-xs px-2 flex items-center gap-2 ">Jelajahi Budaya <svg xmlns="http://www.w3.org/2000/svg"
                         width="12" height="24" viewBox="0 0 12 24">
                         <path fill="currentColor" fill-rule="evenodd"
                             d="M10.157 12.711L4.5 18.368l-1.414-1.414l4.95-4.95l-4.95-4.95L4.5 5.64l5.657 5.657a1 1 0 0 1 0 1.414" />
                     </svg></button>
-                <button class="btn-bg  flex items-center gap-2 shake-lr">Daftar Acara <svg xmlns="http://www.w3.org/2000/svg"
+                <button class="btn-bg  text-xs px-2 flex items-center gap-2 shake-lr">Daftar Acara <svg xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M16 13h-3c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1m0-10v1H8V3c0-.55-.45-1-1-1s-1 .45-1 1v1H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-1V3c0-.55-.45-1-1-1s-1 .45-1 1m2 17H6c-.55 0-1-.45-1-1V9h14v10c0 .55-.45 1-1 1" />
@@ -37,7 +37,7 @@
 
 
 
-        <div class="   w-full absolute   origin-top-left left-[3%] top-[50%] lg:top-[40%] max-w-sm scale-[80%] lg:scale-100">
+        <div class="   w-full absolute   origin-top-left left-[3%] top-[50%] lg:top-[40%] max-w-sm scale-[70%] lg:scale-100">
             <!-- Bagian atas: Avatar + Nama -->
             <div class="flex items-center gap-4 mb-4">
                 <!-- Avatar stack -->

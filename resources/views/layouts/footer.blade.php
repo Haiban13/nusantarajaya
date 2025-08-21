@@ -9,6 +9,27 @@
 </script>
 
 <script>
+    function showAcara() {
+        document.getElementById("konten-acara").classList.remove("hidden");
+        document.getElementById("konten-artikel").classList.add("hidden");
+        document.getElementById("konten-tersimpan").classList.add("hidden");
+    }
+
+    function showArtikel() {
+        document.getElementById("konten-artikel").classList.remove("hidden");
+        document.getElementById("konten-acara").classList.add("hidden");
+        document.getElementById("konten-tersimpan").classList.add("hidden");
+    }
+
+    function showTersimpan() {
+        document.getElementById("konten-tersimpan").classList.remove("hidden");
+        document.getElementById("konten-artikel").classList.add("hidden");
+        document.getElementById("konten-acara").classList.add("hidden");
+    }
+</script>
+
+
+<script>
     // loading screen
     // Simulasi waktu loading (misalnya 3 detik)
     window.addEventListener('load', () => {
@@ -25,9 +46,33 @@
                 document.body.classList.add('loaded');
                 mainContent.style.display = 'block';
             }, 800); // sesuai durasi animasi CSS
-        }, 300); // durasi loading
+        }, 3000); // durasi loading
         // }, 3000); // durasi loading
     });
+
+
+    // navbar
+
+    const burgerBtn = document.getElementById('burger-btn');
+    const burgerIcon = document.getElementById('burger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        burgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+
+    // Optional: klik luar nutup menu
+    document.addEventListener('click', function(e) {
+        if (!burgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            burgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
 
 
 
@@ -73,7 +118,7 @@
     overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
             overlay.style.display = 'none';
-            fullscreenImage.src = ""; // kosongkan src untuk optimasi
+            fullscreenImage.src = "";
         }
     });
 

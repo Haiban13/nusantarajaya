@@ -10,13 +10,33 @@
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.11",
+        "autoprefixer": "^10.4.21",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
-        "tailwindcss": "^4.1.11",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.12",
         "vite": "^7.0.4"
     },
     "dependencies": {
         "animate.css": "^4.1.1"
-    }
+    },
+    "name": "nusantarajaya",
+    "version": "1.0.0",
+    "description": "<h1 >NUSANTARA JAYA</h1>",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Haiban13/nusantarajaya.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Haiban13/nusantarajaya/issues"
+    },
+    "homepage": "https://github.com/Haiban13/nusantarajaya#readme"
 }

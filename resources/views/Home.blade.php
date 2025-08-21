@@ -1,6 +1,10 @@
  <!-- Loading Screen -->
  <div id="loading-screen">
-     <div id="loading-text">Memuat...</div>
+     {{-- <div id="loading-text">Memuat...</div> --}}
+
+     <video autoplay>
+         <source src="assets/logo.mov" type="video/mov">
+     </video>
  </div>
 
  <!-- Konten utama -->
@@ -26,7 +30,8 @@
 
          {{-- tutorial --}}
          <div class="lg:flex items-center gap-10 justify-center w-full hidden mt-[10%]">
-             <h1 class=" text-4xl font-bold  ">Langkah Menjadi <br> Event Orginize</h1>
+             <h1 class=" text-4xl font-bold  ">Langkah Menjadi <br> <span class=" text-orange-600">
+                     Event Orginize</span></h1>
              <div>
                  <div class="relative">
                      <div class=" w-[80%] mb-4 rounded-full mt-1 absolute bg-orange-600 min-h-[4px] ">
@@ -163,7 +168,7 @@
              </div>
              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
                  <!-- Main Image -->
-                 <div class="w-full h-96" data-aos="fade-up" data-aos-duration="1500">
+                 <div class="w-full lg:h-96" data-aos="fade-up" data-aos-duration="1500">
                      <iframe class="w-full h-full"
                          src="https://www.youtube.com/embed/XCM54pKkQSE?autoplay=1&mute=1&controls=0&loop=1&playlist=XCM54pKkQSE&rel=0"
                          title="YouTube video player" frameborder="0"
@@ -242,16 +247,18 @@
              <div class="flex items-center justify-between">
                  <div>
                      <h2 class="text-3xl font-bold text-gray-800 mb-2">Acara Terbaru</h2>
-                     <p class="text-gray-500 mb-8 ">Jangan lewatkan acara-acara budaya paling menarik yang akan datang.
+                     <p class="text-gray-500 mb-8 hidden md:block ">Jangan lewatkan acara-acara budaya paling menarik
+                         yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg class=" rotate-90"
-                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya
+                     <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                         viewBox="0 0 16 16">
                          <path fill="currentColor"
                              d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
                      </svg></button>
              </div>
-             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+             <div class="grid   grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8">
                  @for ($i = 0; $i < 5; $i++)
                      @include('components.card-acara')
                  @endfor
@@ -266,11 +273,13 @@
              <div class="flex items-center justify-between">
                  <div>
                      <h2 class="text-3xl font-bold text-gray-800 mb-2">Berita Terkini</h2>
-                     <p class="text-gray-500 mb-8">Jangan lewatkan acara-acara budaya paling menarik yang akan datang.
+                     <p class="text-gray-500 mb-8 md:block hidden">Jangan lewatkan acara-acara budaya paling menarik
+                         yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg class=" rotate-90"
-                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya
+                     <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                         viewBox="0 0 16 16">
                          <path fill="currentColor"
                              d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
                      </svg></button>
@@ -318,16 +327,17 @@
          <!-- CTA (Call to Action) Section -->
          <!-- =================================================================== -->
          <div
-             class="w-[80%]  mx-auto  grid lg:grid-cols-2 row rounded-3xl bg-zinc-900  px-[5%] py-7 items-center text-zinc-50">
-             <div class="order-2 lg:order-1">
+             class="w-[90%] lg:w-[80%]  mx-auto  grid md:grid-cols-2 row rounded-3xl bg-zinc-900  px-[5%] py-7 items-center text-zinc-50">
+             <div class="order-2 md:order-1">
                  {{-- line --}}
                  <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
-                 <h1 class="text-4xl leading-snug font-semibold">
+                 <h1 class="text-xl lg:text-4xl leading-snug font-semibold">
                      Temukan pesona budaya lokal yang kaya dan jadilah bagian dari pelestarian warisan Indonesia.
                  </h1>
                  <div class="flex items-center gap-3 mt-5">
-                     <button class="btn-line flex items-center gap-3"><span class="hidden md:block">Lihat </span>Berita Terkini <svg
-                             xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512">
+                     <button class="btn-line flex items-center gap-3"><span class="hidden md:block">Lihat
+                         </span>Berita Terkini <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                             viewBox="0 0 512 512">
                              <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
                                  d="M368 415.86V72a24.07 24.07 0 0 0-24-24H72a24.07 24.07 0 0 0-24 24v352a40.12 40.12 0 0 0 40 40h328" />
                              <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
@@ -341,7 +351,7 @@
                  </div>
              </div>
 
-             <div class="flex justify-end order-1 lg:order-2">
+             <div class="flex justify-end order-1 md:order-2">
                  <img src="assets/karakter2.png" class="w-[50%] " alt="">
              </div>
          </div>

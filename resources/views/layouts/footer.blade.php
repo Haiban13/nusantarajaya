@@ -9,27 +9,6 @@
 </script>
 
 <script>
-    function showAcara() {
-        document.getElementById("konten-acara").classList.remove("hidden");
-        document.getElementById("konten-artikel").classList.add("hidden");
-        document.getElementById("konten-tersimpan").classList.add("hidden");
-    }
-
-    function showArtikel() {
-        document.getElementById("konten-artikel").classList.remove("hidden");
-        document.getElementById("konten-acara").classList.add("hidden");
-        document.getElementById("konten-tersimpan").classList.add("hidden");
-    }
-
-    function showTersimpan() {
-        document.getElementById("konten-tersimpan").classList.remove("hidden");
-        document.getElementById("konten-artikel").classList.add("hidden");
-        document.getElementById("konten-acara").classList.add("hidden");
-    }
-</script>
-
-
-<script>
     // loading screen
     // Simulasi waktu loading (misalnya 3 detik)
     window.addEventListener('load', () => {
@@ -46,7 +25,7 @@
                 document.body.classList.add('loaded');
                 mainContent.style.display = 'block';
             }, 800); // sesuai durasi animasi CSS
-        }, 3000); // durasi loading
+        }, 4000); // durasi loading
         // }, 3000); // durasi loading
     });
 
@@ -196,6 +175,29 @@
         answer.classList.toggle("hidden");
     }
 </script>
+
+
+<script>
+    function showAcara() {
+        document.getElementById("konten-acara").classList.remove("hidden");
+        document.getElementById("konten-artikel").classList.add("hidden");
+        document.getElementById("konten-tersimpan").classList.add("hidden");
+    }
+
+    function showArtikel() {
+        document.getElementById("konten-artikel").classList.remove("hidden");
+        document.getElementById("konten-acara").classList.add("hidden");
+        document.getElementById("konten-tersimpan").classList.add("hidden");
+    }
+
+    function showTersimpan() {
+        document.getElementById("konten-tersimpan").classList.remove("hidden");
+        document.getElementById("konten-artikel").classList.add("hidden");
+        document.getElementById("konten-acara").classList.add("hidden");
+    }
+</script>
+
+
 </body>
 
 </html>

@@ -1,8 +1,12 @@
 @include('layouts.header')
 @include('components.navbar')
 
-<div class=" px-[10%] pt-[30%] md:pt-[20%] pb-[15%]">
-    <div class=" text-center ">
+<div class=" px-[10%] pt-[30%] md:pt-[20%] lg:pt-[15%] pb-[15%] lg:pb-0">
+    <div class="relative">
+        <img src="assets/logo.png" class="w-full absolute px-[30%] pl-[35%] drop-shadow-2xl " alt="">
+        <img src="assets/logo-black.png" class="w-full absolute hover:hidden duration-1000 ease-in-out cursor-pointer delay-1000  px-[30%] pl-[35%] drop-shadow-2xl " alt="">
+    </div>
+    <div class=" text-center mt-[20%]">
         <h1 class=" text-4xl font-bold merriweather">Tim Pengembang</h1>
         <p class="mt-5 px-[3%] lg:px-[10%] text-xl">Kami adalah tim pengembang yang berdedikasi untuk menciptakan solusi digital
             yang berdampak
@@ -15,7 +19,7 @@
         </p>
     </div>
     {{-- card --}}
-    <div class="lg:flex justify-center gap-5 lg:gap-10 items-center md:mt-[10%] lg:mt-[30%] ">
+    <div class="lg:flex justify-center gap-5 lg:gap-10 items-center md:mt-[10%]   ">
         <div class="lg:w-[70%] w-full">
             <div
                 class=" bg-white shadow-lg hover:bg-zinc-100 hover:scale-105 duration-300 cursor-pointer rounded-xl overflow-hidden flex items-center px-5 md:px-10 lg:px-20  py-5">
@@ -143,8 +147,8 @@
         <div>
             {{-- line --}}
             <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
-            <h2 class="text-2xl lg:text-4xl font-bold text-left mb-6 lg:w-[70%]">💬 Tanya Jawab Seputar Website Kebudayaan</h2>
-            <p class=" hidden lg:block">Berikut satu paragraf singkat untuk bagian QnA:
+            <h2 class="text-2xl lg:text-4xl font-bold text-left mb-6 lg:w-[70%] merriweather">💬 Tanya Jawab Seputar Website Kebudayaan</h2>
+            <p class=" md:text-xl   hidden lg:block">Berikut satu paragraf singkat untuk bagian QnA:
                 > Bagian Tanya Jawab (Q\&A) ini disediakan untuk membantu pengunjung memahami tujuan, isi, serta fitur
                 utama dari website kebudayaan ini. Dengan menjawab pertanyaan-pertanyaan umum, pengguna dapat lebih
                 mudah mengeksplorasi konten dan mengetahui manfaat dari setiap kategori budaya yang ditampilkan.
@@ -159,7 +163,7 @@
                     class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apa tujuan dari website ini?
                 </button>
-                <p id="answer-1" class="hidden px-4 pb-10 mt-5 text-gray-700">
+                <p id="answer-1" class="hidden px-4 pb-10 md:text-xl  mt-5 text-gray-700">
                     Website ini bertujuan untuk memperkenalkan dan melestarikan berbagai kebudayaan Indonesia kepada
                     masyarakat, khususnya generasi muda. dengan cara yang modern
                 </p>
@@ -171,7 +175,7 @@
                     class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apa saja kategori kebudayaan yang ditampilkan?
                 </button>
-                <p id="answer-2" class="hidden px-4 pb-10 mt-5 text-gray-700">
+                <p id="answer-2" class="hidden px-4 pb-10 md:text-xl  mt-5 text-gray-700">
                     Website ini menampilkan empat kategori utama:<br>
                     1. <strong>Kuliner</strong> – Makanan tradisional khas daerah.<br>
                     2. <strong>Seni</strong> – Tari, musik, dan pertunjukan budaya.<br>
@@ -186,7 +190,7 @@
                     class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apakah konten di website ini bisa terus diperbarui?
                 </button>
-                <p id="answer-3" class="hidden px-4 pb-10 mt-5 text-gray-700">
+                <p id="answer-3" class="hidden px-4 pb-10 md:text-xl  mt-5 text-gray-700">
                     Ya, konten akan terus diperbarui sesuai dengan perkembangan dan tambahan informasi budaya dari
                     berbagai daerah.
                 </p>
@@ -198,7 +202,7 @@
                     class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Siapa yang dapat menggunakan website ini?
                 </button>
-                <p id="answer-4" class="hidden px-4 pb-10 mt-5 text-gray-700">
+                <p id="answer-4" class="hidden px-4 pb-10 md:text-xl  mt-5 text-gray-700">
                     Website ini terbuka untuk semua kalangan: pelajar, guru, wisatawan, maupun masyarakat umum.
                 </p>
             </div>
@@ -209,7 +213,7 @@
                     class="w-full text-left p-4 font-medium text-sm lg:text-xl bg-gray-100 hover:bg-gray-200 transition-all">
                     + Apakah website ini bisa diakses melalui HP?
                 </button>
-                <p id="answer-5" class="hidden px-4 pb-10 mt-5 text-gray-700">
+                <p id="answer-5" class="hidden px-4 pb-10 md:text-xl  mt-5 text-gray-700">
                     Bisa. Website ini responsif dan nyaman digunakan di desktop maupun perangkat seluler.
                 </p>
             </div>

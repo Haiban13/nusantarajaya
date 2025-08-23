@@ -3,10 +3,11 @@
     class="grid grid-cols-2 lg:grid-cols-3 slide-bottom mx-[1%] shadow-xl items-center justify-center rounded-full px-5 lg:px-10 py-2 fixed w-[96%] z-[9999] border-[2px] border-zinc-50  md:mt-0">
 
     <!-- Logo -->
-    <div class="px-4 py-2 rounded-lg">
+    <img src="assets/logo.png" class="h-[80px]" alt="">
+    {{-- <div class="px-4 py-2 rounded-lg">
         <a href="#" class="text-white lg:text-2xl font-bold mix-blend-difference">Budaya. <span
                 class="text-orange-500">Sat Set</span></a>
-    </div>
+    </div> --}}
 
     <!-- Menu Desktop -->
     <div class="hidden md:flex items-center gap-8 text-zinc-800 text-center justify-self-center">

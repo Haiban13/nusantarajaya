@@ -4,7 +4,7 @@
 <div class="  lg:px-[10%] lg:pt-[10%] pt-[20%]">
     <div class=" lg:flex items-center gap-[10%]">
         <div>
-            <div class="w-full rounded-2xl h-[400px] thumbnail bg-zinc-400 bg-center bg-cover"
+            <div class="w-full rounded-2xl h-[400px] thumbnail bg-zinc-50 bg-center bg-cover"
                 style="background-image: url('/assets/dayak.jpg')"></div>
             <div class="grid grid-cols-4 mt-4 gap-3 rounded-2xl">
                 <img src="/assets/festival.webp" alt="" class="w-full bg-zinc-50 h-[65px] md:h-[100px] thumbnail ">
@@ -50,8 +50,17 @@
                 |
                 <p>20 Desember 2022</p>
             </div>
+            <h1 onclick="openModal()" class="cursor-pointer relative text-4xl font-bold mt-4 leading-tight w-fit">
+                Lorem ipsum dolor sit amet consectetur
+                <span
+                    class="inline-flex align-text-top ml-1 w-[16px] hover:opacity-70  hover:scale-105 duration-300 h-[16px] items-center justify-center rounded-full bg-red-500 opacity-20 text-red-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] h-[14px]" viewBox="0 0 48 48">
+                        <path fill="currentColor"
+                            d="M21 7a3 3 0 1 1 6 0v24a3 3 0 1 1-6 0zm0 34a3 3 0 1 1 6 0a3 3 0 0 1-6 0" />
+                    </svg>
+                </span>
+            </h1>
 
-            <h1 class=" text-4xl font-bold mt-4">Lorem ipsum dolor sit amet consectetur</h1>
             @include('components.user-profile')
             @include('components.main-event')
 
@@ -121,11 +130,12 @@
                     adipisicing elit. Iure magni laudantium quo necessitatibus deleniti quis quae exercitationem
                 </p>
             </div>
-                <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg class=" rotate-90"
-                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
-                         <path fill="currentColor"
-                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
-                     </svg></button>
+            <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg
+                    class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                    viewBox="0 0 16 16">
+                    <path fill="currentColor"
+                        d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                </svg></button>
         </div>
         <div class=" flex overflow-x-scroll lg:grid lg:grid-cols-5 overflow-y-hidden gap-3 mt-5 h-[120%]">
             @for ($i = 0; $i < 5; $i++)
@@ -141,11 +151,12 @@
                     adipisicing elit. Iure magni laudantium quo necessitatibus deleniti quis quae exercitationem
                 </p>
             </div>
-                <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg class=" rotate-90"
-                         xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
-                         <path fill="currentColor"
-                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
-                     </svg></button>
+            <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya <svg
+                    class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                    viewBox="0 0 16 16">
+                    <path fill="currentColor"
+                        d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                </svg></button>
         </div>
         <div class=" grid lg:grid-cols-3 grid-cols-1 lg:gap-3 ">
             @for ($i = 0; $i < 10; $i++)
@@ -159,6 +170,74 @@
 <!-- Fullscreen overlay -->
 <div class="overlay" id="overlay">
     <img src="" alt="Full View" class="fullscreen-image" id="fullscreenImage">
+</div>
+
+<!-- MODAL report -->
+<div id="popupModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg p-6 w-[75%] shadow-lg relative ">
+        <button onclick="closeModal()"
+            class="absolute top-2 right-2 text-zinc-500 hover:text-black text-5xl">&times;</button>
+
+        <form action="" method="post" class=" text-zinc-950 relative lg:pb-16">
+            <h2 class="text-3xl lg:text-4xl font-semibold mb-4">Laporkan Acara</h2>
+            <p class=" text-zinc-700 w-[60%] hidden lg:block">Laporkan masalah yang Anda temui selama acara agar kami
+                bisa segera menindaklanjuti dan meningkatkan kualitas pelayanan.
+            </p>
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div>
+                    <div class="lg:mt-10">
+                        <label for="">Nama Pelapor</label>
+                        <input type="text" class="w-full bg-zinc-200 px-3 py-2" placeholder="Bang Toyip">
+                    </div>
+                    <div class="mt-10">
+                        <form class="space-y-3">
+                            <p class="font-semibold text-red-600">Laporkan pelanggaran serius:</p>
+                            <div class="grid grid-cols-2 text-xs lg:text-base">
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="keluhan[]" value="Penipuan / Scam"
+                                        class="accent-red-600">
+                                    <span>Penipuan / Scam</span>
+                                </label>
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="keluhan[]" value="Pungutan liar"
+                                        class="accent-red-600">
+                                    <span>Pungutan liar / Biaya tersembunyi</span>
+                                </label>
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="keluhan[]" value="Penyalahgunaan data"
+                                        class="accent-red-600">
+                                    <span>Penyalahgunaan data pribadi</span>
+                                </label>
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="keluhan[]" value="Konten tidak pantas"
+                                        class="accent-red-600">
+                                    <span>Konten tidak pantas / hoaks / provokasi</span>
+                                </label>
+
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="keluhan[]" value="Kekerasan atau pelecehan"
+                                        class="accent-red-600">
+                                    <span>Kekerasan fisik / pelecehan</span>
+                                </label>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+                <div>
+                    <label for="">Ceritakan Kronologi :</label>
+                    <br>
+                    <textarea name="" id="" class="bg-zinc-200 w-full h-[100px] lg:h-[300px] "></textarea>
+                </div>
+            </div>
+            <button class="btn-bg mt-10 absolute right-10 bottom-4" type="submit"> Kirim Laporan</button>
+        </form>
+    </div>
 </div>
 
 @include('components.footer')

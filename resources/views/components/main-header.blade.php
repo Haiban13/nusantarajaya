@@ -1,4 +1,4 @@
-<div style=" background-image: url('assets/bg2.png');"
+<div style=" background-image: url('/assets/bg2.png');"
     class="w-full h-[700px] lg:h-[760px] bg-zinc-950 bg-cover bg-no-repeat  relative flex items-center justify-center text-zinc-50">
     <div class=" text-center px-[5%] lg:px-[20%] drop-shadow-2xl drop-shadow-2xl animate__delay-1s">
         <div class="animate__backInDown animate__animated ">

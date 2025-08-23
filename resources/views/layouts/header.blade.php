@@ -9,9 +9,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     @vite('resources/css/app.css')
-    @vite('resources/css/output.css')
-    <link rel="stylesheet" href="{{ asset('output.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/app-xxxx.css') }}">
+    {{-- @vite('resources/css/output.css') --}}
+    {{-- <link rel="stylesheet" href="{{ asset('output.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-xxxx.css') }}"> --}}
 
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
 
     {{-- animasi teks --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.dflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.dflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
 
     {{-- font  --}}
     <link

@@ -147,7 +147,7 @@
                      <a href="#">
                          <div data-aos="fade-up" data-aos-duration="500"
                              class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
-                             style="background-image: url('assets/kuliner.webp') ">
+                             style="background-image: url('/assets/kuliner.webp') ">
                              <div class="cc-content text-center backdrop-blur-sm">
                                  <p class="cc-title text-2xl font-bold text-[#333]">Kuliner</p>
                                  <p class="cc-description md:text-xl mt-2 text-sm text-[#777] leading-5">
@@ -162,7 +162,7 @@
                      <a href="#">
                          <div data-aos="fade-up" data-aos-duration="1000"
                              class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
-                             style="background-image: url('assets/tari.jpg') ">
+                             style="background-image: url('/assets/tari.jpg') ">
                              <div class="cc-content text-center backdrop-blur-sm">
                                  <p class="cc-title text-2xl font-bold text-[#333]">Seni</p>
                                  <p class="cc-description md:text-xl mt-2 text-sm text-[#777] leading-5">
@@ -176,7 +176,7 @@
                      <a href="#">
                          <div data-aos="fade-up" data-aos-duration="1500"
                              class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
-                             style="background-image: url('assets/upacara.jpeg') ">
+                             style="background-image: url('/assets/upacara.jpeg') ">
                              <div class="cc-content text-center backdrop-blur-sm">
                                  <p class="cc-title text-2xl font-bold text-[#333]">Upacara Adat</p>
                                  <p class="cc-description md:text-xl mt-2 text-sm text-[#777] leading-5">
@@ -191,7 +191,7 @@
                      <a href="#">
                          <div data-aos="fade-up" data-aos-duration="2000"
                              class="custom-card relative w-full cursor-pointer h-[190px] bg-center bg-cover flex items-center justify-center overflow-hidden rounded-lg transition-all"
-                             style="background-image: url('assets/festival.webp') ">
+                             style="background-image: url('/assets/festival.webp') ">
                              <div class="cc-content text-center backdrop-blur-sm">
                                  <p class="cc-title text-2xl font-bold text-[#333]">Festival</p>
                                  <p class="cc-description md:text-xl mt-2 text-sm text-[#777] leading-5">
@@ -319,7 +319,7 @@
              </div>
 
              <div class="flex justify-end order-1 md:order-2 relative">
-                 <img src="assets/karakter2.png" class="w-[50%] relative z-10" alt="">
+                 <img src="/assets/karakter2.png" class="w-[50%] relative z-10" alt="">
                      <div class="blob w-[400px] opacity-30 bg-orange-700 absolute h-[400px]" ></div>
 
              </div>
@@ -334,7 +334,7 @@
              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                  <!-- Illustration -->
                  <div class="flex justify-center relative" data-aos="fade-up" data-aos-duration="1000">
-                     <img src="assets/karakter.png" alt="Character Illustration" class="relative z-10 max-w-xs md:max-w-sm">
+                     <img src="/assets/karakter.png" alt="Character Illustration" class="relative z-10 max-w-xs md:max-w-sm">
                      <div class="blob w-[600px] opacity-10 bg-orange-600 absolute h-[600px]" ></div>
                  </div>
                  <!-- Feature List -->

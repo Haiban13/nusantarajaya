@@ -1,6 +1,6 @@
- <a href="artikel/1">
+ <a href="/artikel/1">
      <div class="hover:bg-zinc-100 relative z-[99] rounded-3xl gap-5 w-full duration-200 hover:scale-105 hover:cursor-pointer">
-         <div class="bg-center bg-cover rounded-2xl h-[160px] md:h-[240px] bg-zinc-500"  style="background-image: url('assets/dayak.jpg')"></div>
+         <div class="bg-center bg-cover rounded-2xl h-[160px] md:h-[240px] bg-zinc-100"  style="background-image: url('/assets/dayak.jpg')"></div>
          <div class="mt-3 lg:mt-5 px-2 py-4">
              <p class="flex text-xs md:text-base items-center gap-2 text-orange-500"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                      height="20" viewBox="0 0 20 20">

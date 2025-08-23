@@ -80,6 +80,17 @@
     });
 
 
+
+    // pop up report
+    function openModal() {
+        document.getElementById("popupModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+        document.getElementById("popupModal").classList.add("hidden");
+    }
+
+
     // full image overlay
     const overlay = document.getElementById('overlay');
     const fullscreenImage = document.getElementById('fullscreenImage');

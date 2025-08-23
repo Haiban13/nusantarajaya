@@ -3,7 +3,7 @@
 
 <div class=" px-[10%] pt-[30%] md:pt-[20%] lg:pt-[15%] pb-[15%] lg:pb-0">
     <div class="relative">
-        <img src="assets/logo.png" class="w-full absolute px-[10%]  lg:px-[30%] pl-[35%] drop-shadow-2xl " alt="">
+        <img src="/assets/logo.png" class="w-full absolute px-[10%]  lg:px-[30%] pl-[35%] drop-shadow-2xl " alt="">
         {{-- <img src="assets/logo-black.png" class="w-full absolute hover:hidden duration-1000 ease-in-out cursor-pointer delay-1000  px-[30%] pl-[35%] drop-shadow-2xl " alt=""> --}}
     </div>
     <div class=" text-center mt-[25%]">

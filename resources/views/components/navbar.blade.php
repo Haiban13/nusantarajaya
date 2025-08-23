@@ -10,7 +10,7 @@
     </div> --}}
 
     <!-- Menu Desktop -->
-    <div class="hidden md:flex items-center gap-8 text-zinc-800 text-center justify-self-center">
+    <div class="hidden md:flex items-center gap-10 text-zinc-800 text-center justify-self-center">
         <a href="/" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Beranda</a>
         <a href="/acara" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Info Acara</a>
         <a href="/artikel" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Berita</a>
@@ -20,7 +20,7 @@
     <!-- Login (Desktop) -->
     <div class="lg:flex items-center gap-3 hidden justify-self-end">
         <div class="flex items-center gap-3">
-            <a href="/admin" class="rounded-full duration-200 btn-line text-zinc-50">Masuk</a>
+            <a href="/admin" class="rounded-full duration-200 btn-line text-orange-800">Masuk</a>
             <a href="/admin" class="rounded-full duration-200 btn-bg">Login</a>
         </div>
         <a href="{{ route('user.profile') }}">
@@ -54,7 +54,7 @@
             Acara</a>
         <a href="/artikel" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Berita</a>
         <a href="/about" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">About</a>
-        <a href="/admin" class="rounded-full duration-200 btn-line text-zinc-800">Masuk</a>
+        <a href="/admin" class="rounded-full duration-200 btn-line text-orange-800">Masuk</a>
         <a href="/admin" class="rounded-full duration-200 btn-bg">Login</a>
 
     </div>

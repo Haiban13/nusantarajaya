@@ -43,14 +43,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->spa()
             // ->topNavigation()
-            ->colors([
-                'danger' => Color::Rose,
-                'gray' => '#ffffff',
-                'info' => '#b83c07',
-                'primary' => '#b83c07',
-                'success' => Color::Emerald,
-                'warning' => Color::Orange,
-            ])
+            // ->colors([
+            //     'danger' => Color::Rose,
+            //     'gray' => '#ffffff',
+            //     'info' => '#b83c07',
+            //     'primary' => '#b83c07',
+            //     'success' => Color::Emerald,
+            //     'warning' => Color::Orange,
+            // ])
             // ->viteTheme('resources/css/filament/admin/theme.css')
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),

@@ -96,9 +96,9 @@
          <!-- about website -->
          <!-- =================================================================== -->
          <div class=" grid grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%]">
-             <img data-aos="fade-up" data-aos-duration="500" src="assets/3d2.png" class="px-10 order-2" alt="">
+             <img data-aos="fade-up" data-aos-duration="1200" src="assets/3d2.png" class="px-10 order-2" alt="">
 
-             <div data-aos="fade-up" data-aos-duration="500">
+             <div data-aos="fade-up" data-aos-duration="1500">
                  {{-- line --}}
                  <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
                  <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 merriweather">Tentang Budaya Nusantara</h2>
@@ -318,8 +318,10 @@
                  </div>
              </div>
 
-             <div class="flex justify-end order-1 md:order-2">
-                 <img src="assets/karakter2.png" class="w-[50%] " alt="">
+             <div class="flex justify-end order-1 md:order-2 relative">
+                 <img src="assets/karakter2.png" class="w-[50%] relative z-10" alt="">
+                     <div class="blob w-[400px] opacity-30 bg-orange-700 absolute h-[400px]" ></div>
+
              </div>
          </div>
 
@@ -331,8 +333,9 @@
          <section class="container mt-[10%] mx-auto px-6 py-16">
              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                  <!-- Illustration -->
-                 <div class="flex justify-center" data-aos="fade-up" data-aos-duration="1000">
-                     <img src="assets/karakter.png" alt="Character Illustration" class="max-w-xs md:max-w-sm">
+                 <div class="flex justify-center relative" data-aos="fade-up" data-aos-duration="1000">
+                     <img src="assets/karakter.png" alt="Character Illustration" class="relative z-10 max-w-xs md:max-w-sm">
+                     <div class="blob w-[600px] opacity-10 bg-orange-600 absolute h-[600px]" ></div>
                  </div>
                  <!-- Feature List -->
                  <div class="space-y-8">

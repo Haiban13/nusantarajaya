@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav
-    class="grid grid-cols-2 lg:grid-cols-3 slide-bottom mx-[1%] shadow-xl items-center justify-center rounded-full px-5 lg:px-10 py-1 fixed w-[96%] z-[9999] border-[2px] border-zinc-50  md:mt-0">
+    class="grid grid-cols-2 lg:grid-cols-3 slide-bottom mx-[2%] shadow-xl items-center justify-center rounded-full px-5 lg:px-10 py-1 fixed  w-[96%] z-[9999] border-[2px] border-zinc-50  md:mt-0">
 
     <!-- Logo -->
     <img src="/assets/logo.png" class="h-[50px] lg:h-[80px]" alt="">
@@ -60,7 +60,7 @@
 </nav>
 
 <!-- Menu Mobile (Hidden by default) -->
-<div id="mobile-menu" class="hidden md:hidden bg-zinc-900/80 w-dvw h-dvh fixed z-[33]">
+<div id="mobile-menu" class="hidden md:hidden bg-zinc-900/80 w-dvw h-dvh fixed z-[999933]">
 
     <div
         class="  pt-[30%] left-0 w-full bg-white text-zinc-800 text-xl flex flex-col gap-10 px-6 py-2 shadow-xl rounded-b-xl z-[9998]">

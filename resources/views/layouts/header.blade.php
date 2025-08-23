@@ -13,6 +13,21 @@
 <link rel="stylesheet" href="{{ secure_asset('build/assets/app-CqUfnrh7.css') }}">
  
 <script src="{{ secure_asset('build/assets/app-C0G0cght.js') }}" defer></script>
+
+
+
+{{-- hosting --}}
+<link rel="stylesheet" href="./build/app-C2dRaokZ.css ">
+<link rel="stylesheet" href="./build/app-C0G0cght.js ">
+
+
+{{-- hosting --}}
+<link rel="stylesheet" href="./assets/app-C2dRaokZ.css ">
+<link rel="stylesheet" href="./assets/app-C0G0cght.js ">
+
+{{-- hosting --}}
+<link rel="stylesheet" href="./build/assets/app-C2dRaokZ.css ">
+<link rel="stylesheet" href="./build/assets/app-C0G0cght.js ">
  
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

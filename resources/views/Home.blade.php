@@ -95,7 +95,7 @@
          <!-- =================================================================== -->
          <!-- about website -->
          <!-- =================================================================== -->
-         <div class=" grid grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%]">
+         <div class=" grid lg:grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%]">
              <img data-aos="fade-up" data-aos-duration="1200" src="assets/3d2.png" class="px-10 order-2" alt="">
 
              <div data-aos="fade-up" data-aos-duration="1500">
@@ -120,7 +120,7 @@
          <!-- "Warisan Budaya" (Cultural Heritage) Section -->
          <!-- =================================================================== -->
          {{-- batik efek bg --}}
-         <img class="absolute right-0 w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
+         <img class="absolute right-0 ww-[400px] lg:w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
          <section class="container mt-[10%] mx-auto px-6 py-16 relative z-[4]">
              <div data-aos="fade-up" data-aos-duration="500">
@@ -232,7 +232,7 @@
          </section>
 
          {{-- batik efek bg --}}
-         <img class="absolute w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
+         <img class="absolute ww-[400px] lg:w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
          <section class="container mx-auto px-6 py-16 mt-[10%] relative z-[4]" data-aos="fade-up"
              data-aos-duration="500">
@@ -335,7 +335,7 @@
                  <!-- Illustration -->
                  <div class="flex justify-center relative" data-aos="fade-up" data-aos-duration="1000">
                      <img src="/assets/karakter.png" alt="Character Illustration" class="relative z-10 max-w-xs md:max-w-sm">
-                     <div class="blob w-[600px] opacity-10 bg-orange-600 absolute h-[600px]" ></div>
+                     <div class="blob ww-[400px] lg:w-[600px] opacity-10 bg-orange-600 absolute h-[400px] lg:h-[600px]" ></div>
                  </div>
                  <!-- Feature List -->
                  <div class="space-y-8">

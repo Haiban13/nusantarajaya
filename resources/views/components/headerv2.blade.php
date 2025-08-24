@@ -2,7 +2,7 @@
     <div class=" md:konten px-[5%]  pt-[7%]">
         <div class=" text-center">
             <div
-                class=" text-2xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-1s">
+                class=" text-2xl md:text-4xl merriweather font-extrabold leading-tight mb-4 animate__backInDown animate__animated drop-shadow-2xl animate__delay-5s">
                 Kenali dan Cintai
                 Budaya
                 <br>
@@ -10,7 +10,7 @@
                     Indonesia</span>
             </div>
             <p
-                class=" text-lg md:text-xl text-gray-300 px-[5%] lg:px-[20%] mb-8 animate__fadeIn animate__animated animate__delay-2s">
+                class=" text-base md:text-xl text-gray-300 px-[5%] lg:px-[20%] mb-8 animate__fadeIn animate__animated animate__delay-5s">
                 Indonesia adalah negeri yang kaya akan budaya, tradisi, dan kearifan lokal.
                 Temukan pesona tradisi Indonesia yang kaya, unik, dan penuh makna dari Sabang hingga Merauke.
                 {{-- Setiap daerah memiliki
@@ -18,7 +18,7 @@
                 yang menggambarkan jiwa masyarakatnya. --}}
 
             </p>
-            <div class="flex items-center justify-center gap-3 animate__fadeIn animate__animated animate__delay-2s">
+            <div class="flex items-center justify-center gap-3 animate__fadeIn animate__animated animate__delay-5s">
                 <button class="btn-line text-xs px-2 flex items-center gap-2 ">Jelajahi Budaya <svg xmlns="http://www.w3.org/2000/svg"
                         width="12" height="24" viewBox="0 0 12 24">
                         <path fill="currentColor" fill-rule="evenodd"

@@ -95,7 +95,7 @@
          <!-- =================================================================== -->
          <!-- about website -->
          <!-- =================================================================== -->
-         <div class=" grid lg:grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%]">
+         <div class=" grid lg:grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%] relative z-[4]">
              <img data-aos="fade-up" data-aos-duration="1200" src="assets/3d2.png" class="px-10 order-2" alt="">
 
              <div data-aos="fade-up" data-aos-duration="1500">

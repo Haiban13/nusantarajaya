@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav
-    class="grid grid-cols-2 lg:grid-cols-3 slide-bottom mx-[2%] shadow-xl items-center justify-center rounded-full px-5 lg:px-10 py-1 fixed  w-[96%] z-[9999] border-[2px] border-zinc-50  md:mt-0">
+    class="grid grid-cols-2 lg:grid-cols-3 slide-bottom mx-[2%] shadow-xl items-center justify-center rounded-full px-5 lg:px-10 py-1 fixed  w-[96%] z-[999] border-[2px] border-zinc-20  md:mt-0">
 
     <!-- Logo -->
     <img src="/assets/logo.png" class="h-[50px] lg:h-[80px]" alt="">
@@ -10,7 +10,7 @@
     </div> --}}
 
     <!-- Menu Desktop -->
-    <div class="hidden md:flex items-center gap-10 text-zinc-800 text-center justify-self-center">
+    <div class="hidden md:flex items-center gap-10 text-zinc-800 text-center justify-self-center text-xl">
         <a href="/" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Beranda</a>
         {{-- @can('view_any_acara') --}}
         <a href="/acara" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Info Acara</a>
@@ -60,10 +60,10 @@
 </nav>
 
 <!-- Menu Mobile (Hidden by default) -->
-<div id="mobile-menu" class="hidden md:hidden bg-zinc-900/80 w-dvw h-dvh fixed z-[999933]">
+<div id="mobile-menu" class="hidden md:hidden bg-zinc-900/80 w-dvw h-dvh fixed z-[933]">
 
     <div
-        class="  pt-[30%] left-0 w-full bg-white text-zinc-800 text-xl flex flex-col gap-10 px-6 py-2 shadow-xl rounded-b-xl z-[9998]">
+        class="  pt-[30%] left-0 w-full bg-white text-zinc-800 text-xl flex flex-col gap-10 px-6 py-2 shadow-xl rounded-b-xl z-[98]">
 
         <a href="/" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Beranda</a>
         <a href="/acara" class="hover:text-orange-600 hover:scale-105 duration-300 transition-colors">Info

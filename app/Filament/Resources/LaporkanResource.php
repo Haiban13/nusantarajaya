@@ -23,17 +23,49 @@ class LaporkanResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('judul_acara')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('tanggal')
-                    ->required(),
-                Forms\Components\TextInput::make('user_acara_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('user_pelapor_id')
-                    ->required()
-                    ->numeric(),
+                 Forms\Components\Select::make('acara_id')
+    ->label('acara')
+    ->relationship('acara', 'judul') // 'nama' = column in kategoris table
+    ->searchable()
+    ->preload()
+    ->required(),
+              
+                    Forms\Components\Hidden::make('dokumentasi'),
+                Forms\Components\FileUpload::make('upload_img1')
+                    ->label('Image 1')
+                    ->image()
+                    ->directory('dokumentasi/images')
+                    ->maxSize(2048)
+                    ->nullable()->preserveFilenames(false)
+                        ->visibility('public')->multiple(false),
+
+                Forms\Components\FileUpload::make('upload_img2')
+                    ->label('Image 2')
+                    ->image()
+                    ->directory('dokumentasi/images')
+                    ->maxSize(2048)
+                    ->nullable()->preserveFilenames(false)
+                    ->visibility('public')->multiple(false),
+
+                Forms\Components\FileUpload::make('upload_img3')
+                    ->label('Image 3')
+                    ->image()
+                    ->directory('dokumentasi/images')
+                    ->maxSize(2048)
+                    ->nullable()->preserveFilenames(false)
+                    ->visibility('public')->multiple(false),
+
+                Forms\Components\FileUpload::make('upload_video')
+                    ->label('Video')
+                    ->directory('dokumentasi/videos')
+                    ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
+                    ->maxSize(10240) // 10MB
+                    ->nullable()->preserveFilenames(false)
+                    ->visibility('public')->multiple(false),
+                Forms\Components\hidden::make('user_acara_id')
+                   ,
+                Forms\Components\hidden::make('user_pelapor_id')
+                     ,
                 Forms\Components\Textarea::make('keterangan')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('jenis_keluhan')
@@ -46,27 +78,41 @@ class LaporkanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('judul_acara')
+                Tables\Columns\TextColumn::make('acara.judul')
+                    ->label('Acara')
+                    ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('tanggal')
-                    ->date()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('user_acara_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('user_pelapor_id')
-                    ->numeric()
-                    ->sortable(),
+
                 Tables\Columns\TextColumn::make('jenis_keluhan')
+                    ->label('Jenis Keluhan')
                     ->searchable(),
+
+                Tables\Columns\TextColumn::make('keterangan')
+                    ->label('Keterangan')
+                    ->limit(50)
+                    ->toggleable(),
+                Tables\Columns\ImageColumn::make('dokumentasi_id.img1')
+                    ->label('Image 1') 
+                    ->square(),
+
+                Tables\Columns\ImageColumn::make('dokumentasi_id.img2')
+                    ->label('Image 2')
+                    ->square(),
+
+                Tables\Columns\ImageColumn::make('dokumentasi_id.img3')
+                    ->label('Image 3')
+                    ->square(),
+     
+                // Show video as a clickable link
+                Tables\Columns\TextColumn::make('dokumentasi_id.video')
+                    ->label('Video')
+                    ->url(fn ($record) => $record->images?->video ? asset('storage/' . $record->images->video) : null)
+                    ->openUrlInNewTab(),
+
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Dilaporkan Pada')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
             ])
             ->filters([
                 //

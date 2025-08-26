@@ -52,4 +52,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Acara::class, 'owner');
     }
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            // Assign default "user" role to anyone who registers
+            if (method_exists($user, 'assignRole')) {
+                $user->assignRole('user');
+            }
+        });
+    }
 }

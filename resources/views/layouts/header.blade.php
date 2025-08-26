@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Budaya Indonesia</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     @vite('resources/css/app.css')
    
-<link rel="stylesheet" href="{{ secure_asset('build/assets/app-CqUfnrh7.css') }}">
- 
-<script src="{{ secure_asset('build/assets/app-C0G0cght.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ secure_asset('build/assets/app-m8BvIJQY.css') }}">
+    
+    
+    <script src="{{ secure_asset('build/assets/app-C0G0cght.js ') }}" defer></script>
  
     <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

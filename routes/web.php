@@ -1,5 +1,6 @@
 <?php
 
+use App\Filament\Pages\RegisterUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,3 +28,4 @@ Route::get('/artikel/1', function () {
 Route::get('/tutorial', function () {
     return view('tutorial');
 });
+ 

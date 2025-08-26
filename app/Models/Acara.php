@@ -20,7 +20,7 @@ class Acara extends Model
         'detail_acara',
         'htm',
         'no_panitia',
-        'kategori',
+        'kategori_id',
         'asal', // general provinsi
         'owner',
     ];
@@ -34,4 +34,8 @@ class Acara extends Model
     {
         return $this->belongsTo(User::class, 'owner');
     }
-}
+        public function kategori()
+    {
+        return $this->belongsTo(\App\Models\Kategori::class, 'kategori_id');
+    }
+    }

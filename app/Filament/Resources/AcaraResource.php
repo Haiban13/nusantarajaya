@@ -31,8 +31,8 @@ class AcaraResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('tanggal_akhir')
                     ->required(),
-                    Forms\Components\Hidden::make('img'),
                     Forms\Components\Hidden::make('owner'),
+                    Forms\Components\Hidden::make('img'),
                 Forms\Components\FileUpload::make('upload_img1')
                     ->label('Image 1')
                     ->image()
@@ -65,7 +65,8 @@ class AcaraResource extends Resource
                     ->nullable()->preserveFilenames(false)
 ->visibility('public')->multiple(false),
                 Forms\Components\TextInput::make('lokasi')
-                    ->maxLength(255),
+                    ->maxLength(255)  // ✅ Important
+                ->required(),
                 Forms\Components\Textarea::make('des_singkat')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('detail_acara')
@@ -74,8 +75,12 @@ class AcaraResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('no_panitia')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('kategori')
-                    ->maxLength(255),
+                Forms\Components\Select::make('kategori_id')
+    ->label('Kategori')
+    ->relationship('kategori', 'nama') // 'nama' = column in kategoris table
+    ->searchable()
+    ->preload()
+    ->required(),
                 Forms\Components\TextInput::make('asal')
                     ->maxLength(255),
             ]);

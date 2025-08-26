@@ -103,7 +103,7 @@ class ArtikelResource extends Resource
                     ->label('Video')
                     ->url(fn ($record) => $record->images?->video ? asset('storage/' . $record->images->video) : null)
                     ->openUrlInNewTab(),
-        
+  
            
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

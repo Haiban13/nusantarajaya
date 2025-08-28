@@ -1,12 +1,21 @@
 <?php
 
 use App\Filament\Pages\RegisterUser;
+use App\Http\Controllers\SeachController;
+use App\Models\Acara;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/search-acara', [SeachController::class,"searchAcara"])->name('acara.search');
+Route::get('/search-artikel', [SeachController::class,"searchArtikel"])->name('artikel.search');
+Route::get('/search', [SeachController::class,"search"])->name('search');
 
 Route::get('/', function () {
     return view('home');
 });
 Route::get('/acara', function () {
+
     return view('acara');
 });
 Route::get('/acara/1', function () {

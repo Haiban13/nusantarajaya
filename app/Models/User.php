@@ -52,6 +52,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Acara::class, 'owner');
     }
+     public function artikel(): HasMany
+    {
+        return $this->hasMany(Artikel::class, 'owner');
+    }
     protected static function booted()
     {
         static::created(function ($user) {

@@ -1,3 +1,4 @@
+
 <div style=" background-image: url('/assets/bg2.png');"
     class="w-full h-[700px] lg:h-[760px] bg-zinc-950 bg-cover bg-no-repeat  relative flex items-center justify-center text-zinc-50">
     <div class=" text-center px-[5%] lg:px-[20%] drop-shadow-2xl drop-shadow-2xl animate__delay-1s">
@@ -17,8 +18,9 @@
         <div class=" lg:px-[20%]  animate__zoomInDown	    animate__delay-2s	 	">
             <div
                 class="w-full mt-10  bg-white/20 backdrop-blur-sm p-2 rounded-full flex items-center animate__zoomIn animate__animated animate__delay-1s">
-                <input type="text" placeholder="Cari budaya, tarian, atau acara..."
+                <input id="search" type="text" placeholder="Cari budaya, tarian, atau acara..."
                     class="w-full bg-transparent text-white placeholder-gray-300 border-none focus:ring-0 px-4 py-2">
+                    
                 <button
                     class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors shrink-0">
                     Cari
@@ -26,6 +28,7 @@
             </div>
         </div>
     </div>
+    <div id="search-results" class="text-black"></div>
     {{-- <div class="relative ">  --}}
     <div class="absolute bottom-0 w-full bg-zinc-50 rounded-t-3xl lg:rounded-t-[4rem]  ">
         <div class=" justify-between flex items-center  px-[5%] py-[5%]  lg:py-[2%]">
@@ -35,3 +38,39 @@
     </div>
     {{-- </div> --}}
 </div>
+
+<script>
+$(document).ready(function() {
+    $("#search").on("keyup", function() {
+        let query = $(this).val();
+        let currentPath = window.location.pathname; // ✅ Get current URL path
+        let searchUrl = "";
+
+        // Decide the AJAX URL based on the current route
+        if (currentPath === "/artikel") {
+            searchUrl = "{{ route('artikel.search') }}";
+        } 
+        else if (currentPath === "/acara") {
+            searchUrl = "{{ route('acara.search') }}";
+        } 
+        else {
+            // Default: home page search
+            searchUrl = "{{ route('search') }}";
+        }
+
+        // If input is not empty, call AJAX
+        if (query.length > 0) {
+            $.ajax({
+                url: searchUrl,
+                method: "GET",
+                data: { q: query },
+                success: function(data) {
+                    $("#search-results").html(data);
+                }
+            });
+        } else {
+            $("#search-results").html("");
+        }
+    });
+});
+</script>

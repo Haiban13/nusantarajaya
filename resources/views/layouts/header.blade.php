@@ -11,7 +11,7 @@
     @vite('resources/css/app.css')
    
     <link rel="stylesheet" href="{{ secure_asset('build/assets/app-m8BvIJQY.css') }}">
-    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script src="{{ secure_asset('build/assets/app-C0G0cght.js ') }}" defer></script>
  

@@ -65,4 +65,9 @@ class User extends Authenticatable
             }
         });
     }
+
+    public function approvedArtikels()
+    {
+        return $this->hasMany(Approval::class, 'approved_by');
+    }
 }

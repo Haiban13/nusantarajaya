@@ -21,7 +21,7 @@ class Laporkan extends Model
 
     public function dokumentasi_id()
     {
-        return $this->belongsTo(Dokumentasi::class, 'dokumentasi' ,'id');
+        return $this->belongsTo(Dokumentasi::class, 'dokumentasi'  );
     }
     public function acara()
     {

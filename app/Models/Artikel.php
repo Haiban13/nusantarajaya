@@ -25,4 +25,8 @@ class Artikel extends Model
     {
         return $this->belongsTo(User::class, 'owner');
     }
+    public function approval()
+    {
+        return $this->hasOne(\App\Models\Approval::class, 'artikel_id');
+    }
 }

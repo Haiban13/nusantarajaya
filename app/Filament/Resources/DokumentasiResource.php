@@ -87,4 +87,13 @@ class DokumentasiResource extends Resource
             'edit' => Pages\EditDokumentasi::route('/{record}/edit'),
         ];
     }
+            public static function canEdit($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
+
+    public static function canDelete($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
 }

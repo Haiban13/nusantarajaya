@@ -12,12 +12,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ImageEntry;
 class LaporkanResource extends Resource
 {
     protected static ?string $model = Laporkan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-exclamation-triangle';
 
     public static function form(Form $form): Form
     {
@@ -134,12 +137,77 @@ class LaporkanResource extends Resource
         ];
     }
 
+        public static function canEdit($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
+
+    public static function canDelete($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListLaporkans::route('/'),
             'create' => Pages\CreateLaporkan::route('/create'),
             'edit' => Pages\EditLaporkan::route('/{record}/edit'),
+              'view' => Pages\ViewLaporkan::route('/{record}'), 
         ];
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Laporan')
+                    ->schema([
+                        TextEntry::make('acara.judul')->label('Acara'),
+                        TextEntry::make('acara.id')->label('Acara Id'),
+                        TextEntry::make('jenis_keluhan')->label('Jenis Keluhan'),
+                
+                        TextEntry::make('approval.approve')
+                            ->label('Approval')
+                            ->badge()
+                            ->formatStateUsing(fn ($state) => $state ? 'Approved' : 'Pending')
+                            ->color(fn ($state) => $state ? 'success' : 'warning'),
+                    ])->columns(2),
+                Section::make('Isi Artikel')
+                    ->schema([
+                        TextEntry::make('keterangan')->label('Keterangan'),
+                       
+                        
+                    ])->columns(1),
+
+                Section::make('Media')
+                    ->schema([
+                        ImageEntry::make('dokumentasi_id.img1')
+                            ->label('Image 1')
+                            ->disk('public')      // uses /storage URLs
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->dokumentasi_id?->img1)),
+
+                        ImageEntry::make('dokumentasi_id.img2')
+                            ->label('Image 2')
+                            ->disk('public')
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->dokumentasi_id?->img2)),
+
+                        ImageEntry::make('dokumentasi_id.img3')
+                            ->label('Image 3')
+                            ->disk('public')
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->dokumentasi_id?->img3)),
+
+                        TextEntry::make('dokumentasi_id.video')
+                            ->label('Video')
+                            ->url(fn ($record) => $record->dokumentasi_id?->video
+                                ? asset('storage/'.$record->dokumentasi_id->video)
+                                : null)
+                            ->openUrlInNewTab()
+                            ->visible(fn ($record) => filled($record->dokumentasi_id?->video)),
+                    ])->columns(3),
+            ]);
     }
 }

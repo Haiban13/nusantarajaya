@@ -12,12 +12,17 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ImageEntry;
 
 class ArtikelResource extends Resource
 {
     protected static ?string $model = Artikel::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
@@ -26,10 +31,7 @@ class ArtikelResource extends Resource
                 Forms\Components\TextInput::make('judul')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('tanggal_mulai')
-                    ->required(),
-                Forms\Components\DatePicker::make('tanggal_akhir')
-                    ->required(),
+               
              
                 Forms\Components\Hidden::make('img'),
                 Forms\Components\Hidden::make('owner'),
@@ -47,7 +49,7 @@ class ArtikelResource extends Resource
                     ->directory('images')
                     ->maxSize(2048)
                     ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
+                    ->visibility('public')->multiple(false),
 
                 Forms\Components\FileUpload::make('upload_img3')
                     ->label('Image 3')
@@ -55,15 +57,18 @@ class ArtikelResource extends Resource
                     ->directory('images')
                     ->maxSize(2048)
                     ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
-
-                Forms\Components\FileUpload::make('upload_video')
-                    ->label('Video')
-                    ->directory('videos')
-                    ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
-                    ->maxSize(10240) // 10MB
-                    ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
+                    ->visibility('public')->multiple(false),
+                Forms\Components\TextInput::make('youtube_url')
+                    ->label('YouTube Video URL')
+                    ->placeholder('https://www.youtube.com/watch?v=XXXXXX')
+                    ->maxLength(255)
+                    ->nullable()
+                    ->prefixIcon('heroicon-o-video-camera')
+                    ->rules([
+                        'nullable',
+                        'regex:/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=)?[A-Za-z0-9_\-]{11}$/'
+                    ])->helperText('Paste a valid YouTube video URL, e.g. https://www.youtube.com/watch?v=xxxxxxx'),
+ 
 
             
                 Forms\Components\Textarea::make('des_singkat')
@@ -83,6 +88,11 @@ class ArtikelResource extends Resource
                 Tables\Columns\TextColumn::make('tanggal_mulai')
                     ->date()
                     ->sortable(),
+                 Tables\Columns\TextColumn::make('approval_status') // unique name
+                ->label('Approval Status')
+                ->getStateUsing(fn ($record) => $record->approval?->approve ? 'Approved' : 'Pending')
+                ->badge()
+                ->color(fn ($state) => $state === 'Approved' ? 'success' : 'warning'),
                 Tables\Columns\TextColumn::make('tanggal_akhir')
                     ->date()
                     ->sortable(),
@@ -100,11 +110,21 @@ class ArtikelResource extends Resource
 
                 // Show video as a clickable link
                 Tables\Columns\TextColumn::make('images.video')
-                    ->label('Video')
-                    ->url(fn ($record) => $record->images?->video ? asset('storage/' . $record->images->video) : null)
-                    ->openUrlInNewTab(),
-  
-           
+                    ->label('Video'),
+                Tables\Columns\ToggleColumn::make('approval.approve')
+                    ->label('Approved')->visible(fn () => auth()->user()->hasAnyRole(['admin', 'super_admin']))
+                    ->disabled(fn () => ! auth()->user()->hasAnyRole(['admin', 'super_admin']))
+                    ->updateStateUsing(function ($record, $state) {
+                        if (! auth()->user()->hasAnyRole(['admin', 'super_admin'])) {
+                            return; // ❌ Prevent normal users from changing it
+                        }
+
+                        $record->approval()->update([
+                            'approve'     => $state,
+                            'approved_by' => $state ? Auth::user()->id : null,
+                        ]);
+                    }),
+                    
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -134,12 +154,88 @@ class ArtikelResource extends Resource
         ];
     }
 
+        public static function getEloquentQuery(): Builder
+    {
+        $user = auth()->user();
+
+        // If user is admin, show all data
+        if ($user->hasRole('admin') || $user->hasRole('super_admin')) { // If you’re using spatie/laravel-permission
+            return parent::getEloquentQuery();
+        }
+
+        // Otherwise, only show the data created by this user
+        return parent::getEloquentQuery()->where('owner', $user->id);
+    }
+  
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListArtikels::route('/'),
             'create' => Pages\CreateArtikel::route('/create'),
             'edit' => Pages\EditArtikel::route('/{record}/edit'),
+             'view' => Pages\ViewArtikel::route('/{record}'), // ✅ add this
+       
         ];
+    }
+
+    public static function canEdit($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
+
+    public static function canDelete($record): bool
+    {
+        return $record->owner === auth()->id();
+    }
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Artikel')
+                    ->schema([
+                        TextEntry::make('judul')->label('Judul'),
+                
+                        TextEntry::make('approval.approve')
+                            ->label('Approval')
+                            ->badge()
+                            ->formatStateUsing(fn ($state) => $state ? 'Approved' : 'Pending')
+                            ->color(fn ($state) => $state ? 'success' : 'warning'),
+                    ])->columns(2),
+                Section::make('Isi Artikel')
+                    ->schema([
+                        TextEntry::make('des_singkat')->label('deskripsi singkat'),
+                        TextEntry::make('detail_acara')->label('content'),
+                        
+                    ])->columns(1),
+
+                Section::make('Media')
+                    ->schema([
+                        ImageEntry::make('images.img1')
+                            ->label('Image 1')
+                            ->disk('public')      // uses /storage URLs
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->images?->img1)),
+
+                        ImageEntry::make('images.img2')
+                            ->label('Image 2')
+                            ->disk('public')
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->images?->img2)),
+
+                        ImageEntry::make('images.img3')
+                            ->label('Image 3')
+                            ->disk('public')
+                            ->square()
+                            ->hidden(fn ($record) => blank($record->images?->img3)),
+
+                        TextEntry::make('images.video')
+                            ->label('Video')
+                            ->url(fn ($record) => $record->images?->video
+                                ? asset('storage/'.$record->images->video)
+                                : null)
+                            ->openUrlInNewTab()
+                            ->visible(fn ($record) => filled($record->images?->video)),
+                    ])->columns(3),
+            ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ArtikelResource\Pages;
 
 use App\Filament\Resources\ArtikelResource;
+use App\Models\Approval;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,7 @@ class EditArtikel extends EditRecord
     {
         return [
             Actions\DeleteAction::make(),
+            
         ];
     }
     protected function mutateFormDataBeforeFill(array $data): array
@@ -58,19 +60,33 @@ class EditArtikel extends EditRecord
                 $image->img3 = $data['upload_img3'];
             }
 
-            if (!empty($data['upload_video']) && $data['upload_video'] !== $image->video) {
-                if (!empty($image->video)) {
-                    Storage::disk('public')->delete($image->video);
-                }
-                $image->video = $data['upload_video'];
-            }
-
+          
             $image->save(); // 👈 updates database
         }
 
         unset($data['upload_img1'], $data['upload_img2'], $data['upload_img3'], $data['upload_video']);
 
         return $data;
+    }
+    protected function afterSave(): void
+    {
+        Approval::where('artikel_id', $this->record->id)
+            ->update([
+                'approve'     => 0,
+                'approved_by' => null,
+            ]);
+    }
+    public static function canEdit($record): bool
+    {
+        $user = auth()->user();
+
+        // Admin can edit anything
+        if ($user->hasRole('admin') || $user->hasRole('super_admin')) {
+            return true;
+        }
+
+        // User can only edit their own artikel
+        return $record->owner === $user->id;
     }
 
 }

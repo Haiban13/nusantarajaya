@@ -1,3 +1,5 @@
+ @include('components.navbar')
+
  <!-- Loading Screen -->
  <div id="loading-screen">
      <div id="loading-text">
@@ -19,12 +21,10 @@
 
      @include('components.go-top')
      <div data-aos="fade-up" data-aos-duration="500">
-         @include('components.chat-bot  ')
+         {{-- @include('components.chat-bot  ') --}}
      </div>
 
-
      <div class="w-full">
-         @include('components.navbar')
 
 
          <!-- =================================================================== -->
@@ -35,8 +35,8 @@
 
 
          {{-- tutorial --}}
-         <div class="lg:flex items-center gap-10 justify-center w-full hidden mt-[10%] md:px-[5%]">
-             <h1 class=" text-4xl font-bold  w-[20%]">Langkah Menjadi   <span class=" text-orange-600">
+         <div class="hidden lg:flex items-center gap-10 justify-center w-full  mt-[10%] md:px-[5%]">
+             <h1 class=" text-4xl font-bold  w-[20%]">Langkah Menjadi <span class=" text-orange-600">
                      Event Orginize</span></h1>
              <div>
                  <div class="relative">
@@ -61,8 +61,7 @@
                          </svg>
                          <div class=" text-left ">
                              <h3 class=" text-xl font-bold">1. Daftar Anggota</h3>
-                             <p ><a href=""> <span
-                                         class="hover:cursor-pointer text-orange-600 font-bold"> Hubungi
+                             <p><a href=""> <span class="hover:cursor-pointer text-orange-600 font-bold"> Hubungi
                                          Admin</span></a> untuk melakukan ferivikasi data</p>
                          </div>
                      </div>
@@ -74,7 +73,7 @@
                          </svg>
                          <div class=" text-left">
                              <h3 class=" text-xl font-bold">2. Masuk Ke Dashboard Admin</h3>
-                             <p >setelah di acc oleh admin login akun</p>
+                             <p>setelah di acc oleh admin login akun</p>
                          </div>
                      </div>
                      <div class=" text-center px-10 flex items-center gap-3" data-aos="fade-up"
@@ -85,7 +84,7 @@
                          </svg>
                          <div class=" text-left">
                              <h3 class=" text-xl font-bold">3. Masuk Ke Halaman Event</h3>
-                             <p >Tambah Acara dan isi semua form </p>
+                             <p>Tambah Acara dan isi semua form </p>
                          </div>
                      </div>
                  </div>
@@ -95,13 +94,15 @@
          <!-- =================================================================== -->
          <!-- about website -->
          <!-- =================================================================== -->
-         <div class=" grid grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%]">
+         <div class=" grid lg:grid-cols-2 gap-16 items-center px-[10%] mx-auto  mt-[10%] relative z-[4]">
              <img data-aos="fade-up" data-aos-duration="1200" src="assets/3d2.png" class="px-10 order-2" alt="">
 
              <div data-aos="fade-up" data-aos-duration="1500">
                  {{-- line --}}
                  <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
-                 <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 merriweather">Tentang Budaya Nusantara</h2>
+                 <h2 class="text-3xl lg:text-5xl font-bold text-gradasi text-gray-800 mb-2 merriweather">Tentang Budaya
+                     Nusantara
+                 </h2>
                  <p class="mt-5 md:text-xl">Budaya Sat Set adalah platform digital edukasi budaya Nusantara yang
                      menyajikan
                      konten seputar adat,
@@ -120,11 +121,12 @@
          <!-- "Warisan Budaya" (Cultural Heritage) Section -->
          <!-- =================================================================== -->
          {{-- batik efek bg --}}
-         <img class="absolute right-0 w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
+         <img class="absolute right-0 w-[400px] lg:w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
          <section class="container mt-[10%] mx-auto px-6 py-16 relative z-[4]">
              <div data-aos="fade-up" data-aos-duration="500">
-                 <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-5 merriweather">Ragam Budaya</h2>
+                 <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-5 merriweather text-gradasi">Ragam Budaya
+                 </h2>
                  <p class="w-full md:w-[70%] md:text-xl">Warisan budaya adalah peninggalan berharga dari generasi
                      sebelumnya
                      berupa nilai,
@@ -211,78 +213,107 @@
          <section class="container mx-auto px-6 py-16 mt-[10%]" data-aos="fade-up" data-aos-duration="500">
              <div class="flex items-center justify-between">
                  <div>
-                     <h2 class="text-3xl lg:text-5xl  font-bold text-gray-800 mb-2 merriweather">Acara Terbaru</h2>
-                     <p class="text-gray-500 mb-8 hidden md:block md:text-xl">Jangan lewatkan acara-acara budaya paling
+                     <h2 class="text-3xl lg:text-5xl  font-bold text-gray-800 mb-2 merriweather text-gradasi">Acara
+                         Terbaru</h2>
+                     <p class="hidden lg:block text-gray-500 mb-8   md:text-xl">Jangan lewatkan acara-acara budaya paling
                          menarik
                          yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya
-                     <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
-                         viewBox="0 0 16 16">
-                         <path fill="currentColor"
-                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
-                     </svg></button>
+                 <a href="{{ route('acara.index') }}">
+
+                     <button class="btn-line flex items-center gap-2"><span class=" hidden lg:block">Lihat </span>
+                         Lainnya
+                         <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                             viewBox="0 0 16 16">
+                             <path fill="currentColor"
+                                 d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                         </svg></button>
+                 </a>
              </div>
-             <div class="grid   grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-8">
-                 @for ($i = 0; $i < 5; $i++)
+             <div class="grid   grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-8">
+                 @foreach ($data_acara as $acara)
                      @include('components.card-acara')
-                 @endfor
+                 @endforeach
              </div>
          </section>
 
          {{-- batik efek bg --}}
-         <img class="absolute w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
+         <img class="absolute w-[400px] lg:w-[600px] opacity-60 z-[1]" src="assets/batik2.png" alt="">
 
          <section class="container mx-auto px-6 py-16 mt-[10%] relative z-[4]" data-aos="fade-up"
              data-aos-duration="500">
              <div class="flex items-center justify-between">
                  <div>
-                     <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 merriweather">Berita Terkini</h2>
-                     <p class="text-gray-500 mb-8 md:block hidden md:text-xl">Jangan lewatkan acara-acara budaya paling
+                     <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 merriweather text-gradasi">Berita
+                         Terkini</h2>
+                     <p class="text-gray-500 mb-8  hidden lg:block  md:text-xl">Jangan lewatkan acara-acara budaya paling
                          menarik
                          yang akan datang.
                      </p>
                  </div>
-                 <button class="btn-line flex items-center gap-2"><span class="hidden md:block">Lihat </span> Lainnya
-                     <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
-                         viewBox="0 0 16 16">
-                         <path fill="currentColor"
-                             d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
-                     </svg></button>
+                 <a href="{{ route('artikel.index') }}">
+                     <button class="btn-line flex items-center gap-2"><span class=" hidden lg:block">Lihat </span>
+                         Lainnya
+                         <svg class=" rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                             viewBox="0 0 16 16">
+                             <path fill="currentColor"
+                                 d="M10.843 13.069L6.232 8.384a.546.546 0 0 1 0-.768l4.61-4.685a.55.55 0 0 0 0-.771a.53.53 0 0 0-.759 0l-4.61 4.684a1.65 1.65 0 0 0 0 2.312l4.61 4.684a.53.53 0 0 0 .76 0a.55.55 0 0 0 0-.771" />
+                         </svg></button>
+                 </a>
+
              </div>
-             <div class="lg:flex gap-5 justify-between">
-                 <div class="grid lg:grid-cols-2 lg:w-[70%]   gap-10">
-                     @for ($i = 0; $i < 5; $i++)
+             <div class="lg:flex gap-5 justify-between  ">
+                 <div class="grid lg:grid-cols-2 lg:w-[70%]   gap-2">
+                     @foreach ($data_artikel as $artikel)
                          @include('components.card-artikel3')
-                     @endfor
+                     @endforeach
                  </div>
-                 <div class=" hidden lg:block bg-zinc-100 px-10 py-10 w-[30%] rounded-3xl">
+                 <div class=" hidden lg:block   bg-orange-100 px-10 py-10 w-[30%] rounded-3xl">
                      <div class="flex justify-between items-center">
-                         <h1 class=" text-xl font-bold">Penguna Ter-Aktif</h1>
-                         <button class=" text-orange-700">
+                         <h1 class=" text-xl font-semmibold">Selamat Bergabung</h1>
+                         {{-- <button class=" text-orange-700">
                              Lainnya
-                         </button>
+                         </button> --}}
                      </div>
                      {{-- card populer --}}
-                     @for ($i = 0; $i < 4; $i++)
+                     @foreach ($top_user as $top)
                          <div class="flex  items-center my-5 gap-5" data-aos="fade-up" data-aos-duration="500">
-                             <div class="bg-cover bg-center w-[55px] h-[55px] rounded-full bg-zinc-400"
+                             <div class="bg-cover bg-center w-[55px] h-[55px] rounded-full bg-orange-400"
                                  style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D')">
                              </div>
                              <div>
-                                 <h1 class="flex items-center text-xl gap-2">Hafiz Alwan Susilo <span><svg
-                                             class="text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24"
-                                             height="24" viewBox="0 0 24 24">
-                                             <path fill="currentColor"
-                                                 d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z" />
-                                         </svg></span></h1>
+                                 <h1 class="flex items-center text-base lg:text-xl gap-2">
+                                     {{ $top->name }}
+
+                                     @if (Str::contains($top->name, ['Kabupaten', 'Provinsi']))
+                                         <span>
+                                             <svg class="text-blue-500" xmlns="http://www.w3.org/2000/svg"
+                                                 width="24" height="24" viewBox="0 0 24 24">
+                                                 <path fill="currentColor"
+                                                     d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z" />
+                                             </svg>
+                                         </span>
+                                     @endif
+                                 </h1>
                                  {{-- keterangan --}}
-                                 <p class=" text-orange-600 font-medium">Dinas Kebudayaan Purwokerto</p>
-                                 {{-- <p>User Silver</p> --}}
+                                 @if (empty($top))
+                                     @if (Str::contains($top->name, ['Kota', 'Kabupaten']))
+                                         <p class="text-orange-600 font-medium">Kementrian</p>
+                                     @else
+                                         <p class="text-orange-600 font-medium">Masyarakat Umum</p>
+                                     @endif
+                                 @else
+                                     @if (Str::contains($top->name, ['Kota', 'Kabupaten']))
+                                         <p class="text-orange-600 font-medium">Kementrian</p>
+                                     @else
+                                         <p class="text-orange-600 font-medium">Masyarakat Umum</p>
+                                     @endif
+                                 @endif
+                          
                              </div>
                          </div>
-                     @endfor
+                     @endforeach
                  </div>
              </div>
          </section>
@@ -294,33 +325,42 @@
          <!-- CTA (Call to Action) Section -->
          <!-- =================================================================== -->
          <div
-             class="w-[90%] lg:w-[80%]  mx-auto  grid md:grid-cols-2 row rounded-3xl bg-zinc-900  px-[5%] py-7 items-center text-zinc-50">
+             class="w-[90%] lg:w-[80%]  mx-auto relative z-10  grid md:grid-cols-2 row rounded-3xl bg-zinc-900  px-[5%] py-7 items-center text-orange-50">
              <div class="order-2 md:order-1">
                  {{-- line --}}
-                 <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
+                 <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px] shadow-orange-500/50 shadow-lg"></div>
                  <h1 class="text-xl lg:text-4xl leading-snug font-semibold">
                      Temukan pesona budaya lokal yang kaya dan jadilah bagian dari pelestarian warisan Indonesia.
                  </h1>
                  <div class="flex items-center gap-3 mt-5  ">
-                     <button class="btn-line flex items-center gap-3"><span class="hidden md:block">Lihat
-                         </span>Berita Terkini <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                             viewBox="0 0 512 512">
-                             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
-                                 d="M368 415.86V72a24.07 24.07 0 0 0-24-24H72a24.07 24.07 0 0 0-24 24v352a40.12 40.12 0 0 0 40 40h328" />
-                             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"
-                                 d="M416 464a48 48 0 0 1-48-48V128h72a24 24 0 0 1 24 24v264a48 48 0 0 1-48 48Z" />
-                             <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                 stroke-linejoin="round" stroke-width="32"
-                                 d="M240 128h64m-64 64h64m-192 64h192m-192 64h192m-192 64h192" />
-                             <path fill="currentColor"
-                                 d="M176 208h-64a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v64a16 16 0 0 1-16 16" />
-                         </svg></button>
+                     <a href="{{ route('artikel.index') }}">
+
+                         <button class="btn-bg shadow-orange-500/50 shadow-lg flex items-center gap-3"><span
+                                 class=" block">Lihat
+                             </span>Berita Terkini <svg xmlns="http://www.w3.org/2000/svg" width="22"
+                                 height="22" viewBox="0 0 512 512">
+                                 <path fill="none" stroke="currentColor" stroke-linejoin="round"
+                                     stroke-width="32"
+                                     d="M368 415.86V72a24.07 24.07 0 0 0-24-24H72a24.07 24.07 0 0 0-24 24v352a40.12 40.12 0 0 0 40 40h328" />
+                                 <path fill="none" stroke="currentColor" stroke-linejoin="round"
+                                     stroke-width="32"
+                                     d="M416 464a48 48 0 0 1-48-48V128h72a24 24 0 0 1 24 24v264a48 48 0 0 1-48 48Z" />
+                                 <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                     stroke-linejoin="round" stroke-width="32"
+                                     d="M240 128h64m-64 64h64m-192 64h192m-192 64h192m-192 64h192" />
+                                 <path fill="currentColor"
+                                     d="M176 208h-64a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v64a16 16 0 0 1-16 16" />
+                             </svg></button>
+                     </a>
+
                  </div>
              </div>
 
              <div class="flex justify-end order-1 md:order-2 relative">
                  <img src="/assets/karakter2.png" class="w-[50%] relative z-10" alt="">
-                     <div class="blob w-[400px] opacity-30 bg-orange-700 absolute h-[400px]" ></div>
+                 <div
+                     class="blob hidden sm:block sm:h-[220px] sm:w-[220px] md:h-[200px] md:w-[200px] lg:h-[200px] lg:w-[200px]    opacity-30 bg-orange-700 absolute ">
+                 </div>
 
              </div>
          </div>
@@ -334,15 +374,19 @@
              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                  <!-- Illustration -->
                  <div class="flex justify-center relative" data-aos="fade-up" data-aos-duration="1000">
-                     <img src="/assets/karakter.png" alt="Character Illustration" class="relative z-10 max-w-xs md:max-w-sm">
-                     <div class="blob w-[600px] opacity-10 bg-orange-600 absolute h-[600px]" ></div>
+                     <img src="/assets/karakter.png" alt="Character Illustration"
+                         class="relative z-10 max-w-xs md:max-w-sm">
+                     <div
+                         class="blob ww-[400px] lg:w-[600px] opacity-10 bg-orange-600 absolute h-[400px] lg:h-[600px]">
+                     </div>
                  </div>
                  <!-- Feature List -->
                  <div class="space-y-8">
                      <div data-aos="fade-up" data-aos-duration="500">
                          {{-- line --}}
-                         <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px]"></div>
-                         <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 merriweather">Kenapa
+                         <div class="h-[5px] mb-4 rounded-full bg-orange-600 w-[130px] shadow-orange-500/50 shadow-lg">
+                         </div>
+                         <h2 class="text-3xl lg:text-5xl font-bold   mb-2 merriweather text-gradasi">Kenapa
                              Memilih Kami?</h2>
                          <p class="md:text-xl">Kami dipilih karena mengutamakan kualitas, kecepatan layanan, dan
                              komitmen menghadirkan
@@ -401,13 +445,63 @@
              </div>
          </section>
 
-
-
      </div>
-
-     @include('components.footer')
-     @include('layouts.footer')
-
-
-
  </div>
+
+
+
+ @include('components.chat-bot  ')
+
+ {{-- animasi scroll --}}
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+     AOS.init();
+ </script>
+ <script>
+     // loading screen
+     // Simulasi waktu loading (misalnya 3 detik)
+     window.addEventListener('load', () => {
+         setTimeout(() => {
+             const loadingScreen = document.getElementById('loading-screen');
+             const mainContent = document.getElementById('main-content');
+
+             // Tambah class hide untuk animasi keluar
+             loadingScreen.classList.add('hide');
+
+             // Tampilkan konten setelah animasi selesai
+             setTimeout(() => {
+                 loadingScreen.style.display = 'none';
+                 document.body.classList.add('loaded');
+                 mainContent.style.display = 'block';
+             }, 800); // sesuai durasi animasi CSS
+         }, 4000); // durasi loading
+         // }, 3000); // durasi loading
+     });
+
+
+
+     // counterP
+     document.addEventListener("DOMContentLoaded", () => {
+         const counters = document.querySelectorAll('.counter');
+
+         counters.forEach(counter => {
+             let target = parseInt(counter.getAttribute('data-target'));
+             counter.textContent = "0"; // mulai dari 0
+             let duration = 3000; // durasi total animasi (ms)
+             let startTime = null;
+
+             function updateCount(currentTime) {
+                 if (!startTime) startTime = currentTime;
+                 let progress = Math.min((currentTime - startTime) / duration, 1);
+                 counter.textContent = Math.floor(progress * target);
+                 if (progress < 1) {
+                     requestAnimationFrame(updateCount);
+                 }
+             }
+
+             requestAnimationFrame(updateCount);
+         });
+     });
+ </script>
+ @include('components.footer')
+ @include('layouts.footer')

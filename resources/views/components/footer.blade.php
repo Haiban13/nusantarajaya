@@ -1,10 +1,10 @@
-<footer class="bg-zinc-900 text-white mt-[10%] relative z-[55]">
+<footer class="bg-zinc-900 text-white mt-[10%] relative z-[5]">
     {{-- <img src="/assets/hbatik2.png" class="w-full scale-200 opacity-30" alt=""> --}}
     <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- About -->
             <div class="col-span-1 md:col-span-2 lg:col-span-1">
-                <h3 class="text-2xl font-bold mb-4">Budaya.</h3>
+                <img src="assets/logo.png" alt="">
                 <p class=" text-zinc-300">Platform digital untuk menjelajahi dan melestarikan kekayaan budaya
                     Indonesia.</p>
             </div>
@@ -12,35 +12,53 @@
             <div>
                 <h4 class="font-semibold text-lg mb-4">Fitur</h4>
                 <ul class="space-y-2  text-zinc-300">
-                    <li><a href="#" class="hover:text-white">Acara</a></li>
-                    <li><a href="#" class="hover:text-white">Warisan</a></li>
-                    <li><a href="#" class="hover:text-white">Galeri</a></li>
-                    <li><a href="#" class="hover:text-white">Blog</a></li>
+                    <li><a href="{{ route('index') }}" class="hover:text-white">Beranda</a></li>
+                    <li><a href="{{ route('acara.index') }}" class="hover:text-white">Acara</a></li>
+                    <li><a href="{{ route('artikel.index') }}" class="hover:text-white">Berita</a></li>
+                    <li><a href="{{ route('gallery.index') }}" class="hover:text-white">Galeri</a></li>
                 </ul>
             </div>
             <!-- Resources -->
             <div>
                 <h4 class="font-semibold text-lg mb-4">Resources</h4>
                 <ul class="space-y-2  text-zinc-300">
-                    <li><a href="#" class="hover:text-white">Pusat Bantuan</a></li>
-                    <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
-                    <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
+                    <li>
+                        <a href="{{ route('syarat') }}" class="hover:text-white">Pusat Bantuan</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('privasi') }}" class="hover:text-white">Kebijakan Privasi</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('bantuan') }}" class="hover:text-white">Syarat & Ketentuan</a>
+                    </li>
                 </ul>
             </div>
             <!-- Contact -->
             <div>
-                <h4 class="font-semibold text-lg mb-4">Kontak</h4>
-                <ul class="space-y-2  text-zinc-300">
-                    <li><a href="mailto:info@budaya.com" class="hover:text-white">info@budaya.com</a></li>
-                    <li>
-                        <p>Jl. Budaya No. 123, Jakarta</p>
-                    </li>
-                </ul>
+                <h2 class=" mt-5 font-semibold text-lg mb-4">Dukung Kami</h2>
+                <div class="flex gap-3 items-center ">
+                    <a target="_blank" href="https://www.instagram.com/zzls__/"
+                        class="hover:text-pink-700 duration-400 cursor-pointer hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                        </svg>
+                    </a>
+                    <a target="_blank" href="http://instagram.com/haiskuy13/"
+                        class="hover:text-pink-700 duration-400 cursor-pointer hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                        </svg>
+                    </a>
+
+                </div>
             </div>
         </div>
     </div>
 
-    <div class=" bg-orange-800 h-[100px] w-full py-3 lg:py-10 flex flex-col sm:flex-row justify-between items-center px-[10%]">
+    <div
+        class=" bg-orange-800 h-[100px] w-full py-3 lg:py-10 flex flex-col sm:flex-row justify-between items-center px-[10%]">
         <p class=" text-zinc-50 text-sm">&copy; {{ date('Y') }} Budaya. All rights reserved.</p>
         <div class=" space-x-4 mt-4 sm:mt-0 hidden md:flex">
             <!-- Social Icons -->

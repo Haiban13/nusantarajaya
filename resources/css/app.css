@@ -1,5 +1,5 @@
 @import "tailwindcss";
- 
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -50,7 +50,8 @@ h4 {
     font-size: 1.7rem;
 }
 p {
-    opacity: 80%;
+    opacity: 90%;
+    color: #bd813e;
 }
 .img-projek {
     background-position: center;
@@ -62,12 +63,12 @@ button {
     padding: 12px 50px;
 }
 
-nav {
-    background: rgba(55, 55, 55, 0.164); /* transparan agar blur terlihat */
-    backdrop-filter: blur(10px); /* efek blur */
-    -webkit-backdrop-filter: blur(10px); /* untuk Safari */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* garis tipis */
-}
+/* nav { */
+/* background: rgba(55, 55, 55, 0.164); transparan agar blur terlihat */
+/* backdrop-filter: blur(10px); efek blur */
+/* -webkit-backdrop-filter: blur(10px); untuk Safari */
+/* border-bottom: 1px solid rgba(255, 255, 255, 0.3); garis tipis */
+/* } */
 /* Tombol garis dengan gradasi border */
 
 /* Tombol garis biasa */
@@ -82,13 +83,13 @@ nav {
 
 .btn-white:hover {
     background-color: rgba(192, 192, 192, 0.395);
-    border-color: rgb(175, 97, 7);
+    border-color: rgb(255, 136, 1);
     cursor: pointer;
 }
 .btn-line {
-    color: rgb(175, 91, 7);
-    padding: 8px 50px;
-    border: 3px solid rgb(175, 88, 7);
+    color: rgb(178, 89, 0);
+    padding: 4px 50px;
+    border: 3px solid rgb(204, 99, 0);
     border-radius: 3rem;
     background-color: transparent;
     transition: all 0.3s ease;
@@ -132,6 +133,37 @@ nav {
     -ms-transform: scale(1.02);
     -o-transform: scale(1.02);
 }
+
+
+/* Responsif */
+
+/* 📱 HP: padding kecil */
+@media (max-width: 639px) {
+    .btn-line,
+    .btn-bg {
+        padding: 8px 10px;
+        font-size: 0.875rem; /* text-sm */
+    }
+}
+
+/* 📱 Tablet: padding sedang */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .btn-line,
+    .btn-bg {
+        padding: 10px 36px;
+        font-size: 1rem; /* text-base */
+    }
+}
+
+/* 💻 Laptop/Desktop: padding besar */
+@media (min-width: 1024px) {
+    .btn-line,
+    .btn-bg {
+        padding: 12px 50px;
+        font-size: 1.125rem; /* text-lg */
+    }
+}
+/* animasi */
 
 .slide-bottom {
     -webkit-animation: slide-bottom 1.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
@@ -236,9 +268,9 @@ nav {
 }
 
 .text-focus-in {
-    -webkit-animation: text-focus-in 2.4s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    -webkit-animation: text-focus-in 5.54s cubic-bezier(0.55, 0.085, 0.68, 0.53)
         both;
-    animation: text-focus-in 2.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: text-focus-in 5.54s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @-webkit-keyframes text-focus-in {
@@ -325,6 +357,15 @@ nav {
     background: #b30000;
 }
 
+::-webkit-scrollbar:horizontal {
+    height: 1px; /* tinggi untuk scrollbar horizontal */
+}
+
+::-webkit-scrollbar:horizontal-thumb {
+    background-color: gray; /* warna scroll */
+    border-radius: 1px;
+}
+
 /* font */
 
 .merriweather {
@@ -391,6 +432,7 @@ nav {
     cursor: grab;
 }
 
+/*  */
 @media (max-width: 768px) {
     .scroll-wrapper {
         height: 64px;
@@ -483,4 +525,37 @@ nav {
         curve to 40.61% 93.88% with 45.27% 97.11%,
         curve to 31.67% 88.13% with 35.95% 90.65%
     );
+}
+
+/* games */
+.popup-kuis {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #3498db;
+    padding: 30px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.popup-kuis-content {
+    text-align: center;
+}
+ 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }

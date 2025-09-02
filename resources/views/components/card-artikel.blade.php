@@ -1,5 +1,5 @@
 {{-- <div class="flex gap-5"> --}}
-<div class=" flex md:block hover:bg-zinc-100 duration-200 hover:scale-105 hover:cursor-pointer"> 
+{{-- <div class=" flex md:block hover:bg-zinc-100 duration-200 hover:scale-105 hover:cursor-pointer"> 
 
     <div class="bg-zinc-400 rounded-2xl w-[100%] h-[230px]"></div>
     <div>
@@ -17,4 +17,4 @@
                 recusandae rem quam fugit facilis dolores molestias at eaque molestiae id dolore vel eligendi fuga
                 accusamus rerum possimus voluptatum..</p>
         </div>
-    </div>
+    </div> --}}

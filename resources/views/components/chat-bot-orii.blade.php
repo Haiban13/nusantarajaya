@@ -1,3 +1,4 @@
+<flowise-fullchatbot></flowise-fullchatbot>
 <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
@@ -18,15 +19,15 @@
                 dragAndDrop: true,
                 iconColor: 'white',
                 customIconSrc: 'assets/karakter.png',
-                // autoWindowOpen: {
-                //     autoOpen: true,
-                //     openDelay: 2,
-                //     autoOpenOnMobile: false
-                // }
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
             },
             tooltip: {
                 showTooltip: true,
-                tooltipMessage: 'Hi There 👋!',
+                tooltipMessage: 'Haii Pintar 👋!',
                 tooltipBackgroundColor: 'black',
                 tooltipTextColor: 'white',
                 tooltipFontSize: 16
@@ -34,7 +35,7 @@
             disclaimer: {
                 title: 'Disclaimer',
                 message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
-                   textColor: 'black',
+                textColor: 'black',
                 buttonColor: '#d96f18',
                 buttonText: 'Start Chatting',
                 buttonTextColor: 'white',
@@ -56,7 +57,8 @@
                 fontSize: 16,
                 starterPrompts: [
                     "What is a bot?",
-                    "Who are you?"
+                    // "Apa itu Budaya Sat Set?",
+                    "Hubungi Admin?"
                 ],
                 starterPromptFontSize: 15,
                 clearChatOnReload: false,
@@ -69,16 +71,16 @@
                     avatarSrc: 'assets/karakter.png'
                 },
                 userMessage: {
-                    backgroundColor: '#3B81F6',
+                    backgroundColor: '#d96f18',
                     textColor: '#ffffff',
                     showAvatar: true,
                     avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
                 },
                 textInput: {
-                    placeholder: 'Type your question',
+                    placeholder: 'Masukan Pertanyaan',
                     backgroundColor: '#ffffff',
                     textColor: '#303235',
-                    sendButtonColor: '#3B81F6',
+                    sendButtonColor: '#d96f18',
                     maxChars: 50,
                     maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
                     autoFocus: true,
@@ -95,9 +97,9 @@
                     time: true
                 },
                 footer: {
-                    textColor: '#303235',
+                    textColor: '#d96f18',
                     text: 'Powered by',
-                    company: 'Flowise',
+                    company: 'Budaya Sat Set',
                     companyLink: 'https://flowiseai.com'
                 }
             }

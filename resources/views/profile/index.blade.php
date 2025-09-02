@@ -4,10 +4,10 @@
  @include('components.navbar')
  <div class="lg:flex items-center gap-10">
      <div class="flex items-center text-center justify-center konten pt-[10%] w-[30%]">
-         <div class="  bg-orange-50 rounded-2xl h-full  ">
+         <div class="  bg-zinc-50 rounded-2xl h-full  ">
              <div>
                  <div class="flex items-center justify-center w-full">
-                     <div class="bg-orange-400 w-[111px] h-[111px]  rounded-full"></div>
+                     <div class="bg-zinc-400 w-[111px] h-[111px]  rounded-full"></div>
                  </div>
                  <h2 class=" text-3xl mt-5 font-bold">Haiban Aufar</h2>
                  <p class=" text-orange-600 text-sm lg:text-xl mt-2 lg:my-3">Dinas Kebudayaan Purbalingga</p>
@@ -36,7 +36,7 @@
      </div>
      {{-- konten --}}
      <div class="px-[5%] lg:pt-[10%] ">
-        
+
          <div class="grid grid-cols-3 gap-2 lg:gap-10 text-center mt-[2%] px-[10%] w-full h-full">
              <button onclick="showArtikel()"
                  class="font-bold text-center hover:text-orange-600 text-sm lg:text-2xl w-full">Berita</button>
@@ -50,29 +50,19 @@
              <div class="w-full h-[3px] rounded-full bg-zinc-200 my-3 lg:my-10 "></div>
              {{-- artikel --}}
              <div id="konten-artikel" class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                 @foreach ($artikels as $artikel)
-                     @include('components.card-artikel2')
+
+                 @foreach ($data_artikel as $artikel)
+                     @include('components.card-artikel2', ['artikel' => $artikel])
                  @endforeach
+
              </div>
              {{-- acaara --}}
              <div id="konten-acara" class="grid grid-cols-2 lg:grid-cols-4 gap-3 hidden">
-                @foreach ($acaras as $acara)
+                 @foreach ($data_acara as $acara)
                      @include('components.card-acara')
                  @endforeach
+
              </div>
-
-             {{-- artikel --}}
-             {{-- <div id="konten-artikel" class="grid grid-cols-2 lg:grid-cols-4 gap-3"> --}}
-                 {{-- @foreach ($data_acara as $artikel) --}}
-                     {{-- @include('components.card-artikel2') --}}
-                 {{-- @endforeach --}}
-             {{-- </div> --}}
-             {{-- <div id="konten-acara" class="grid grid-cols-2 lg:grid-cols-4 gap-3 hidden"> --}}
-                 {{-- @foreach ($data_acara as $acara) --}}
-                     {{-- @include('components.card-acara') --}}
-                 {{-- @endforeach --}}
-             {{-- </div> --}}
-
              {{-- acaara --}}
              <div id="konten-tersimpan" class="grid grid-cols-2 lg:grid-cols-4 gap-3 hidden min-h-[300px] w-full">
 

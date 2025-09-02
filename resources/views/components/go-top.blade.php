@@ -1,5 +1,5 @@
 <a href="#top">
-    <div class="px-4 py-4 rounded-full bg-orange-600  text-zinc-50 hover:bg-orange-700 duration-200 fixed right-9 lg:right-8.5 bottom-8 z-[66]"
+    <div class="px-4 py-4 rounded-full bg-orange-600 shadow-orange-500/80 shadow-lg text-zinc-50 hover:bg-orange-700 duration-200 fixed right-9 lg:right-8.5 bottom-8 z-[6999996]"
         data-aos="fade-up">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">

@@ -1,19 +1,25 @@
  <!-- Card 1 -->
- <a href="/acara/1">
+ <a href="{{ route('acara.show', $acara->id) }}">
      <div
-         class=" relative z-[4] rounded-2xl w-min-[300px] lg:w-min-[500px] shadow-lg hover:bg-zinc-100  hover:cursor-pointer overflow-hidden hover:scale-105 bg-zinc-50 duration-200">
+         class=" relative min-h-[290px]  lg:min-h-[390px] z-[4] card-bg rounded-2xl w-min-[300px] lg:w-min-[500px] shadow-lg hover:bg-orange-100  hover:cursor-pointer overflow-hidden hover:scale-105 bg-orange-50 duration-200">
          {{-- <img src="https://images.unsplash.com/photo-1587542989595-a273d445ca8d?q=80&w=1974&auto=format&fit=crop"
                     alt="Tari Kecak" class="w-full h-48 object-cover"> --}}
-         <div class="w-full h-[150px] lg:h-[200px] bg-zinc-50 bg-center bg-cover"
-             style="background-image: url('/assets/karapan.webp')"></div>
+         <div class="w-full h-[150px] lg:h-[200px] bg-orange-50 bg-center bg-cover"
+             style="background-image: url('{{ $acara->image && $acara->image->img1 ? asset('storage/' . $acara->image->img1) : asset('assets/default-image.jpg') }}')">
+         </div>
          {{-- status --}}
-         {{-- <div class="px-12 py-2 rounded-bl-3xl text-zinc-50 shadow-sm bg-green-500 absolute right-0 top-0">Free</div> --}}
-         <div
-             class="lg:px-12 px-8 text-xs lg:text-xl py-2 rounded-bl-3xl text-zinc-100 shadow-sm bg-red-500 absolute right-0 top-0">
-             Berbayar</div>
-         <div class="p-3 lg:p-6">
-             <p class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                     viewBox="0 0 16 16">
+         @if ($acara->htm > 0)
+             <div
+                 class="lg:px-12 px-8 text-xs lg:text-xl py-2 rounded-bl-3xl text-orange-100 shadow-sm bg-red-500 absolute right-0 top-0">
+                 Berbayar</div>
+         @else
+             <div
+                 class="px-12 py-2  text-xs lg:text-xl rounded-bl-3xl text-orange-50 shadow-sm bg-green-500 absolute right-0 top-0">
+                 Tanpa Biaya</div>
+         @endif
+         <div class="p-3 lg:p-6 ">
+             <p class="flex items-center line-clamp-1 gap-2"><svg class="min-w-[5px] md:w-[16px] max-w-[26px] w-full"
+                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                      <g fill="none">
                          <path fill="url(#fluentColorLocationRipple162)"
                              d="M14 12.5C14 14 11.314 15 8 15s-6-1-6-2.5S4.686 10 8 10s6 1 6 2.5" />
@@ -42,12 +48,12 @@
                          </defs>
                      </g>
                  </svg>
-                 Bali, Pulau Bali
+                 <span class=" line-clamp-1">
+                     {{ $acara->lokasi }}
+                 </span>
              </p>
-             <h3 class="font-bold text-xl mb-2">Tari Kecak</h3>
-             <p class="text-zinc-900/60 text-sm line-clamp-2">Lorem ipsum dolor sit, amet consectetur
-                 adipisicing elit. Molestias unde similique quia hic sed nostrum assumenda animi quas doloremque
-                 eius! At amet sunt enim, sequi ducimus exercitationem pariatur doloribus a?</p>
+             <h3 class="font-bold text-xl mb-2 line-clamp-2 h-[30px] md:h-[70px]">{{ $acara->judul }}</h3>
+             <p class="text-orange-900/60 text-sm line-clamp-2">{{ $acara->des_singkat }}</p>
          </div>
      </div>
  </a>

@@ -3,6 +3,11 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Resources\AcaraResource;
+use App\Filament\Resources\ProfileResource\Widgets\ProfileInfoWidget;
+use App\Filament\Resources\YesResource\Widgets\StatistikOverview;
+use App\Filament\Widgets\AcaraTerbaru;
+use App\Filament\Widgets\ArtikelBarChart;
+use App\Filament\Widgets\StatistikLineChart;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -40,9 +45,15 @@ class AdminPanelProvider extends PanelProvider
 
             ]) 
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([
+           ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+            ProfileInfoWidget::class,
+            // Widgets\FilamentInfoWidget::class,
+            StatistikOverview::class,
+            StatistikLineChart::class,
+            ArtikelBarChart::class,
+            // ArtikelTerbaru::class,
+            AcaraTerbaru::class,
             ])
             ->middleware([
                 EncryptCookies::class,

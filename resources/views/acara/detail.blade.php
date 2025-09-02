@@ -205,70 +205,91 @@
     <div class="bg-white rounded-lg p-6 w-[75%] shadow-lg relative ">
         <button onclick="closeModal()"
             class="absolute top-2 right-2 text-zinc-500 hover:text-black text-5xl">&times;</button>
-
-        <form action="" method="post" class=" text-zinc-950 relative lg:pb-16">
+        @if(auth()->check())
+        <form action="{{ route('laporkan.store') }}" 
+            method="POST" 
+            enctype="multipart/form-data" 
+            class="text-zinc-950 relative lg:pb-16">
+            @csrf
             <h2 class="text-3xl lg:text-4xl font-semibold mb-4">Laporkan Acara</h2>
-            <p class=" text-zinc-700 w-[60%] hidden lg:block">Laporkan masalah yang Anda temui selama acara agar kami
-                bisa segera menindaklanjuti dan meningkatkan kualitas pelayanan.
+            <p class="text-zinc-700 w-[60%] hidden lg:block">
+                Laporkan masalah yang Anda temui selama acara agar kami bisa segera menindaklanjuti dan meningkatkan kualitas pelayanan.
             </p>
+                 
+            <input type="hidden" name="acara_id" value="{{ $detail_acara->id }}">
+            <input type="hidden" name="tanggal" value="{{ now()->toDateString() }}">
+
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <div class="lg:mt-10">
-                        <label for="">Nama Pelapor</label>
-                        <input type="text" class="w-full bg-zinc-200 px-3 py-2" placeholder="Bang Toyip">
-                    </div>
+                    
+
                     <div class="mt-10">
-                        <form class="space-y-3">
-                            <p class="font-semibold text-red-600">Laporkan pelanggaran serius:</p>
-                            <div class="grid grid-cols-2 text-xs lg:text-base">
-
+                        <p class="font-semibold text-red-600">Pilih Jenis Keluhan:</p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 text-xs lg:text-base">
+                            @foreach(['Penipuan / Scam', 'Pungutan liar', 'Penyalahgunaan data', 'Konten tidak pantas', 'Kekerasan atau pelecehan'] as $item)
                                 <label class="flex items-center space-x-2">
-                                    <input type="checkbox" name="keluhan[]" value="Penipuan / Scam"
-                                        class="accent-red-600">
-                                    <span>Penipuan / Scam</span>
+                                    <input type="radio" name="jenis_keluhan" value="{{ $item }}" class="accent-red-600" required>
+                                    <span>{{ $item }}</span>
                                 </label>
+                            @endforeach
+                        </div>
+                    </div>
 
-                                <label class="flex items-center space-x-2">
-                                    <input type="checkbox" name="keluhan[]" value="Pungutan liar"
-                                        class="accent-red-600">
-                                    <span>Pungutan liar / Biaya tersembunyi</span>
-                                </label>
+                    <div class="mt-10">
+                        <label for="img1">Upload Bukti Gambar (Opsional)</label>
+                        <input type="file" name="img1" accept="image/*" class="block mt-2">
+                        <input type="file" name="img2" accept="image/*" class="block mt-2">
+                        <input type="file" name="img3" accept="image/*" class="block mt-2">
+                    </div>
 
-                                <label class="flex items-center space-x-2">
-                                    <input type="checkbox" name="keluhan[]" value="Penyalahgunaan data"
-                                        class="accent-red-600">
-                                    <span>Penyalahgunaan data pribadi</span>
-                                </label>
-
-                                <label class="flex items-center space-x-2">
-                                    <input type="checkbox" name="keluhan[]" value="Konten tidak pantas"
-                                        class="accent-red-600">
-                                    <span>Konten tidak pantas / hoaks / provokasi</span>
-                                </label>
-
-                                <label class="flex items-center space-x-2">
-                                    <input type="checkbox" name="keluhan[]" value="Kekerasan atau pelecehan"
-                                        class="accent-red-600">
-                                    <span>Kekerasan fisik / pelecehan</span>
-                                </label>
-                            </div>
-
-                        </form>
-
+                    <div class="mt-6">
+                        <label for="video">Upload Bukti Video (Opsional)</label>
+                        <input type="file" name="video" accept="video/*" class="block mt-2">
                     </div>
                 </div>
+
                 <div>
-                    <label for="">Ceritakan Kronologi :</label>
-                    <br>
-                    <textarea name="" id="" class="bg-zinc-200 w-full h-[100px] lg:h-[300px] "></textarea>
+                    <label for="keterangan">Ceritakan Kronologi :</label>
+                    <textarea name="keterangan" id="keterangan" class="bg-zinc-200 w-full h-[100px] lg:h-[300px]" required></textarea>
                 </div>
             </div>
-            <button class="btn-bg mt-10 absolute right-10 bottom-4" type="submit"> Kirim Laporan</button>
+
+            <button class="btn-bg mt-10 absolute right-10 bottom-4" type="submit">
+                Kirim Laporan
+            </button>
         </form>
+        @else
+        <div>login untuk laporkan</div>
+        <a href="/admin">login</a>
+        @endif
+        {{-- Success / Error Messages --}}
+        @if(session('success'))
+            <div class="bg-green-100 text-green-700 p-3 rounded mt-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('info'))
+            <div class="bg-blue-100 text-blue-700 p-3 rounded mt-4">
+                {{ session('info') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="bg-red-100 text-red-700 p-3 rounded mt-4">
+                {{ session('error') }}
+            </div>
+        @endif
+
+
     </div>
 </div>
 
-
+@if(session()->has('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
 <script>
     // Fullscreen overlay logic
     const overlay = document.getElementById('overlay');

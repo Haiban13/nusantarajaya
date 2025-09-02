@@ -97,10 +97,14 @@
         @endforeach
     </div>
 </div>
-
-<img src="{{ asset('storage/' . $detail_artikel->image->img1) }}"
+@if(isset($detail_artikel->image->img1))
+<img src="{{ asset('storage/' . $detail_artikel->image->img1 ?? '') }}"
+    class="w-full h-[250px] lg:h-[500px] bg-orange-900 absolute top-0  brightness-50 object-cover">
+@else
+<img src=""
     class="w-full h-[250px] lg:h-[500px] bg-orange-900 absolute top-0  brightness-50 object-cover">
 
+@endif
 
 
 <!-- Modal fullscreen viewer -->

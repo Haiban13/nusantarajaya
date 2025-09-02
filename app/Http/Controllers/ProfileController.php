@@ -27,7 +27,7 @@ class ProfileController extends Controller
         $artikels = $user->artikel;
         $acaras = $user->acara;
         $total_acara = $user->acara->count();
-        $acara_aktif = $user->acara->where('status', 'aktif')->count();
+       $acara_aktif = $user->acara ->where('tanggal_mulai', '!=', now()->toDateString())->count();
         return view('user-profile', compact(
             'user',
             'artikels',

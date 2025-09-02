@@ -60,12 +60,7 @@ class EditAcara extends EditRecord
                 $image->img3 = $data['upload_img3'];
             }
 
-            if (!empty($data['upload_video']) && $data['upload_video'] !== $image->video) {
-                if (!empty($image->video)) {
-                    Storage::disk('public')->delete($image->video);
-                }
-                $image->video = $data['upload_video'];
-            }
+         
 
             $image->save(); // 👈 updates database
         }

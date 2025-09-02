@@ -27,55 +27,81 @@ class ArtikelResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('judul')
-                    ->required()
-                    ->maxLength(255),
-               
-             
-                Forms\Components\Hidden::make('img'),
-                Forms\Components\Hidden::make('owner'),
-                Forms\Components\FileUpload::make('upload_img1')
-                    ->label('Image 1')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                        ->visibility('public')->multiple(false),
+        ->schema([
+            // Judul Acara
+            Forms\Components\TextInput::make('judul')
+                ->label('Judul Acara')
+                ->placeholder('Masukkan judul acara')
+                ->required()
+                ->maxLength(255)
+                ->helperText('Judul acara harus singkat dan jelas.'),
 
-                Forms\Components\FileUpload::make('upload_img2')
-                    ->label('Image 2')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                    ->visibility('public')->multiple(false),
+            Forms\Components\Hidden::make('img'),
+            Forms\Components\Hidden::make('owner'),
 
-                Forms\Components\FileUpload::make('upload_img3')
-                    ->label('Image 3')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                    ->visibility('public')->multiple(false),
-                Forms\Components\TextInput::make('youtube_url')
-                    ->label('YouTube Video URL')
-                    ->placeholder('https://www.youtube.com/watch?v=XXXXXX')
-                    ->maxLength(255)
-                    ->nullable()
-                    ->prefixIcon('heroicon-o-video-camera')
-                    ->rules([
-                        'nullable',
-                        'regex:/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/(watch\?v=)?[A-Za-z0-9_\-]{11}$/'
-                    ])->helperText('Paste a valid YouTube video URL, e.g. https://www.youtube.com/watch?v=xxxxxxx'),
- 
+            // Upload Image 1
+            Forms\Components\FileUpload::make('upload_img1')
+                ->label('Gambar Utama')
+                ->image()
+                ->directory('images')
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah gambar utama acara. Maksimal ukuran 2MB.'),
 
-            
-                Forms\Components\Textarea::make('des_singkat')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('detail_acara')
-                    ->columnSpanFull(),
-            ]);
+            // Upload Image 2
+            Forms\Components\FileUpload::make('upload_img2')
+                ->label('Gambar Tambahan 1')
+                ->image()
+                ->directory('images')
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Opsional: Gambar tambahan pertama.'),
+
+            // Upload Image 3
+            Forms\Components\FileUpload::make('upload_img3')
+                ->label('Gambar Tambahan 2')
+                ->image()
+                ->directory('images')
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Opsional: Gambar tambahan kedua.'),
+
+            // YouTube URL Input
+            Forms\Components\TextInput::make('youtube_url')
+                ->label('YouTube Video URL')
+                ->placeholder('https://www.youtube.com/watch?v=XXXXXX')
+                ->maxLength(255)
+                ->nullable()
+                ->prefixIcon('heroicon-o-video-camera')
+                ->helperText('Masukkan URL video YouTube yang valid.')
+                ->rules([
+                    'nullable',
+                    'regex:/^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[A-Za-z0-9_-]{11}$/'
+                ])
+                ->validationMessages([
+                    'regex' => 'URL YouTube tidak valid. Contoh: https://www.youtube.com/watch?v=XXXXXX',
+                ]),
+
+            // Deskripsi Singkat
+            Forms\Components\Textarea::make('des_singkat')
+                ->label('Deskripsi Singkat')
+                ->placeholder('Tulis deskripsi singkat tentang acara...')
+                ->columnSpanFull()
+                ->helperText('Deskripsi singkat acara dalam beberapa kalimat.'),
+
+            // Detail Acara
+            Forms\Components\Textarea::make('detail_acara')
+                ->label('Detail Acara')
+                ->placeholder('Tuliskan detail lengkap tentang acara...')
+                ->columnSpanFull()
+                ->helperText('Jelaskan acara lebih detail, termasuk rundown atau informasi penting.'),
+        ]);
        
     }
 
@@ -159,7 +185,7 @@ class ArtikelResource extends Resource
         $user = auth()->user();
 
         // If user is admin, show all data
-        if ($user->hasRole('admin') || $user->hasRole('super_admin')) { // If you’re using spatie/laravel-permission
+        if ( $user->hasRole('super_admin')) { // If you’re using spatie/laravel-permission
             return parent::getEloquentQuery();
         }
 

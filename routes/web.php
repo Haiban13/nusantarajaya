@@ -6,6 +6,7 @@ use App\Http\Controllers\AcaraController;
 use App\Http\Controllers\SeachController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LaporkanController;
 use App\Http\Controllers\ProfileController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -45,6 +46,9 @@ Route::get('/search-acara', [SeachController::class, "searchAcara"])->name('acar
 Route::get('/search-artikel', [SeachController::class, "searchArtikel"])->name('artikel.search');
 Route::get('/search', [SeachController::class, "search"])->name('search');
 
+Route::post('/laporkan', [LaporkanController::class, 'store'])
+    ->middleware('auth')
+    ->name('laporkan.store');
 
 
 // help

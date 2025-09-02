@@ -16,7 +16,7 @@ class CreateAcara extends CreateRecord
             'img1'  => $data['upload_img1'] ?? null,
             'img2'  => $data['upload_img2'] ?? null,
             'img3'  => $data['upload_img3'] ?? null,
-            'video' => $data['upload_video'] ?? null,
+        
             'jenis' => "acara",
 
         ]);     

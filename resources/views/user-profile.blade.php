@@ -9,21 +9,21 @@
                  <div class="flex items-center justify-center w-full">
                      <div class="bg-orange-400 w-[111px] h-[111px]  rounded-full"></div>
                  </div>
-                 <h2 class=" text-3xl mt-5 font-bold">Haiban Aufar</h2>
-                 <p class=" text-orange-600 text-sm lg:text-xl mt-2 lg:my-3">Dinas Kebudayaan Purbalingga</p>
+                 <h2 class=" text-3xl mt-5 font-bold">{{$user->name}}</h2>
+                 <p class=" text-orange-600 text-sm lg:text-xl mt-2 lg:my-3">{{$user->email}}</p>
                  <div class=" flex items-center justify-center gap-4 lg:gap-10 my-4 ">
                      <div class=" text-center ">
-                         <h5 class="text-2xl lg:text-4xl font-bold">14</h5>
+                         <h5 class="text-2xl lg:text-4xl font-bold">{{$total_artikel}}</h5>
                          <p class="text-xs  lg:text-base ">Artikel Berita</p>
                      </div>
                      <div class="w-[2px] h-[25px] lg:h-[40px] rounded-full bg-zinc-200"></div>
                      <div class=" text-center ">
-                         <h5 class="text-2xl lg:text-4xl font-bold text-green-500">24</h5>
+                         <h5 class="text-2xl lg:text-4xl font-bold text-green-500">{{$acara_aktif}}</h5>
                          <p class="text-xs  lg:text-base ">Acara Aktif</p>
                      </div>
                      <div class="w-[2px] h-[25px] lg:h-[40px] rounded-full bg-zinc-200"></div>
                      <div class=" text-center ">
-                         <h5 class="text-2xl lg:text-4xl font-bold">4</h5>
+                         <h5 class="text-2xl lg:text-4xl font-bold">{{$total_acara}}</h5>
                          <p class="text-xs  lg:text-base ">total acara</p>
                      </div>
                  </div>

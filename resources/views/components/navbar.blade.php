@@ -36,7 +36,7 @@
                         class="rounded-full duration-200 btn-line text-orange-600 ">Masuk</a>
                     <a href="/admin/register" class="rounded-full duration-200 btn-bg">Daftar</a>
                 </div>
-                {{-- <a target="_blank" href="{{ route('user.profile') }}">
+                {{-- <a target="_blank" href="/admin">
                     <div class="bg-zinc-500 w-[50px]  flex items-center justify-center  h-[50px] rounded-full"></div>
                 </a> --}}
             </div>
@@ -92,7 +92,7 @@
                     {{-- <a href="/admin" class="rounded-full duration-200 btn-bg">Login</a> --}}
                 </div>
 
-                <a href="{{ route('user.profile') }}">
+                <a href="/admin">
                     <div class="flex justify-center border-2 border-zinc-900 bg-transparent rounded-full">
                         Dasgboard
                         <span class="bg-zinc-900 w-[50px]   flex items-center justify-center h-[50px] rounded-full">

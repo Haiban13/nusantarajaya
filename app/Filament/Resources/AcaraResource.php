@@ -23,67 +23,110 @@ class AcaraResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('judul')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('tanggal_mulai')
-                    ->required(),
-                Forms\Components\DatePicker::make('tanggal_akhir')
-                    ->required(),
-                    Forms\Components\Hidden::make('owner'),
-                    Forms\Components\Hidden::make('img'),
-                Forms\Components\FileUpload::make('upload_img1')
-                    ->label('Image 1')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                        ->visibility('public')->multiple(false),
+        ->schema([
+            Forms\Components\TextInput::make('judul')
+                ->label('Judul Acara')
+                ->placeholder('Masukkan judul acara')
+                ->required()
+                ->maxLength(255)
+                ->helperText('Judul acara harus singkat dan jelas.'),
 
-                Forms\Components\FileUpload::make('upload_img2')
-                    ->label('Image 2')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
+            Forms\Components\DatePicker::make('tanggal_mulai')
+                ->label('Tanggal Mulai')
+                ->placeholder('Pilih tanggal mulai acara')
+                ->required()
+                ->helperText('Tanggal mulai tidak boleh sebelum hari ini.')
+                ->minDate(today()), // ✅ Prevent past dates
 
-                Forms\Components\FileUpload::make('upload_img3')
-                    ->label('Image 3')
-                    ->image()
-                    ->directory('images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
+            Forms\Components\DatePicker::make('tanggal_akhir')
+                ->label('Tanggal Akhir')
+                ->placeholder('Pilih tanggal akhir acara')
+                ->required()
+                ->helperText('Tanggal akhir tidak boleh sebelum tanggal mulai.')
+                ->afterOrEqual('tanggal_mulai'), // ✅ Prevent ending before start
 
-                Forms\Components\FileUpload::make('upload_video')
-                    ->label('Video')
-                    ->directory('videos')
-                    ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
-                    ->maxSize(10240) // 10MB
-                    ->nullable()->preserveFilenames(false)
-->visibility('public')->multiple(false),
-                Forms\Components\TextInput::make('lokasi')
-                    ->maxLength(255)  // ✅ Important
-                ->required(),
-                Forms\Components\Textarea::make('des_singkat')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('detail_acara')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('htm')
-                    ->numeric(),
-                Forms\Components\TextInput::make('no_panitia')
-                    ->maxLength(255),
-                Forms\Components\Select::make('kategori_id')
-    ->label('Kategori')
-    ->relationship('kategori', 'nama') // 'nama' = column in kategoris table
-    ->searchable()
-    ->preload()
-    ->required(),
-                Forms\Components\TextInput::make('asal')
-                    ->maxLength(255),
-            ]);
+            Forms\Components\Hidden::make('owner'),
+            Forms\Components\Hidden::make('img'),
+
+            // Upload Image 1
+            Forms\Components\FileUpload::make('upload_img1')
+                ->label('Gambar Utama')
+                ->directory('images')
+                ->image()
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah gambar utama acara. Maksimal 2MB.'),
+
+            // Upload Image 2
+            Forms\Components\FileUpload::make('upload_img2')
+                ->label('Gambar Tambahan 1')
+                ->directory('images')
+                ->image()
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Opsional: Gambar tambahan pertama.'),
+
+            // Upload Image 3
+            Forms\Components\FileUpload::make('upload_img3')
+                ->label('Gambar Tambahan 2')
+                ->directory('images')
+                ->image()
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Opsional: Gambar tambahan kedua.'),
+
+            Forms\Components\TextInput::make('lokasi')
+                ->label('Lokasi Acara')
+                ->placeholder('Contoh: Gedung Kesenian Jakarta')
+                ->required()
+                ->maxLength(255)
+                ->helperText('Masukkan lokasi lengkap acara.'),
+
+            Forms\Components\Textarea::make('des_singkat')
+                ->label('Deskripsi Singkat')
+                ->placeholder('Tulis deskripsi singkat acara...')
+                ->columnSpanFull()
+                ->helperText('Deskripsi singkat acara, maksimal beberapa kalimat.'),
+
+            Forms\Components\Textarea::make('detail_acara')
+                ->label('Detail Acara')
+                ->placeholder('Tuliskan detail lengkap tentang acara...')
+                ->columnSpanFull()
+                ->helperText('Jelaskan acara lebih detail, termasuk rundown atau informasi penting.'),
+
+            Forms\Components\TextInput::make('htm')
+                ->label('Harga Tiket Masuk (HTM)')
+                ->numeric()
+                ->placeholder('Contoh: 50000')
+                ->helperText('Masukkan harga tiket masuk dalam rupiah. Isi 0 jika gratis.'),
+
+            Forms\Components\TextInput::make('no_panitia')
+                ->label('Nomor Panitia')
+                ->placeholder('Contoh: 081234567890')
+                ->maxLength(255)
+                ->helperText('Nomor kontak panitia yang bisa dihubungi.'),
+
+            Forms\Components\Select::make('kategori_id')
+                ->label('Kategori Acara')
+                ->relationship('kategori', 'nama')
+                ->searchable()
+                ->preload()
+                ->required()
+                ->placeholder('Pilih kategori acara')
+                ->helperText('Pilih kategori yang sesuai dengan acara ini.'),
+
+            Forms\Components\TextInput::make('asal')
+                ->label('Asal Daerah / Grup')
+                ->placeholder('Contoh: Sanggar Seni Jawa Tengah')
+                ->maxLength(255)
+                ->helperText('Masukkan asal daerah atau grup penyelenggara.'),
+        ]);
     }
 
     public static function table(Table $table): Table

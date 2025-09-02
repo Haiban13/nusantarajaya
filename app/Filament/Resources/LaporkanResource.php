@@ -16,6 +16,8 @@ use Filament\Infolists\Infolist;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Components\ImageEntry;
+use Illuminate\Support\Facades\Auth;
+
 class LaporkanResource extends Resource
 {
     protected static ?string $model = Laporkan::class;
@@ -25,56 +27,82 @@ class LaporkanResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                 Forms\Components\Select::make('acara_id')
-    ->label('acara')
-    ->relationship('acara', 'judul') // 'nama' = column in kategoris table
-    ->searchable()
-    ->preload()
-    ->required(),
-              
-                    Forms\Components\Hidden::make('dokumentasi'),
-                Forms\Components\FileUpload::make('upload_img1')
-                    ->label('Image 1')
-                    ->image()
-                    ->directory('dokumentasi/images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                        ->visibility('public')->multiple(false),
+        ->schema([
+            // Pilih Acara
+            Forms\Components\Select::make('acara_id')
+                ->label('Pilih Acara')
+                ->relationship('acara', 'judul')
+                ->searchable()
+                ->preload()
+                ->required()
+                ->helperText('Pilih acara yang ingin Anda laporkan.'),
 
-                Forms\Components\FileUpload::make('upload_img2')
-                    ->label('Image 2')
-                    ->image()
-                    ->directory('dokumentasi/images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                    ->visibility('public')->multiple(false),
+            // Hidden field for storing final dokumentasi path
+            Forms\Components\Hidden::make('dokumentasi'),
 
-                Forms\Components\FileUpload::make('upload_img3')
-                    ->label('Image 3')
-                    ->image()
-                    ->directory('dokumentasi/images')
-                    ->maxSize(2048)
-                    ->nullable()->preserveFilenames(false)
-                    ->visibility('public')->multiple(false),
+            // Upload Gambar 1
+            Forms\Components\FileUpload::make('upload_img1')
+                ->label('Gambar 1')
+                ->image()
+                ->directory('dokumentasi/images')
+                ->maxSize(2048) // 2MB per image
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah gambar utama dokumentasi (opsional).'),
 
-                Forms\Components\FileUpload::make('upload_video')
-                    ->label('Video')
-                    ->directory('dokumentasi/videos')
-                    ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
-                    ->maxSize(10240) // 10MB
-                    ->nullable()->preserveFilenames(false)
-                    ->visibility('public')->multiple(false),
-                Forms\Components\hidden::make('user_acara_id')
-                   ,
-                Forms\Components\hidden::make('user_pelapor_id')
-                     ,
-                Forms\Components\Textarea::make('keterangan')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('jenis_keluhan')
-                    ->required()
-                    ->maxLength(255),
-            ]);
+            // Upload Gambar 2
+            Forms\Components\FileUpload::make('upload_img2')
+                ->label('Gambar 2')
+                ->image()
+                ->directory('dokumentasi/images')
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah gambar tambahan dokumentasi (opsional).'),
+
+            // Upload Gambar 3
+            Forms\Components\FileUpload::make('upload_img3')
+                ->label('Gambar 3')
+                ->image()
+                ->directory('dokumentasi/images')
+                ->maxSize(2048)
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah gambar tambahan dokumentasi (opsional).'),
+
+            // Upload Video
+            Forms\Components\FileUpload::make('upload_video')
+                ->label('Video Dokumentasi')
+                ->directory('dokumentasi/video')
+                ->acceptedFileTypes(['video/mp4', 'video/mpeg', 'video/quicktime'])
+                ->maxSize(10240) // 10MB
+                ->nullable()
+                ->preserveFilenames(false)
+                ->visibility('public')
+                ->helperText('Unggah video dokumentasi (maks. 10MB).'),
+
+            // Hidden fields for tracking
+            Forms\Components\Hidden::make('user_acara_id'),
+            Forms\Components\Hidden::make('user_pelapor_id'),
+
+            // Keterangan
+            Forms\Components\Textarea::make('keterangan')
+                ->label('Keterangan Tambahan')
+                ->placeholder('Tuliskan keterangan tambahan mengenai dokumentasi acara...')
+                ->columnSpanFull()
+                ->helperText('Opsional: Jelaskan detail dokumentasi atau catatan penting.'),
+
+            // Jenis Keluhan / Laporan
+            Forms\Components\TextInput::make('jenis_keluhan')
+                ->label('Jenis Keluhan / Laporan')
+                ->placeholder('Contoh: Dokumentasi rusak atau tidak lengkap')
+                ->required()
+                ->maxLength(255)
+                ->helperText('Tuliskan jenis keluhan atau laporan terkait dokumentasi acara.'),
+        ]);
     }
 
     public static function table(Table $table): Table
@@ -137,14 +165,28 @@ class LaporkanResource extends Resource
         ];
     }
 
+        public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+        
+        if (auth()->user()->hasRole('user') ) {
+            // Normal users only see their own reports
+            return $query->where('user_pelapor_id', Auth::id());
+        }
+
+        // Admin can see all
+        return $query;
+    }
+
         public static function canEdit($record): bool
     {
-        return $record->owner === auth()->id();
+        return $record->user_pelapor_id === auth()->id();
     }
+     
 
     public static function canDelete($record): bool
     {
-        return $record->owner === auth()->id();
+        return $record->user_pelapor_id === auth()->id();
     }
 
     public static function getPages(): array

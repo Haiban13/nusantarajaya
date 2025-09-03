@@ -1,17 +1,19 @@
 <?php
 namespace App\Filament\Widgets;
 
+use App\Models\Acara;
 use App\Models\Artikel;
 use Filament\Widgets\ChartWidget;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class StatistikLineChart extends ChartWidget
 {
-    protected static ?string $heading = 'Statistik Artikel per Bulan';
+    protected static ?string $heading = 'Statistik Acara per Bulan';
 
     protected function getData(): array
     {
-        $data = Artikel::selectRaw("MONTH(created_at) as bulan, COUNT(*) as jumlah")
+        $data =Acara::selectRaw("MONTH(created_at) as bulan, COUNT(*) as jumlah")->where('owner',Auth::user()->id)
             ->groupBy('bulan')
             ->orderBy('bulan')
             ->pluck('jumlah', 'bulan');
@@ -27,7 +29,7 @@ class StatistikLineChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Artikel',
+                    'label' => 'Acara',
                     'data' => $values,
                     'borderColor' => 'rgba(255, 99, 132, 1)',
                     'backgroundColor' => 'rgba(255, 99, 132, 0.2)',

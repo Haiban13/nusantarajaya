@@ -279,13 +279,13 @@
                      {{-- card populer --}}
                      @foreach ($top_user as $top)
                          <div class="flex  items-center my-5 gap-5" data-aos="fade-up" data-aos-duration="500">
-                             <div class="bg-cover bg-center w-[55px] h-[55px] rounded-full bg-orange-400"
+                             <a href="{{route('profile.show',$top->id)}}" class="bg-cover bg-center w-[55px] h-[55px] rounded-full bg-orange-400"
                                  style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D')">
-                             </div>
+                         </a>
                              <div>
-                                 <h1 class="flex items-center text-base lg:text-xl gap-2">
+                                 <a href="{{route('profile.show',$top->id)}}" class="flex items-center text-base lg:text-xl gap-2">
                                      {{ $top->name }}
-
+   
                                      @if (Str::contains($top->name, ['Kabupaten', 'Provinsi']))
                                          <span>
                                              <svg class="text-blue-500" xmlns="http://www.w3.org/2000/svg"
@@ -293,21 +293,23 @@
                                                  <path fill="currentColor"
                                                      d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z" />
                                              </svg>
+                                             <a href="{{route('profile.show',$top->id)}}"></a>
                                          </span>
                                      @endif
-                                 </h1>
+                         </a>
                                  {{-- keterangan --}}
                                  @if (empty($top))
                                      @if (Str::contains($top->name, ['Kota', 'Kabupaten']))
-                                         <p class="text-orange-600 font-medium">Kementrian</p>
+                                     <a href="{{route('profile.show',$top->id)}}"></a>
+                                         <a href="{{route('profile.show',$top->id)}}" class="text-orange-600 font-medium">Kementrian</a>
                                      @else
-                                         <p class="text-orange-600 font-medium">Masyarakat Umum</p>
+                                         <a href="{{route('profile.show',$top->id)}}" class="text-orange-600 font-medium">Masyarakat Umum</a>
                                      @endif
                                  @else
                                      @if (Str::contains($top->name, ['Kota', 'Kabupaten']))
-                                         <p class="text-orange-600 font-medium">Kementrian</p>
+                                         <a href="{{route('profile.show',$top->id)}}" class="text-orange-600 font-medium">Kementrian</a>
                                      @else
-                                         <p class="text-orange-600 font-medium">Masyarakat Umum</p>
+                                         <a href="{{route('profile.show',$top->id)}}" class="text-orange-600 font-medium">Masyarakat Umum</a>
                                      @endif
                                  @endif
                           

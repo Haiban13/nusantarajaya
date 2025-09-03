@@ -73,20 +73,36 @@ class ArtikelResource extends Resource
                 ->helperText('Opsional: Gambar tambahan kedua.'),
 
             // YouTube URL Input
-            Forms\Components\TextInput::make('youtube_url')
-                ->label('YouTube Video URL')
-                ->placeholder('https://www.youtube.com/watch?v=XXXXXX')
-                ->maxLength(255)
-                ->nullable()
-                ->prefixIcon('heroicon-o-video-camera')
-                ->helperText('Masukkan URL video YouTube yang valid.')
-                ->rules([
-                    'nullable',
-                    'regex:/^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[A-Za-z0-9_-]{11}$/'
-                ])
-                ->validationMessages([
-                    'regex' => 'URL YouTube tidak valid. Contoh: https://www.youtube.com/watch?v=XXXXXX',
-                ]),
+           Forms\Components\TextInput::make('upload_video')
+            ->label('YouTube Video URL')
+            ->placeholder('https://www.youtube.com/watch?v=XXXXXX')
+            ->maxLength(255)
+            ->nullable()
+            ->prefixIcon('heroicon-o-video-camera')
+            ->helperText('Masukkan URL video YouTube yang valid.')
+            ->reactive()
+            ->afterStateUpdated(function ($state, callable $set) {
+                if (blank($state)) {
+                    return;
+                }
+
+                // Regex to extract YouTube Video ID from ANY valid YouTube link
+                $pattern = '/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/';
+
+                if (preg_match($pattern, $state, $matches)) {
+                    // Normalize URL to a clean format
+                    $videoId = $matches[1];
+                    $cleanUrl = "https://www.youtube.com/watch?v={$videoId}";
+                    $set('youtube_url', $cleanUrl);
+                }
+            })
+            ->rules([
+                'nullable',
+                'regex:/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/'
+            ])
+            ->validationMessages([
+                'regex' => 'URL YouTube tidak valid. Contoh: https://www.youtube.com/watch?v=XXXXXX',
+            ]) ,
 
             // Deskripsi Singkat
             Forms\Components\Textarea::make('des_singkat')

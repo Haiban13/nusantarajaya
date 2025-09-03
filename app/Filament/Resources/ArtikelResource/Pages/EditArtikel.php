@@ -60,7 +60,10 @@ class EditArtikel extends EditRecord
                 $image->img3 = $data['upload_img3'];
             }
 
-          
+           if (!empty($data['upload_video']) && $data['upload_video'] !== $image->img3) {
+                
+                $image->video = $data['upload_video'];
+            }
             $image->save(); // 👈 updates database
         }
 

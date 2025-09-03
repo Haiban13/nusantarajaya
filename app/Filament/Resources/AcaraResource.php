@@ -52,7 +52,7 @@ class AcaraResource extends Resource
             Forms\Components\FileUpload::make('upload_img1')
                 ->label('Gambar Utama')
                 ->directory('images')
-                ->image()
+                ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp'])
                 ->maxSize(2048)
                 ->nullable()
                 ->preserveFilenames(false)
@@ -63,7 +63,7 @@ class AcaraResource extends Resource
             Forms\Components\FileUpload::make('upload_img2')
                 ->label('Gambar Tambahan 1')
                 ->directory('images')
-                ->image()
+                ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp'])
                 ->maxSize(2048)
                 ->nullable()
                 ->preserveFilenames(false)
@@ -74,7 +74,7 @@ class AcaraResource extends Resource
             Forms\Components\FileUpload::make('upload_img3')
                 ->label('Gambar Tambahan 2')
                 ->directory('images')
-                ->image()
+                ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp'])
                 ->maxSize(2048)
                 ->nullable()
                 ->preserveFilenames(false)
@@ -167,7 +167,7 @@ class AcaraResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('no_panitia')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('kategori')
+                Tables\Columns\TextColumn::make('kategori.nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('asal')
                     ->searchable(),

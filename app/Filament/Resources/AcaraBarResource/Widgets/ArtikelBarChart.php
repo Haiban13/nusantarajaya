@@ -5,6 +5,7 @@ namespace App\Filament\Widgets;
 
 use App\Models\Artikel;
 use Filament\Widgets\ChartWidget;
+use Illuminate\Support\Facades\Auth;
 
 class ArtikelBarChart extends ChartWidget
 {
@@ -12,7 +13,7 @@ class ArtikelBarChart extends ChartWidget
 
     protected function getData(): array
     {
-        $data = Artikel::selectRaw("MONTH(created_at) as bulan, COUNT(*) as jumlah")
+        $data = Artikel::selectRaw("MONTH(created_at) as bulan, COUNT(*) as jumlah")->where('owner',Auth::user()->id)
             ->groupBy('bulan')
             ->orderBy('bulan')
             ->pluck('jumlah', 'bulan');

@@ -259,8 +259,12 @@
             </button>
         </form>
         @else
-        <div>login untuk laporkan</div>
-        <a href="/admin">login</a>
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-md mb-5"
+                role="alert">
+                <h3 class="font-bold text-lg mb-1">Login Diperlukan</h3>
+                <p class="text-sm">Silakan login terlebih dahulu untuk dapat mengirim laporan acara.</p>
+            </div>
+            <a href="/admin" class="btn-bg">login</a>
         @endif
         {{-- Success / Error Messages --}}
         @if(session('success'))

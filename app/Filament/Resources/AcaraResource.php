@@ -167,7 +167,7 @@ class AcaraResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('no_panitia')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('kategori.nama')
+                Tables\Columns\TextColumn::make('kategori.')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('asal')
                     ->searchable(),

@@ -19,9 +19,9 @@ class LaporkanController extends Controller
             'tanggal'        => 'required|date',
             'keterangan'     => 'required|string|max:500',
             'jenis_keluhan'  => 'required|string|max:100',
-            'img1'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'img2'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            'img3'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'img1'           => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:2048',
+            'img2'           => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:2048',
+            'img3'           => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:2048',
             'video'          => 'nullable|mimetypes:video/mp4,video/avi,video/mpeg|max:10240',
         ]);
 

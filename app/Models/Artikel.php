@@ -21,8 +21,12 @@ class Artikel extends Model
     {
         return $this->belongsTo(Image::class, 'img');
     }
-    public function owner()
+    public function user()
     {
         return $this->belongsTo(User::class, 'owner');
+    }
+    public function approval()
+    {
+        return $this->hasOne(\App\Models\Approval::class, 'artikel_id');
     }
 }

@@ -1,3 +1,4 @@
+{{-- <flowise-fullchatbot></flowise-fullchatbot> --}}
 <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
@@ -17,7 +18,7 @@
                 size: 55,
                 dragAndDrop: true,
                 iconColor: 'white',
-                customIconSrc:  'assets/karakter.png',
+                customIconSrc: 'assets/karakter.png',
                 // autoWindowOpen: {
                 //     autoOpen: true,
                 //     openDelay: 2,
@@ -55,7 +56,8 @@
                 width: 400,
                 fontSize: 16,
                 starterPrompts: [
-                    "Apa itu Budaya Sat Set?",
+                    // "What is a bot?",
+                    "Website ini berisi tentang apa?",
                     "Hubungi Admin?"
                 ],
                 starterPromptFontSize: 15,

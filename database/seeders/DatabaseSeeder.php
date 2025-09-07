@@ -5,25 +5,19 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Maatwebsite\Excel\Facades\Excel;
 
 class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
      */
-    public function run()
+    public function run(): void
     {
-        $rows = Excel::toArray([], base_path('./daftar-kabupaten-kota-di-indonesia-excel.xlsx'))[0];
-        array_shift($rows); // remove header
+        // User::factory(10)->create();
 
-        foreach ($rows as $row) {
-            User::create([
-                'name' => $row[0],
-                'email' => $row[0],
-                'password' => bcrypt($row[1]), // default password
-                // or 'admin', etc.
-            ]);
-        }
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }

@@ -10,11 +10,23 @@ class Laporkan extends Model
 
     protected $fillable = [
         'judul_acara',        // Judul acara
-        'tanggal',            // Tanggal laporan / kejadian
-        'id_dokumentasi',            // Tanggal laporan / kejadian
-        'user_pembuat_acara', // ID atau nama user pembuat acara     
+        'acara_id',            // Tanggal laporan / kejadian
+        'dokumentasi',            // Tanggal laporan / kejadian
+        'user_acara_id', // ID atau nama user pembuat acara     
+        'user_pelapor_id', // ID atau nama user pembuat acara     
         'keterangan',         // Keterangan atau keluhan
         'jenis_keluhan',      // Jenis keluhan (penipuan, tidak amanah, dll)
     ];
+
+
+    public function dokumentasi_id()
+    {
+        return $this->belongsTo(Dokumentasi::class, 'dokumentasi'  );
+    }
+    public function acara()
+    {
+        return $this->belongsTo(Acara::class, 'acara_id', 'id');
+    }
+
 
 }
